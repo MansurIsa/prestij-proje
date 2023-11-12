@@ -48,6 +48,9 @@ const BranchsAccountingAbiturient = () => {
                     Ödəniş tarixi
                 </th>
                 <th>
+                    Ödənildiyi tarix
+                </th>
+                <th>
                     Ödəniş forması
                 </th>
                 <th>

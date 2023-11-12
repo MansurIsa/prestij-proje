@@ -168,7 +168,7 @@ export const getPubliciationRetrieveList=(id)=>async dispatch=>{
 }
 
 export const getBranchsList=(email)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "branch-list/"+email,{
+    return await axios.get(baseUrl+"service/"+"branch-list/"+email,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }

@@ -21,3 +21,75 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+
+
+
+
+ // const data = {
+        //     first_name: studentUpdateName,
+        //     last_name: studentUpdateSurname,
+        //     phone_number1: +studentUpdateTelFirst,
+        //     phone_number2: +studentUpdateTelSecond,
+        //     wp_number: +studentUpdateWp,
+        //     status: studentUpdateStatusValue,
+        //     dim_point: +studentUpdateDimPoint,
+        //     sector: studentUpdateSectorValue,
+        //     specialty: studentUpdateSpecialty,
+        //     payment_date: studentUpdatePaymentDate,
+        //     payment_amount: +studentUpdatePaymentMoney,
+        //     season: studentUpdateSeasonSelectValue,
+        //     abiturient_class: studentUpdateClass,
+        //     group: studentUpdateGroup,
+        //     language: studentUpdateLanguage,
+        //     categories: categoriesSelectValue,
+        //     teachers: teachersSelectValue,
+        //     blocks: blocksSelectValue,
+        //     subjects: selectValue
+        // }
+        // console.log(studentUpdateSubjects, data);
+
+        // axios({
+        //     headers: {
+        //         Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+        //     },
+        //     method: "PUT",
+        //     url: `${baseUrl}service/student-retrieve-update-delete/${id}/`,
+        //     data
+        // }).then(resp => {
+        //     console.log(resp);
+        //     if (resp.status === 200) {
+
+        //         Swal.fire({
+        //             title: "Tələbə məlumatları dəyişdirildi",
+        //             icon: "success",
+        //             confirmButtonText: "OK",
+        //             width: "400px"
+        //         }).then(function () {
+        //             navigate(`/branchs-category/${localStorage.getItem('branchId')}`)
+        //             if (!refreshed) {
+        //                 dispatch(setRefreshed())
+        //                 window.location.reload();
+        //             }
+
+
+
+        //         });
+        //     }
+        // }).catch(err => {
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: 'Oops...',
+        //         text: '',
+
+        //     }).then(function () {
+
+        //         navigate(`/branchs-category/${localStorage.getItem('branchId')}`)
+        //         if (!refreshed) {
+        //             dispatch(setRefreshed())
+        //             window.location.reload();
+        //         }
+        //     })
+        // })

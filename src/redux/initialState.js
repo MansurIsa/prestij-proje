@@ -343,6 +343,7 @@ export const initialState = {
     editStudentModalContainer: false,
     editPaymentStudent: {},
     editPaymentStudentDate: "",
+    editPaidStudentDate: "",
     editPaymentStudentAmount: "",
     editPaymentStudentType: "",
     editPaymentStudentStatus: false,
@@ -353,6 +354,8 @@ export const initialState = {
     editPaymentTeacherAmount: "",
     editPaymentTeacherType: "",
     editPaymentTeacherStatus: false,
+
+    branchSelectAccountValue: ""
 
 
 }

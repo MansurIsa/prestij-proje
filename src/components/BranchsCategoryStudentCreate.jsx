@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { blockCreateModalFunc, blockUpdateModalContainerFunc, categoryCreateModalFunc, categoryUpdateModalContainerFunc, categoryUpdateModalFunc, classCreateModalFunc, classUpdateModalContainerFunc, groupCreateModalFunc, groupUpdateModalContainerFunc, languageCreateModalFunc, languageUpdateModalContainerFunc, studentCreateModalFunc, studentPaymentCreateModalContainerFunc, studentUpdateModalContainerFunc, subjectCreateModalFunc, subjectUpdateModalContainerFunc, teacherCreateModalFunc, teacherPaymentCreateModalContainerFunc, teacherUpdateModalContainerFunc } from '../redux/MainReducer'
+import { blockCreateModalFunc, blockUpdateModalContainerFunc, categoryCreateModalFunc, categoryUpdateModalContainerFunc, categoryUpdateModalFunc, classCreateModalFunc, classUpdateModalContainerFunc, groupCreateModalFunc, groupUpdateModalContainerFunc, languageCreateModalFunc, languageUpdateModalContainerFunc, studentCreateModalFunc, studentUpdateModalContainerFunc, subjectCreateModalFunc, subjectUpdateModalContainerFunc, teacherCreateModalFunc, teacherUpdateModalContainerFunc } from '../redux/MainReducer'
 import CategoryCreateModal from './modals/CategoryCreateModal'
 import CategoryUpdateModalContainer from './modals/CategoryUpdateModalContainer'
 import CategoryUpdateModal from './modals/CategoryUpdateModal'
@@ -57,9 +57,10 @@ const BranchsCategoryStudentCreate = () => {
         teacherUpdateModalContainer,
         teacherUpdateModal,
         studentPaymentCreateModalContainer,
-        teacherPaymentCreateModalContainer } = useSelector(state => state.Data)
+        teacherPaymentCreateModalContainer,
+        branchsSeasonsListArr } = useSelector(state => state.Data)
 
-
+console.log(branchsSeasonsListArr);
 
 
     return (
@@ -106,7 +107,7 @@ const BranchsCategoryStudentCreate = () => {
 
                 <button onClick={() => dispatch(studentCreateModalFunc())}>Tələbə yarat</button>
                 <button onClick={() => dispatch(studentUpdateModalContainerFunc())}>Tələbə dəyiş</button>
-                <button style={{backgroundColor: '#EAAE0D'}} onClick={() => dispatch(studentPaymentCreateModalContainerFunc())}>Tələbə ödəniş məlumatlarını yarat</button>
+                {/* <button style={{backgroundColor: '#EAAE0D'}} onClick={() => dispatch(studentPaymentCreateModalContainerFunc())}>Tələbə ödəniş məlumatlarını yarat</button> */}
 
             </div>
 
@@ -114,7 +115,7 @@ const BranchsCategoryStudentCreate = () => {
 
                 <button onClick={() => dispatch(teacherCreateModalFunc())}>Müəllim yarat</button>
                 <button onClick={() => dispatch(teacherUpdateModalContainerFunc())}>Müəllim dəyiş</button>
-                <button style={{backgroundColor: '#EAAE0D'}} onClick={() => dispatch(teacherPaymentCreateModalContainerFunc())}>Müəllim ödəniş məlumatlarını yarat</button>
+                {/* <button style={{backgroundColor: '#EAAE0D'}} onClick={() => dispatch(teacherPaymentCreateModalContainerFunc())}>Müəllim ödəniş məlumatlarını yarat</button> */}
 
             </div>
 

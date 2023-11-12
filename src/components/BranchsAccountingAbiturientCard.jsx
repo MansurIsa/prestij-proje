@@ -31,7 +31,7 @@ const BranchsAccountingAbiturientCard = ({ data }) => {
 
     const daysDifference = calculateDateDifference(startDate, endDate);
     return (
-        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference == 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' : 'black' }}>
+        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference == 0 ? 'purple' : daysDifference < 0 && daysDifference >= -3 ? '#196EDA' : daysDifference < -3 ? 'red' : 'black' }}>
             <td>
                 {data.month.name}
             </td>
@@ -50,7 +50,7 @@ const BranchsAccountingAbiturientCard = ({ data }) => {
             </td>
 
             <td>
-                {data.student.abiturient_class}
+                {data.student.abiturient_class != null ? data.student.abiturient_class.name : ''}
             </td>
             <td>
                 {data.student.blocks.map(block => {
@@ -58,7 +58,7 @@ const BranchsAccountingAbiturientCard = ({ data }) => {
                 })}
             </td>
             <td>
-                {data.student.group}
+                {data.student.group != null ? data.student.group.name : ''}
             </td>
             <td>
                 {data.student.subjects.map(sub => {
@@ -72,16 +72,19 @@ const BranchsAccountingAbiturientCard = ({ data }) => {
                 {data.student.sector}
             </td>
             <td>
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_date}
+                {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.payment_date}
             </td>
             <td>
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_type==='N'? 'Nağd': data.payment_type==='HK'? 'Hesaba köçürmə': ''}
+                {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.paid_date}
             </td>
             <td>
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_amount}
+                {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.payment_type === 'N' ? 'Nağd' : data.payment_type === 'HK' ? 'Hesaba köçürmə' : ''}
             </td>
             <td>
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.status ? 'Ödənilib' : 'Ödənilməyib'}
+                {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.payment_amount}
+            </td>
+            <td>
+                {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.status ? 'Ödənilib' : 'Ödənilməyib'}
             </td>
         </tr>
     )

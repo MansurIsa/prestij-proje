@@ -4,13 +4,16 @@ import { getSettingsList } from '../actions/MainAction';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaChevronDown } from 'react-icons/fa';
+import { branchChangeAccount } from '../redux/MainReducer';
 
 const RegisterPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const { settingsListArr } = useSelector(state => state.Data);
+    const { settingsListArr,branchsListArr,branchSelectAccountValue } = useSelector(state => state.Data);
 
+    console.log(branchSelectAccountValue);
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [email, setEmail] = useState("")
@@ -19,6 +22,7 @@ const RegisterPage = () => {
     const [isStaff, setIsStaff] = useState(false)
     const [isAccountant, setIsAccountant] = useState(false)
 
+    console.log(branchsListArr);
     useEffect(() => {
         dispatch(getSettingsList())
     }, [dispatch])
@@ -42,12 +46,12 @@ const RegisterPage = () => {
             setRegErrPsw('')
         }
     }
-    const setRegIsStaff=(e)=>{
+    const setRegIsStaff = (e) => {
         console.log(e.target.checked);
         setIsStaff(e.target.checked)
     }
 
-    const setRegIsAccountant=(e)=>{
+    const setRegIsAccountant = (e) => {
         setIsAccountant(e.target.checked)
     }
 
@@ -58,10 +62,10 @@ const RegisterPage = () => {
             last_name: surname,
             email: email,
             password: password,
-            is_staff: isStaff,
-            is_accountant: isAccountant
+            is_accountant: isAccountant,
+            branch: +branchSelectAccountValue
         }
-       
+
         console.log(data);
         axios('https://prestijs.pythonanywhere.com/api/account/account-create/', {
             method: "POST",
@@ -74,7 +78,7 @@ const RegisterPage = () => {
                 icon: "success",
                 confirmButtonText: "OK",
             })
-            
+
         }).catch(err => {
             Swal.fire({
                 title: "Error",
@@ -119,15 +123,33 @@ const RegisterPage = () => {
 
                     </div>
                     <div className='register_check_container'>
-                        <div className="register_check">
+                        {/* <div className="register_check">
                             <label htmlFor="regStaff">is staff</label>
                             <input id='regStaff' value={isStaff} onChange={setRegIsStaff} type="checkbox" />
-                        </div>
+                        </div> */}
 
                         <div className="register_check">
                             <label htmlFor="regAccountant">is accountant</label>
                             <input id='regAccountant' value={isAccountant} onChange={setRegIsAccountant} type="checkbox" />
                         </div>
+                        <div className="season_select_container">
+                            <div className='branchs_seasons'>
+                                <select onChange={(e)=>dispatch(branchChangeAccount(e.target.value))} value={branchSelectAccountValue}>
+                                   
+                                    <option disabled value="">Filial seçin</option>
+                                    {
+                                        branchsListArr?.map((data, i) => {
+                                            return (
+                                                <option key={data.id} value={data.id}>{data.name}</option>
+                                            );
+                                        })
+                                    }
+                                </select>
+                                <FaChevronDown className='select_down_icon' />
+                            </div>
+                        </div>
+
+
                     </div>
 
 

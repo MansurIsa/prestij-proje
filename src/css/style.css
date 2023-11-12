@@ -2567,11 +2567,12 @@ nav {
 .register_check_container{
     display: flex;
     align-items: center;
-    gap: 60px;
+    /* gap: 20px; */
     margin-top: 30px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    justify-content: space-between;
 }
 .register_check{
     display: flex;
@@ -2998,6 +2999,7 @@ table{
 .multi_select{
     margin-bottom: 10px;
     width: 60%;
+    color: black;
    
     
 }
@@ -3138,3 +3140,9 @@ table{
     margin: 0;
     padding: 0;
 }
+
+
+  
+  
+  
+  

@@ -1,5 +1,5 @@
 import React from 'react'
-import { editPaymentStudentAmountFunc, editPaymentStudentDateFunc, editPaymentStudentStatusFunc, editPaymentStudentTypeFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
+import { editPaidStudentDateFunc, editPaymentStudentAmountFunc, editPaymentStudentDateFunc, editPaymentStudentStatusFunc, editPaymentStudentTypeFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { baseUrl } from '../../MAIN_API'
@@ -9,13 +9,14 @@ import { useNavigate } from 'react-router-dom'
 const EditStudentModalContainer = () => {
     const dispatch = useDispatch()
     const navigate=useNavigate()
-    const { editPaymentStudent, editPaymentStudentDate, editPaymentStudentAmount, editPaymentStudentType, editPaymentStudentStatus,refreshed } = useSelector(state => state.Data)
+    const { editPaymentStudent, editPaymentStudentDate, editPaymentStudentAmount, editPaymentStudentType, editPaymentStudentStatus,refreshed,editPaidStudentDate } = useSelector(state => state.Data)
     console.log(editPaymentStudent);
 
     const editPaymentStudentSubmit = (e,id) => {
         e.preventDefault()
         const data = {
             payment_date: editPaymentStudentDate,
+            paid_date: editPaidStudentDate,
             payment_amount: editPaymentStudentAmount,
             payment_type: editPaymentStudentType,
             status: editPaymentStudentStatus,
@@ -78,6 +79,7 @@ const EditStudentModalContainer = () => {
                 
                 <form onSubmit={(e)=>editPaymentStudentSubmit(e,editPaymentStudent.id)}>
                     <input type="date" value={editPaymentStudentDate} onChange={(e) => dispatch(editPaymentStudentDateFunc(e.target.value))} />
+                    <input type="date" value={editPaidStudentDate} onChange={(e) => dispatch(editPaidStudentDateFunc(e.target.value))} />
                     <input type="number" value={editPaymentStudentAmount} onChange={(e) => dispatch(editPaymentStudentAmountFunc(e.target.value))} />
                     <select value={editPaymentStudentType} onChange={(e) => dispatch(editPaymentStudentTypeFunc(e.target.value))}>
                         <option value="N">Nağd</option>

@@ -65,7 +65,7 @@ const AccountingAbiturientCard = ({ data }) => {
             </td>
 
             <td >
-                {data.student.abiturient_class}
+                {data.student.abiturient_class!=null? data.student.abiturient_class.name: ''}
             </td>
             <td >
                 {data.student.blocks.map((block,i) => {
@@ -73,7 +73,7 @@ const AccountingAbiturientCard = ({ data }) => {
                 })}
             </td>
             <td >
-                {data.student.group}
+                {data.student.group!=null?data.student.group.name: ''}
             </td>
             <td >
                 {data.student.subjects.map((sub,i) => {
@@ -88,6 +88,9 @@ const AccountingAbiturientCard = ({ data }) => {
             </td>
             <td >
                 {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_date}
+            </td>
+            <td >
+                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.paid_date}
             </td>
             <td >
                 {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_type==='N'? 'Nağd': data.payment_type==='HK'? 'Hesaba köçürmə': ''}

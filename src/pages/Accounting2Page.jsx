@@ -27,13 +27,14 @@ const Accounting2Page = () => {
 
 
   localStorage.removeItem('selectedSeason')
+  localStorage.removeItem('selectedMonth')
   return (
     <div className='accounting_page_container'>
       {
         (loggedInUser?.is_accountant == false && loggedInUser?.is_staff == true) ?
           <div className="accounting_create container">
             <button onClick={notification} className='accounting_create_btn'>Bildirişlər</button>
-            <button onClick={goRegister} className='accounting_create_btn'>İstifadəçi yarat</button>
+            {/* <button onClick={goRegister} className='accounting_create_btn'>İstifadəçi yarat</button> */}
             <button onClick={goRegister} className='accounting_create_btn'>Mühasib yarat</button>
           </div>
           : null

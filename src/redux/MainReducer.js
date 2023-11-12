@@ -1029,8 +1029,9 @@ export const MainSlice = createSlice({
             state.studentUpdateSubjects = action.payload.subjects
 
             // state.seasonStudentUpdateId
+            console.log(action.payload.season);
 
-            let idX = state.branchsSeasonsListArr.find(data => data.name == action.payload.season)
+            let idX = state.branchsSeasonsListArr.find(data => data.id == action.payload.season.id)
 
             console.log(idX);
 
@@ -1088,9 +1089,9 @@ export const MainSlice = createSlice({
         studentUpdateLanguageFunc: (state, action) => {
             state.studentUpdateLanguage = action.payload
         },
-        monthCreateModalContainerFunc: (state, action) => {
-            state.monthCreateModalContainer = true
-        },
+        // monthCreateModalContainerFunc: (state, action) => {
+        //     state.monthCreateModalContainer = true
+        // },
 
 
 
@@ -1192,24 +1193,28 @@ export const MainSlice = createSlice({
             state.accountingStudentMonthPaymentListArr = action.payload
         },
 
-        studentPaymentCreateModalContainerFunc: (state, action) => {
-            state.studentPaymentCreateModalContainer = true
-        },
+        // studentPaymentCreateModalContainerFunc: (state, action) => {
+        //     state.studentPaymentCreateModalContainer = true
+        // },
 
-        teacherPaymentCreateModalContainerFunc: (state, action) => {
-            state.teacherPaymentCreateModalContainer = true
-        },
+        // teacherPaymentCreateModalContainerFunc: (state, action) => {
+        //     state.teacherPaymentCreateModalContainer = true
+        // },
 
         editStudentModalContainerFunc: (state, action) => {
             state.editStudentModalContainer = true
             state.editPaymentStudent=action.payload
             state.editPaymentStudentDate=action.payload.payment_date
+            state.editPaidStudentDate=action.payload.paid_date
             state.editPaymentStudentAmount=action.payload.payment_amount
             state.editPaymentStudentType=action.payload.payment_type
             state.editPaymentStudentStatus=action.payload.status
         },
         editPaymentStudentDateFunc: (state, action) => {
             state.editPaymentStudentDate=action.payload
+        },
+        editPaidStudentDateFunc: (state, action) => {
+            state.editPaidStudentDate=action.payload
         },
         editPaymentStudentAmountFunc: (state, action) => {
             state.editPaymentStudentAmount=action.payload
@@ -1240,6 +1245,9 @@ export const MainSlice = createSlice({
         },
         editPaymentTeacherStatusFunc: (state, action) => {
             state.editPaymentTeacherStatus=action.payload
+        },
+        branchChangeAccount: (state, action) => {
+            state.branchSelectAccountValue=action.payload
         },
 
 
@@ -1559,7 +1567,7 @@ export const {
     studentUpdateClassFunc,
     studentUpdateGroupFunc,
     studentUpdateLanguageFunc,
-    monthCreateModalContainerFunc,
+    // monthCreateModalContainerFunc,
 
 
 
@@ -1592,11 +1600,12 @@ export const {
     teacherUpdateSeasonSelectValueFunc,
     getAccountingStudentMonthPaymentListArr,
 
-    studentPaymentCreateModalContainerFunc,
-    teacherPaymentCreateModalContainerFunc,
+    // studentPaymentCreateModalContainerFunc,
+    // teacherPaymentCreateModalContainerFunc,
     editStudentModalContainerFunc,
 
     editPaymentStudentDateFunc,
+    editPaidStudentDateFunc,
     editPaymentStudentAmountFunc,
     editPaymentStudentTypeFunc,
     editPaymentStudentStatusFunc,
@@ -1605,5 +1614,6 @@ export const {
     editPaymentTeacherAmountFunc,
     editPaymentTeacherTypeFunc,
     editPaymentTeacherStatusFunc,
+    branchChangeAccount
 
 } = MainSlice.actions;

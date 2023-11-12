@@ -82,6 +82,7 @@ const BranchsSeasons = ({ id }) => {
     console.log(getSelectedSeason);
     let c = branchsSeasonsListArr.find(data => data.id == getSelectedSeason)
     console.log(c);
+    
     return (
         <div className='season_select_container'>
             <div className=" branchs_seasons">
@@ -98,7 +99,7 @@ const BranchsSeasons = ({ id }) => {
             </div>
             <button onClick={()=>dispatch(seasonCreateModalFunc())}>Sezon yarat</button>
             <button onClick={()=>dispatch(seasonUpdateModalContainerFunc())}>Sezon dəyiş</button>
-            <button style={{backgroundColor: '#EAAE0D'}} onClick={()=>dispatch(monthCreateModalContainerFunc())}>Ayları yarat</button>
+            {/* <button style={{backgroundColor: '#EAAE0D'}} onClick={()=>dispatch(monthCreateModalContainerFunc())}>Ayları yarat</button> */}
 
             {seasonCreateModal && <SeasonCreateModal/>}
             {seasonUpdateModalContainer && <SeasonUpdateModalContainer/>}

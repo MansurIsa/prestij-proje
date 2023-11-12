@@ -65,6 +65,9 @@ const AccountingStudentAbiturientCard = ({ data }) => {
                 {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.payment_date}
             </td>
             <td >
+                {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.paid_date}
+            </td>
+            <td >
                 {(data.student.status == 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.payment_type==='N'? 'Nağd': data.payment_type==='HK'? 'Hesaba köçürmə': ''}
             </td>
             <td >

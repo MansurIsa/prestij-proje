@@ -40,7 +40,8 @@ const StudentUpdateModal = () => {
 
     } = useSelector(state => state.Data)
 
-    console.log(studentObj.season);
+    console.log(studentObj);
+    console.log(studentUpdateCategories);
 
     console.log(categoryListArr);
     console.log(studentUpdateSeasonSelectValue);
@@ -55,64 +56,126 @@ const StudentUpdateModal = () => {
         dispatch(getSubjectList())
     }, [dispatch])
 
-    const [removedOptions, setRemovedOptions] = useState([]);
-    const [selectValue, setSelectValue] = useState(studentObj?.subjects?.map(x=>{
-        return x.name
-    }))
-    const [blocksSelectValue, setBlocksSelectValue] = useState(studentObj?.blocks?.map(x=>{
-        return x.name
-    }))
-    const [teachersSelectValue, setTeachersSelectValue] = useState([])
-    const [categoriesSelectValue, setCategoriesSelectValue] = useState(studentObj?.categories?.map(x=>{
-        return x.name
+    const [studentUpdateCategoriesValue, setStudentUpdateCategoriesValue] = useState(studentUpdateCategories.map(data => {
+        return data.id
     }))
 
+    const [studentUpdateTeachersValue, setStudentUpdateTeachersValue] = useState(studentUpdateTeachers.map(data => {
+        return data.id
+    }))
 
-    const selectRemove = (selectedList, removedItem) => {
-        setRemovedOptions([...removedOptions, removedItem]);
-    }
+    const [studentUpdateBlocksValue, setStudentUpdateBlocksValue] = useState(studentUpdateBlocks.map(data => {
+        return data.id
+    }))
 
-    const studentCreateSubjectSelectFunc = (e) => {
-        setSelectValue(e)
-        console.log(e);
-    }
-    const studentCreateBlockSelectFunc = (e) => {
-        setBlocksSelectValue(e)
-    }
-    const studentCreateTeacherSelectFunc = (e) => {
-        setTeachersSelectValue(e)
-    }
+    const [studentUpdateSubjectsValue, setStudentUpdateSubjectsValue] = useState(studentUpdateSubjects.map(data => {
+        return data.id
+    }))
 
-    const studentCreateSelectFunc = (e) => {
-        setCategoriesSelectValue(e)
+    console.log(studentUpdateCategoriesValue);
+    console.log(studentUpdateTeachersValue);
+    console.log(studentUpdateBlocksValue);
+    console.log(studentUpdateSubjectsValue);
+    const studentCreateSelectFunc = (selectedList, selectedItem) => {
+        console.log(selectedList);
+        console.log(selectedItem.id);
+        setStudentUpdateCategoriesValue((x) => {
+            const updatedSelectedOptions = [...x, selectedItem.id];
+            return updatedSelectedOptions;
+        });
     }
-    const studentUpdate = (e,id) => {
+    const selectCategoryRemove = (selectedList, removedItem) => {
+        console.log(selectedList);
+        setStudentUpdateCategoriesValue((x) => {
+            const updatedSelectedOptions = x.filter(
+                (item) => item !== removedItem.id
+            );
+            return updatedSelectedOptions;
+        });
+    };
+
+    const studentTeacherUpdateSelectFunc = (selectedList, selectedItem) => {
+        console.log(selectedList);
+        console.log(selectedItem.id);
+        setStudentUpdateTeachersValue((x) => {
+            const updatedSelectedOptions = [...x, selectedItem.id];
+            return updatedSelectedOptions;
+        });
+    }
+    const selectTeacherRemove = (selectedList, removedItem) => {
+        console.log(selectedList);
+        setStudentUpdateTeachersValue((x) => {
+            const updatedSelectedOptions = x.filter(
+                (item) => item !== removedItem.id
+            );
+            return updatedSelectedOptions;
+        });
+    };
+
+
+    const studentBlocksUpdateSelectFunc = (selectedList, selectedItem) => {
+        console.log(selectedList);
+        console.log(selectedItem.id);
+        setStudentUpdateBlocksValue((x) => {
+            const updatedSelectedOptions = [...x, selectedItem.id];
+            return updatedSelectedOptions;
+        });
+    }
+    const selectBlocksRemove = (selectedList, removedItem) => {
+        console.log(selectedList);
+        setStudentUpdateBlocksValue((x) => {
+            const updatedSelectedOptions = x.filter(
+                (item) => item !== removedItem.id
+            );
+            return updatedSelectedOptions;
+        });
+    };
+
+    const studentSubjectsUpdateSelectFunc = (selectedList, selectedItem) => {
+        console.log(selectedList);
+        console.log(selectedItem.id);
+        setStudentUpdateSubjectsValue((x) => {
+            const updatedSelectedOptions = [...x, selectedItem.id];
+            return updatedSelectedOptions;
+        });
+    }
+    const selectSubjectsRemove = (selectedList, removedItem) => {
+        console.log(selectedList);
+        setStudentUpdateSubjectsValue((x) => {
+            const updatedSelectedOptions = x.filter(
+                (item) => item !== removedItem.id
+            );
+            return updatedSelectedOptions;
+        });
+    };
+    const studentUpdate = (e, id) => {
         e.preventDefault()
 
-        console.log(e,id);
+        console.log(e, id);
+
 
         const data = {
             first_name: studentUpdateName,
             last_name: studentUpdateSurname,
-            phone_number1: +studentUpdateTelFirst,
-            phone_number2: +studentUpdateTelSecond,
-            wp_number: +studentUpdateWp,
+            phone_number1: studentUpdateTelFirst,
+            phone_number2: studentUpdateTelSecond,
+            wp_number: studentUpdateWp,
             status: studentUpdateStatusValue,
             dim_point: +studentUpdateDimPoint,
             sector: studentUpdateSectorValue,
             specialty: studentUpdateSpecialty,
             payment_date: studentUpdatePaymentDate,
             payment_amount: +studentUpdatePaymentMoney,
-            season: studentUpdateSeasonSelectValue,
+            season: studentUpdateSeasonSelectValue?.id,
             abiturient_class: studentUpdateClass,
             group: studentUpdateGroup,
             language: studentUpdateLanguage,
-            categories: categoriesSelectValue,
-            teachers: teachersSelectValue,
-            blocks: blocksSelectValue,
-            subjects: selectValue
+            categories: studentUpdateCategoriesValue,
+            teachers: studentUpdateTeachersValue,
+            blocks: studentUpdateBlocksValue,
+            subjects: studentUpdateSubjectsValue
         }
-        console.log(studentUpdateSubjects,data);
+        console.log(studentUpdateSubjects, data);
 
         axios({
             headers: {
@@ -157,8 +220,10 @@ const StudentUpdateModal = () => {
             })
         })
 
+
+
     }
-    
+
     return (
         <div className="modal_container">
             <div onClick={() => dispatch(modalOverlayFunc())} className='overlay'></div>
@@ -187,7 +252,7 @@ const StudentUpdateModal = () => {
                         <option value="" disabled>Sezon seçin</option>
                         {
                             branchsSeasonsListArr?.map((data, i) => {
-                                return <option  key={data.id} value={data.name}>{data.name}</option>
+                                return <option key={data.id} value={data.name}>{data.name}</option>
                             })
                         }
 
@@ -219,62 +284,57 @@ const StudentUpdateModal = () => {
                             })
                         }
                     </select>
+
+
                     <Multiselect
-                        isObject={false}
-                        onRemove={selectRemove}
+                        isObject={true}
+                        onRemove={selectCategoryRemove}
                         onSelect={studentCreateSelectFunc}
-                        options={categoryListArr?.map(data => {
-                            return data.name
-                        })}
+                        options={categoryListArr}
                         className='multi_select'
                         placeholder='Enter categories'
-                        selectedValues={studentUpdateCategories?.map(data => {
-                            return data.name
-                        })}
-                        
+                        selectedValues={studentUpdateCategories}
+                        displayValue='name'
+
                     />
 
                     <Multiselect
-                        isObject={false}
-                        onRemove={selectRemove}
-                        onSelect={studentCreateTeacherSelectFunc}
-                        options={branchsTeachersListArr?.map(data => {
-                            return data.first_name+ ' '+ data.last_name
-                        })}
+                        isObject={true}
+                        onRemove={selectTeacherRemove}
+                        onSelect={studentTeacherUpdateSelectFunc}
+                        options={branchsTeachersListArr.map(teacher => ({ ...teacher, displayValue: `${teacher.first_name} ${teacher.last_name}` }))}
                         className='multi_select'
-                        placeholder='Enter teachers'
-                        selectedValues={studentUpdateTeachers?.map(data => {
-                            return data.first_name+ ' '+data.last_name
-                        })}
-                    />
-                    <Multiselect
-                        isObject={false}
-                        onRemove={selectRemove}
-                        onSelect={studentCreateBlockSelectFunc}
-                        options={blockListArr?.map(data => {
-                            return data.name
-                        })}
-                        selectedValues={studentUpdateBlocks?.map(data => {
-                            return data.name
-                        })}
-                        className='multi_select'
-                        placeholder='Enter blocks'
+                        placeholder='Enter categories'
+                        selectedValues={studentUpdateTeachers.map(teacher => ({ ...teacher, displayValue: `${teacher.first_name} ${teacher.last_name}` }))}
+                        displayValue='displayValue'
+
                     />
 
                     <Multiselect
-                        isObject={false}
-                        onRemove={selectRemove}
-                        onSelect={studentCreateSubjectSelectFunc}
-                        options={subjectListArr?.map(data => {
-                            return data.name
-                        })}
-                        selectedValues={studentUpdateSubjects?.map(data => {
-                            return data.name
-                        })}
+                        isObject={true}
+                        onRemove={selectBlocksRemove}
+                        onSelect={studentBlocksUpdateSelectFunc}
+                        options={blockListArr}
                         className='multi_select'
-                        placeholder='Enter subjects'
+                        placeholder='Enter categories'
+                        selectedValues={studentUpdateBlocks}
+                        displayValue='name'
 
                     />
+
+                    <Multiselect
+                        isObject={true}
+                        onRemove={selectSubjectsRemove}
+                        onSelect={studentSubjectsUpdateSelectFunc}
+                        options={subjectListArr}
+                        className='multi_select'
+                        placeholder='Enter categories'
+                        selectedValues={studentUpdateSubjects}
+                        displayValue='name'
+
+                    />
+
+
 
                     <div className="branchs_create modal_save_btn_container">
                         <button>Dəyiş</button>
