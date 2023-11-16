@@ -351,11 +351,22 @@ export const initialState = {
     editTeacherModalContainer: false,
     editPaymentTeacher: {},
     editPaymentTeacherDate: "",
+    editPaidTeacherDate: "",
     editPaymentTeacherAmount: "",
     editPaymentTeacherType: "",
     editPaymentTeacherStatus: false,
 
-    branchSelectAccountValue: ""
+    branchSelectAccountValue: "",
+
+    accountantChangeModalContainer: false,
+    accountants: [],
+    accountantObj: {},
+    accountantUpdateModal: false,
+    accountantName: "",
+    accountantSurname: "",
+    accountantEmail: "",
+    isAccountantValue: false,
+    accountantBranchSelectValue: ""
 
 
 }

@@ -3142,7 +3142,24 @@ table{
 }
 
 
-  
-  
-  
-  
+.isAccountant input{
+    width: auto;
+    margin: 0;
+}
+
+.edit_student_payment{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--black2);
+}
+.edit_student_payment input{
+    width: 40%;
+    border-bottom: none;
+    font-size: 1.6rem;
+    margin: 0;
+}
+.edit_student_payment label{
+    font-size: 1.6rem;
+}

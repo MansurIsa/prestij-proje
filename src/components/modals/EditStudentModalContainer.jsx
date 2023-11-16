@@ -8,11 +8,11 @@ import { useNavigate } from 'react-router-dom'
 
 const EditStudentModalContainer = () => {
     const dispatch = useDispatch()
-    const navigate=useNavigate()
-    const { editPaymentStudent, editPaymentStudentDate, editPaymentStudentAmount, editPaymentStudentType, editPaymentStudentStatus,refreshed,editPaidStudentDate } = useSelector(state => state.Data)
+    const navigate = useNavigate()
+    const { editPaymentStudent, editPaymentStudentDate, editPaymentStudentAmount, editPaymentStudentType, editPaymentStudentStatus, refreshed, editPaidStudentDate } = useSelector(state => state.Data)
     console.log(editPaymentStudent);
 
-    const editPaymentStudentSubmit = (e,id) => {
+    const editPaymentStudentSubmit = (e, id) => {
         e.preventDefault()
         const data = {
             payment_date: editPaymentStudentDate,
@@ -74,12 +74,18 @@ const EditStudentModalContainer = () => {
     return (
         <div className="modal_container">
             <div onClick={() => dispatch(modalOverlayFunc())} className='overlay'></div>
-            <div className="branch_create_modal_card">
+            <div className="branch_create_modal_card edit_branch_create_modal_card">
                 <button onClick={() => dispatch(modalCloseFunc())} className='modal_close_btn'>Close</button>
-                
-                <form onSubmit={(e)=>editPaymentStudentSubmit(e,editPaymentStudent.id)}>
-                    <input type="date" value={editPaymentStudentDate} onChange={(e) => dispatch(editPaymentStudentDateFunc(e.target.value))} />
-                    <input type="date" value={editPaidStudentDate} onChange={(e) => dispatch(editPaidStudentDateFunc(e.target.value))} />
+
+                <form onSubmit={(e) => editPaymentStudentSubmit(e, editPaymentStudent.id)}>
+                    <div className='edit_student_payment'>
+                        <label htmlFor="">Ödəniş tarixi</label>
+                        <input type="date" value={editPaymentStudentDate} onChange={(e) => dispatch(editPaymentStudentDateFunc(e.target.value))} />
+                    </div>
+                    <div className='edit_student_payment'>
+                        <label htmlFor="">Ödənildiyi tarix</label>
+                        <input type="date" value={editPaidStudentDate} onChange={(e) => dispatch(editPaidStudentDateFunc(e.target.value))} />
+                    </div>
                     <input type="number" value={editPaymentStudentAmount} onChange={(e) => dispatch(editPaymentStudentAmountFunc(e.target.value))} />
                     <select value={editPaymentStudentType} onChange={(e) => dispatch(editPaymentStudentTypeFunc(e.target.value))}>
                         <option value="N">Nağd</option>

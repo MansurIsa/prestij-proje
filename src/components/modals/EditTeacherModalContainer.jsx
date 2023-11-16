@@ -1,21 +1,22 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { editPaymentTeacherAmountFunc, editPaymentTeacherDateFunc, editPaymentTeacherStatusFunc, editPaymentTeacherTypeFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
+import { editPaidTeacherDateFunc, editPaymentTeacherAmountFunc, editPaymentTeacherDateFunc, editPaymentTeacherStatusFunc, editPaymentTeacherTypeFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { baseUrl } from '../../MAIN_API'
 
 const EditTeacherModalContainer = () => {
     const dispatch = useDispatch()
-    const navigate=useNavigate()
-    const { editPaymentTeacher, editPaymentTeacherDate, editPaymentTeacherAmount, editPaymentTeacherType, editPaymentTeacherStatus,refreshed } = useSelector(state => state.Data)
+    const navigate = useNavigate()
+    const { editPaymentTeacher, editPaymentTeacherDate, editPaymentTeacherAmount, editPaymentTeacherType, editPaymentTeacherStatus, refreshed, editPaidTeacherDate } = useSelector(state => state.Data)
     console.log(editPaymentTeacher);
 
-    const editPaymentTeacherSubmit = (e,id) => {
+    const editPaymentTeacherSubmit = (e, id) => {
         e.preventDefault()
         const data = {
             payment_date: editPaymentTeacherDate,
+            paid_date: editPaidTeacherDate,
             payment_amount: editPaymentTeacherAmount,
             payment_type: editPaymentTeacherType,
             status: editPaymentTeacherStatus,
@@ -73,11 +74,18 @@ const EditTeacherModalContainer = () => {
     return (
         <div className="modal_container">
             <div onClick={() => dispatch(modalOverlayFunc())} className='overlay'></div>
-            <div className="branch_create_modal_card">
+            <div className="branch_create_modal_card edit_branch_create_modal_card">
                 <button onClick={() => dispatch(modalCloseFunc())} className='modal_close_btn'>Close</button>
 
                 <form onSubmit={(e) => editPaymentTeacherSubmit(e, editPaymentTeacher.id)}>
-                    <input type="date" value={editPaymentTeacherDate} onChange={(e) => dispatch(editPaymentTeacherDateFunc(e.target.value))} />
+                    <div className='edit_student_payment'>
+                        <label htmlFor="">Ödəniş tarixi</label>
+                        <input type="date" value={editPaymentTeacherDate} onChange={(e) => dispatch(editPaymentTeacherDateFunc(e.target.value))} />
+                    </div>
+                    <div className='edit_student_payment'>
+                        <label htmlFor="">Ödənildiyi tarix</label>
+                        <input type="date" value={editPaidTeacherDate} onChange={(e) => dispatch(editPaidTeacherDateFunc(e.target.value))} />
+                    </div>
                     <input type="number" value={editPaymentTeacherAmount} onChange={(e) => dispatch(editPaymentTeacherAmountFunc(e.target.value))} />
                     <select value={editPaymentTeacherType} onChange={(e) => dispatch(editPaymentTeacherTypeFunc(e.target.value))}>
                         <option value="N">Nağd</option>

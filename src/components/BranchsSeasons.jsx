@@ -16,7 +16,8 @@ const BranchsSeasons = ({ id }) => {
 
 
     useEffect(() => {
-        dispatch(getBranchsSeasonsList(localStorage.getItem('branchId')))
+        // dispatch(getBranchsSeasonsList(localStorage.getItem('branchId')))
+        dispatch(getBranchsSeasonsList(id))
     }, [dispatch, id])
 
     console.log(branchsSeasonsListArr);

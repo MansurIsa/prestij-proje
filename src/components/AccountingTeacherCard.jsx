@@ -67,6 +67,9 @@ const AccountingTeacherCard = ({ data }) => {
                 {data.payment_date}
             </td>
             <td>
+                {data.paid_date}
+            </td>
+            <td>
                 {data.payment_type==='N'? 'Nağd': data.payment_type==='HK'? 'Hesaba köçürmə': ''}
             </td>
             <td>

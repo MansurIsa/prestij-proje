@@ -2,17 +2,20 @@ import React from 'react'
 import Branchs2Container from '../components/Branchs2Container'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { branchCreateModalFunc, branchDeleteModalContainerFunc, branchUpdateModalContainerFunc } from '../redux/MainReducer'
+import { accountantChangeModalContainerFunc, branchCreateModalFunc, branchDeleteModalContainerFunc, branchUpdateModalContainerFunc } from '../redux/MainReducer'
 import BranchCreateModal from '../components/modals/BranchCreateModal'
 import BranchUpdateModalContainer from '../components/modals/BranchUpdateModalContainer'
 import BranchUpdateModal from '../components/modals/BranchUpdateModal'
 import BranchDeleteModalContainer from '../components/modals/BranchDeleteModalContainer'
+import AccountantChangeModalContainer from '../components/modals/AccountantChangeModalContainer'
+import AccountantUpdateModal from '../components/modals/AccountantUpdateModal'
 
 const Accounting2Page = () => {
 
   const navigate = useNavigate()
   const dispatch=useDispatch()
-  const { loggedInEmail, loggedInUser,branchCreateModal,branchUpdateModalContainer,branchUpdateModal,branchDeleteModalContainer } = useSelector(state => state.Data)
+  const { loggedInEmail, loggedInUser,branchCreateModal,branchUpdateModalContainer,branchUpdateModal,branchDeleteModalContainer,
+    accountantChangeModalContainer,accountantUpdateModal } = useSelector(state => state.Data)
 
   console.log(loggedInEmail);
   console.log(loggedInUser);
@@ -36,6 +39,7 @@ const Accounting2Page = () => {
             <button onClick={notification} className='accounting_create_btn'>Bildirişlər</button>
             {/* <button onClick={goRegister} className='accounting_create_btn'>İstifadəçi yarat</button> */}
             <button onClick={goRegister} className='accounting_create_btn'>Mühasib yarat</button>
+            <button onClick={()=>dispatch(accountantChangeModalContainerFunc())} className='accounting_create_btn'>Mühasib Dəyiş</button>
           </div>
           : null
       }
@@ -61,6 +65,8 @@ const Accounting2Page = () => {
       {branchUpdateModalContainer && <BranchUpdateModalContainer/>}
       {branchUpdateModal && <BranchUpdateModal/>}
       {branchDeleteModalContainer && <BranchDeleteModalContainer/>}
+      {accountantChangeModalContainer && <AccountantChangeModalContainer/>}
+      {accountantUpdateModal && <AccountantUpdateModal/>}
 
     </div>
   )

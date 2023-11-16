@@ -714,6 +714,9 @@ export const MainSlice = createSlice({
             state.teacherPaymentCreateModalContainer=false
             state.editStudentModalContainer=false
             state.editTeacherModalContainer=false
+            state.accountantChangeModalContainer=false
+            state.accountantUpdateModal=false
+
 
 
         },
@@ -754,6 +757,8 @@ export const MainSlice = createSlice({
             state.teacherPaymentCreateModalContainer=false
             state.editStudentModalContainer=false
             state.editTeacherModalContainer=false
+            state.accountantChangeModalContainer=false
+            state.accountantUpdateModal=false
 
         },
         branchNameFunc: (state, action) => {
@@ -1019,9 +1024,9 @@ export const MainSlice = createSlice({
             state.studentUpdateSpecialty = action.payload.specialty
             state.studentUpdatePaymentDate = action.payload.payment_date
             state.studentUpdatePaymentMoney = action.payload.payment_amount
-            state.studentUpdateSeasonSelectValue = action.payload.season
-            state.studentUpdateClass = action.payload.abiturient_class
-            state.studentUpdateGroup = action.payload.group
+            state.studentUpdateSeasonSelectValue = action.payload.season?.id
+            state.studentUpdateClass = action.payload.abiturient_class?.id
+            state.studentUpdateGroup = action.payload.group?.id
             state.studentUpdateLanguage = action.payload.language
             state.studentUpdateCategories = action.payload.categories
             state.studentUpdateTeachers = action.payload.teachers
@@ -1229,6 +1234,7 @@ export const MainSlice = createSlice({
             state.editTeacherModalContainer = true
             state.editPaymentTeacher=action.payload
             state.editPaymentTeacherDate=action.payload.payment_date
+            state.editPaidTeacherDate=action.payload.paid_date
             state.editPaymentTeacherAmount=action.payload.payment_amount
             state.editPaymentTeacherType=action.payload.payment_type
             state.editPaymentTeacherStatus=action.payload.status
@@ -1236,6 +1242,9 @@ export const MainSlice = createSlice({
 
         editPaymentTeacherDateFunc: (state, action) => {
             state.editPaymentTeacherDate=action.payload
+        },
+        editPaidTeacherDateFunc: (state, action) => {
+            state.editPaidTeacherDate=action.payload
         },
         editPaymentTeacherAmountFunc: (state, action) => {
             state.editPaymentTeacherAmount=action.payload
@@ -1249,6 +1258,38 @@ export const MainSlice = createSlice({
         branchChangeAccount: (state, action) => {
             state.branchSelectAccountValue=action.payload
         },
+
+        accountantChangeModalContainerFunc: (state,action)=>{
+            state.accountantChangeModalContainer=true
+        },
+        getAccountantsFunc: (state,action)=>{
+            state.accountants=action.payload
+        },
+        accountantUpdateModalFunc:(state,action)=>{
+            state.accountantObj=action.payload
+            state.accountantUpdateModal=true
+            state.accountantChangeModalContainer=false
+            state.accountantName=action.payload.first_name
+            state.accountantSurname=action.payload.last_name
+            state.accountantEmail=action.payload.email
+            state.isAccountantValue=action.payload.is_accountant
+            state.accountantBranchSelectValue=action.payload.branch
+        },
+        accountantNameFunc: (state,action)=>{
+            state.accountantName=action.payload
+        },
+        accountantSurnameFunc: (state,action)=>{
+            state.accountantSurname=action.payload
+        },
+        accountantEmailFunc: (state,action)=>{
+            state.accountantEmail=action.payload
+        },
+        isAccountantFunc: (state,action)=>{
+            state.isAccountantValue=action.payload
+        },
+        accountantBranchSelectFunc: (state,action)=>{
+            state.accountantBranchSelectValue=action.payload
+        }
 
 
     }
@@ -1611,9 +1652,18 @@ export const {
     editPaymentStudentStatusFunc,
     editTeacherModalContainerFunc,
     editPaymentTeacherDateFunc,
+    editPaidTeacherDateFunc,
     editPaymentTeacherAmountFunc,
     editPaymentTeacherTypeFunc,
     editPaymentTeacherStatusFunc,
-    branchChangeAccount
+    branchChangeAccount,
+    accountantChangeModalContainerFunc,
+    getAccountantsFunc,
+    accountantUpdateModalFunc,
+    accountantNameFunc,
+    accountantSurnameFunc,
+    accountantEmailFunc,
+    isAccountantFunc,
+    accountantBranchSelectFunc
 
 } = MainSlice.actions;

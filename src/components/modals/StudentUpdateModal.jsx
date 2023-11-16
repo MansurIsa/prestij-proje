@@ -41,7 +41,7 @@ const StudentUpdateModal = () => {
     } = useSelector(state => state.Data)
 
     console.log(studentObj);
-    console.log(studentUpdateCategories);
+    console.log(studentUpdateClass);
 
     console.log(categoryListArr);
     console.log(studentUpdateSeasonSelectValue);
@@ -166,7 +166,7 @@ const StudentUpdateModal = () => {
             specialty: studentUpdateSpecialty,
             payment_date: studentUpdatePaymentDate,
             payment_amount: +studentUpdatePaymentMoney,
-            season: studentUpdateSeasonSelectValue?.id,
+            season: studentUpdateSeasonSelectValue,
             abiturient_class: studentUpdateClass,
             group: studentUpdateGroup,
             language: studentUpdateLanguage,
@@ -175,7 +175,7 @@ const StudentUpdateModal = () => {
             blocks: studentUpdateBlocksValue,
             subjects: studentUpdateSubjectsValue
         }
-        console.log(studentUpdateSubjects, data);
+        console.log( data);
 
         axios({
             headers: {
@@ -248,17 +248,23 @@ const StudentUpdateModal = () => {
                     <input value={studentUpdateSpecialty} onChange={(e) => dispatch(studentUpdateSpecialtyFunc(e.target.value))} type="text" placeholder='Enter student specialty' />
                     <input value={studentUpdatePaymentDate} onChange={(e) => dispatch(studentUpdatePaymentDateFunc(e.target.value))} type="date" />
                     <input value={studentUpdatePaymentMoney} onChange={(e) => dispatch(studentUpdatePaymentMoneyFunc(e.target.value))} type="number" placeholder='Enter payment money' />
-                    <select onChange={(e) => dispatch(studentUpdateSeasonSelectValueFunc(e.target.value))} value={studentObj.season}>
-                        <option value="" disabled>Sezon seçin</option>
+                    <select onChange={(e) => dispatch(studentUpdateSeasonSelectValueFunc(e.target.value))} value={studentUpdateSeasonSelectValue}>
+                        <option value="" >Sezon seçin</option>
                         {
                             branchsSeasonsListArr?.map((data, i) => {
-                                return <option key={data.id} value={data.name}>{data.name}</option>
+                                return <option key={i} value={data.id}>{data.name}</option>
                             })
                         }
 
                     </select>
                     <select value={studentUpdateClass} onChange={(e) => dispatch(studentUpdateClassFunc(e.target.value))}>
-                        <option value="" disabled>Sinif seçin</option>
+                        
+                        
+                        
+                        
+                         <option value="" >Sinif seçin</option>
+                        
+                        
 
                         {
                             classesListArr?.map((data, i) => {
@@ -267,7 +273,7 @@ const StudentUpdateModal = () => {
                         }
                     </select>
                     <select value={studentUpdateGroup} onChange={(e) => dispatch(studentUpdateGroupFunc(e.target.value))}>
-                        <option value="" disabled>Qrup seçin</option>
+                        <option value="" >Qrup seçin</option>
 
                         {
                             groupsListArr?.map((data, i) => {
@@ -276,7 +282,7 @@ const StudentUpdateModal = () => {
                         }
                     </select>
                     <select value={studentUpdateLanguage} onChange={(e) => dispatch(studentUpdateLanguageFunc(e.target.value))}>
-                        <option value="" disabled>Xarici dil seçin</option>
+                        <option value="" >Xarici dil seçin</option>
 
                         {
                             languageListArr?.map((data, i) => {
@@ -304,7 +310,7 @@ const StudentUpdateModal = () => {
                         onSelect={studentTeacherUpdateSelectFunc}
                         options={branchsTeachersListArr.map(teacher => ({ ...teacher, displayValue: `${teacher.first_name} ${teacher.last_name}` }))}
                         className='multi_select'
-                        placeholder='Enter categories'
+                        placeholder='Enter teachers'
                         selectedValues={studentUpdateTeachers.map(teacher => ({ ...teacher, displayValue: `${teacher.first_name} ${teacher.last_name}` }))}
                         displayValue='displayValue'
 
@@ -316,7 +322,7 @@ const StudentUpdateModal = () => {
                         onSelect={studentBlocksUpdateSelectFunc}
                         options={blockListArr}
                         className='multi_select'
-                        placeholder='Enter categories'
+                        placeholder='Enter blocks'
                         selectedValues={studentUpdateBlocks}
                         displayValue='name'
 
@@ -328,7 +334,7 @@ const StudentUpdateModal = () => {
                         onSelect={studentSubjectsUpdateSelectFunc}
                         options={subjectListArr}
                         className='multi_select'
-                        placeholder='Enter categories'
+                        placeholder='Enter subjects'
                         selectedValues={studentUpdateSubjects}
                         displayValue='name'
 
