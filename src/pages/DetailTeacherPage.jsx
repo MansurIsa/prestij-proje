@@ -15,7 +15,8 @@ const DetailTeacherPage = ({otherPageBanner}) => {
 
   useEffect(() => {
     dispatch(getTeacherRetrieveList(id))
-  }, [])
+  }, [dispatch,id])
+// }, [])
 
   console.log(teacherRetrieveObj);
   return (

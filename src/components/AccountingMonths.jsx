@@ -2,7 +2,11 @@ import React, { useEffect } from 'react'
 import { FaChevronDown } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { monthSelectChange } from '../redux/MainReducer';
-import { getAccountingAbiturientMonthPaymentList, getAccountingAccountingMonthPaymentList, getAccountingCivilMonthPaymentList, getAccountingComputerCourseMonthPaymentList, getAccountingForeignlanguageMonthPaymentList, getAccountingHighSchoolMonthPaymentList, getAccountingMasterMonthPaymentList, getAccountingMiqMonthPaymentList, getAccountingPreSchoolMonthPaymentList, getAccountingPrimarySchoolMonthPaymentList, getAccountingSeasonMonthList, getAccountingStudentMonthPaymentList, getAccountingTeacherMonthPaymentList, getBranchsAbiturientsList, getBranchsAccountingList, getBranchsBlockAbiturientsList, getBranchsBlocksList, getBranchsCivilList, getBranchsCivilSubjectstList, getBranchsClassAbiturientsList, getBranchsClassesList, getBranchsComputerCourseAllList, getBranchsComputerCourseList, getBranchsComputerList, getBranchsForeignLanguageList, getBranchsForeignLanguageList2, getBranchsGroupAbiturientsList, getBranchsGroupMasterList, getBranchsGroupsList, getBranchsHandleHighSchoolClassList, getBranchsHandleHighSchoolGroupList, getBranchsSeasonsList, getBranchsTeachersList } from '../actions/MainAction';
+// import { getAccountingAbiturientMonthPaymentList, getAccountingAccountingMonthPaymentList, getAccountingCivilMonthPaymentList, getAccountingComputerCourseMonthPaymentList, getAccountingForeignlanguageMonthPaymentList, getAccountingHighSchoolMonthPaymentList, getAccountingMasterMonthPaymentList, getAccountingMiqMonthPaymentList, getAccountingPreSchoolMonthPaymentList, getAccountingPrimarySchoolMonthPaymentList, getAccountingSeasonMonthList, getAccountingStudentMonthPaymentList, getAccountingTeacherMonthPaymentList, getBranchsAbiturientsList, getBranchsAccountingList, getBranchsBlockAbiturientsList, getBranchsBlocksList, getBranchsCivilList, getBranchsCivilSubjectstList, getBranchsClassAbiturientsList, getBranchsClassesList, getBranchsComputerCourseAllList, getBranchsComputerCourseList, getBranchsComputerList, getBranchsForeignLanguageList, getBranchsForeignLanguageList2, getBranchsGroupAbiturientsList, getBranchsGroupMasterList, getBranchsGroupsList, getBranchsHandleHighSchoolClassList, getBranchsHandleHighSchoolGroupList, getBranchsSeasonsList, getBranchsTeachersList } from '../actions/MainAction';
+import { getAccountingAbiturientMonthPaymentList, getAccountingSeasonMonthList, 
+    getAccountingStudentMonthPaymentList, getAccountingTeacherMonthPaymentList, 
+    
+    getBranchsSeasonsList } from '../actions/MainAction';
 
 const AccountingMonths = ({ id }) => {
     const { seasonSelectValue, accountingSeasonMonthListArr, monthSelectValue, accountingAbiturientMonthPaymentListArr, accountingStudentMonthPaymentListArr, branchsSeasonsListArr } = useSelector(state => state.Data);
@@ -42,15 +46,15 @@ const AccountingMonths = ({ id }) => {
         dispatch(monthSelectChange(selectedMonth));
         dispatch(getAccountingTeacherMonthPaymentList(selectedMonth));
         dispatch(getAccountingAbiturientMonthPaymentList(selectedMonth));
-        dispatch(getAccountingMasterMonthPaymentList(selectedMonth))
-        dispatch(getAccountingMiqMonthPaymentList(selectedMonth))
-        dispatch(getAccountingCivilMonthPaymentList(selectedMonth))
-        dispatch(getAccountingComputerCourseMonthPaymentList(selectedMonth))
-        dispatch(getAccountingForeignlanguageMonthPaymentList(selectedMonth))
-        dispatch(getAccountingAccountingMonthPaymentList(selectedMonth))
-        dispatch(getAccountingPrimarySchoolMonthPaymentList(selectedMonth))
-        dispatch(getAccountingPreSchoolMonthPaymentList(selectedMonth))
-        dispatch(getAccountingHighSchoolMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingMasterMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingMiqMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingCivilMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingComputerCourseMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingForeignlanguageMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingAccountingMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingPrimarySchoolMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingPreSchoolMonthPaymentList(selectedMonth))
+        // dispatch(getAccountingHighSchoolMonthPaymentList(selectedMonth))
         dispatch(getAccountingStudentMonthPaymentList(id, selectedMonth))
 
 

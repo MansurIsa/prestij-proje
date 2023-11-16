@@ -16,7 +16,8 @@ const DetailPublicationPage = ({otherPageBanner}) => {
 
   useEffect(() => {
     dispatch(getPubliciationRetrieveList(id))
-  }, [dispatch])
+  }, [dispatch,id])
+// }, [dispatch])
 
   console.log(editionRetrieveObj);
   return (

@@ -15,7 +15,8 @@ const DetailServicePage = ({ otherPageBanner }) => {
 
   useEffect(() => {
     dispatch(getServiceRetrieveList(id))
-  }, [dispatch])
+  }, [dispatch,id])
+// }, [dispatch])
 
   console.log(serviceRetrieveObj);
   return (

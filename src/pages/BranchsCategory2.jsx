@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import BranchsSeasons from '../components/BranchsSeasons';
 import BranchsServices2 from '../components/BranchsServices2';
 import BranchsCategoryStudentCreate from '../components/BranchsCategoryStudentCreate';
-import BranchsClasses from '../components/BranchsClasses';
 
 const BranchsCategory2 = () => {
     const { id } = useParams()

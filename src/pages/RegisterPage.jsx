@@ -19,7 +19,7 @@ const RegisterPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [regErrPsw, setRegErrPsw] = useState("")
-    const [isStaff, setIsStaff] = useState(false)
+    const [ setIsStaff] = useState(false)
     const [isAccountant, setIsAccountant] = useState(false)
 
     console.log(branchsListArr);
@@ -46,10 +46,7 @@ const RegisterPage = () => {
             setRegErrPsw('')
         }
     }
-    const setRegIsStaff = (e) => {
-        console.log(e.target.checked);
-        setIsStaff(e.target.checked)
-    }
+ 
 
     const setRegIsAccountant = (e) => {
         setIsAccountant(e.target.checked)

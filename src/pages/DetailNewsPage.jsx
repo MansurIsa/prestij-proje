@@ -19,7 +19,8 @@ const DetailNewsPage = ({ otherPageBanner }) => {
     
     useEffect(() => {
         dispatch(getNewsRetrieveList(id))
-    }, [id])
+    }, [dispatch,id])
+// }, [id])
     console.log(newsRetrieveObj);
     
 
