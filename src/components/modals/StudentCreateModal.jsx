@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { modalCloseFunc, modalOverlayFunc, setRefreshed, studentCreateBlockSelectFunc, studentCreateClassFunc, studentCreateDimPointFunc, studentCreateGroupFunc, studentCreateLanguageFunc, studentCreateNameFunc, studentCreatePaymentDateFunc, studentCreatePaymentMoneyFunc, studentCreateSeasonSelectValueFunc, studentCreateSectorValueFunc, studentCreateSpecialtyFunc, studentCreateStatusValueFunc, studentCreateSurnameFunc, studentCreateTeacherSelectFunc, studentCreateTelFirstFunc, studentCreateTelSecondFunc, studentCreateWpFunc } from '../../redux/MainReducer'
+import { modalCloseFunc, modalOverlayFunc, setRefreshed, studentCreateClassFunc, studentCreateDimPointFunc, studentCreateGroupFunc, studentCreateLanguageFunc, studentCreateNameFunc, studentCreatePaymentDateFunc, studentCreatePaymentMoneyFunc, studentCreateSeasonSelectValueFunc, studentCreateSectorValueFunc, studentCreateSpecialtyFunc, studentCreateStatusValueFunc, studentCreateSurnameFunc, studentCreateTelFirstFunc, studentCreateTelSecondFunc, studentCreateWpFunc } from '../../redux/MainReducer'
 import { getBlockList, getBranchsTeachersList, getCategoryList, getGroupsList, getLanguageList, getSubjectList, getclassesList } from '../../actions/MainAction'
 import Multiselect from 'multiselect-react-dropdown'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import { baseUrl } from '../../MAIN_API'
 
-// import { MultiSelect } from 'primereact/multiselect';
 
 
 const StudentCreateModal = () => {
@@ -24,9 +23,12 @@ const StudentCreateModal = () => {
         dispatch(getBlockList())
         dispatch(getSubjectList())
     }, [dispatch])
-    const { studentCreateName, studentCreateSurname, studentCreateTelFirst, studentCreateTelSecond, studentCreateWp, studentCreateStatusValue, studentCreateDimPoint, studentCreateSectorValue, studentCreateSpecialty,
-        studentCreatePaymentDate, studentCreatePaymentMoney, branchsSeasonsListArr, studentCreateSeasonSelectValue, studentCreateClass, classesListArr, studentCreateGroup, groupsListArr
-        , languageListArr, studentCreateLanguage, categoryListArr, studentCreateSelectValue, branchsTeachersListArr, blockListArr, subjectListArr, studentCreateSubjectSelectValue, refreshed } = useSelector(state => state.Data)
+    const { studentCreateName, studentCreateSurname, studentCreateTelFirst, studentCreateTelSecond, 
+        studentCreateWp, studentCreateStatusValue, studentCreateDimPoint, studentCreateSectorValue, 
+        studentCreateSpecialty,studentCreatePaymentDate, studentCreatePaymentMoney, branchsSeasonsListArr, 
+        studentCreateSeasonSelectValue, studentCreateClass, classesListArr, studentCreateGroup, groupsListArr
+        , languageListArr, studentCreateLanguage, categoryListArr, branchsTeachersListArr, 
+        blockListArr, subjectListArr, refreshed } = useSelector(state => state.Data)
 
     console.log(branchsTeachersListArr);
 
@@ -34,9 +36,7 @@ const StudentCreateModal = () => {
     const [blocksSelectValue, setBlocksSelectValue] = useState([])
     const [teachersSelectValue, setTeachersSelectValue] = useState([])
     const [categoriesSelectValue, setCategoriesSelectValue] = useState([])
-    const [categoriesSelectValueId, setCategoriesSelectValueId] = useState([])
 
-    const [removedOptions, setRemovedOptions] = useState([]);
 
 
 

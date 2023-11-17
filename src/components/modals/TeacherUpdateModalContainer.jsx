@@ -6,13 +6,12 @@ import { getBranchsTeachersList } from '../../actions/MainAction';
 
 const TeacherUpdateModalContainer = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
 
     useEffect(()=>{
         dispatch(getBranchsTeachersList(localStorage.getItem('selectedSeason')))
     },[dispatch])
 
-    const {branchsTeachersListArr,refreshed}=useSelector(state=>state.Data)
+    const {branchsTeachersListArr}=useSelector(state=>state.Data)
     console.log(branchsTeachersListArr);
     return (
         <div className="modal_container">

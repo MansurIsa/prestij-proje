@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { blockUpdateModalFunc, modalCloseFunc, modalOverlayFunc, setRefreshed, subjectUpdateModalFunc } from '../../redux/MainReducer';
+import {  modalCloseFunc, modalOverlayFunc, setRefreshed, subjectUpdateModalFunc } from '../../redux/MainReducer';
 import axios from 'axios';
 import { baseUrl } from '../../MAIN_API';
 import Swal from 'sweetalert2';

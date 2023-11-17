@@ -19,7 +19,6 @@ const RegisterPage = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [regErrPsw, setRegErrPsw] = useState("")
-    const [ setIsStaff] = useState(false)
     const [isAccountant, setIsAccountant] = useState(false)
 
     console.log(branchsListArr);
