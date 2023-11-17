@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { blockCreateModalFunc, blockUpdateModalContainerFunc, categoryCreateModalFunc, categoryUpdateModalContainerFunc, categoryUpdateModalFunc, classCreateModalFunc, classUpdateModalContainerFunc, groupCreateModalFunc, groupUpdateModalContainerFunc, languageCreateModalFunc, languageUpdateModalContainerFunc, studentCreateModalFunc, studentUpdateModalContainerFunc, subjectCreateModalFunc, subjectUpdateModalContainerFunc, teacherCreateModalFunc, teacherUpdateModalContainerFunc } from '../redux/MainReducer'
+import { blockCreateModalFunc, blockUpdateModalContainerFunc, categoryCreateModalFunc, categoryUpdateModalContainerFunc, classCreateModalFunc, classUpdateModalContainerFunc, groupCreateModalFunc, groupUpdateModalContainerFunc, languageCreateModalFunc, languageUpdateModalContainerFunc, studentCreateModalFunc, studentUpdateModalContainerFunc, subjectCreateModalFunc, subjectUpdateModalContainerFunc, teacherCreateModalFunc, teacherUpdateModalContainerFunc } from '../redux/MainReducer'
 import CategoryCreateModal from './modals/CategoryCreateModal'
 import CategoryUpdateModalContainer from './modals/CategoryUpdateModalContainer'
 import CategoryUpdateModal from './modals/CategoryUpdateModal'
@@ -14,13 +14,11 @@ import GroupsUpdateModal from './modals/GroupsUpdateModal'
 import LanguageCreateModal from './modals/LanguageCreateModal'
 import LanguageUpdateModalContainer from './modals/LanguageUpdateModalContainer'
 import LanguageUpdateModal from './modals/LanguageUpdateModal'
-import { getBranchsTeachersList } from '../actions/MainAction'
 import BlockCreateModal from './modals/BlockCreateModal'
 import BlockUpdateModalContainer from './modals/BlockUpdateModalContainer'
 import BlockUpdateModal from './modals/BlockUpdateModal'
 import SubjectCreateModal from './modals/SubjectCreateModal'
 import SubjectUpdateModalContainer from './modals/SubjectUpdateModalContainer'
-import SubjectUpdateModalFunc from './modals/SubjectUpdateModal'
 import SubjectUpdateModal from './modals/SubjectUpdateModal'
 import StudentUpdateModalContainer from './modals/StudentUpdateModalContainer'
 import StudentUpdateModal from './modals/StudentUpdateModal'
@@ -107,7 +105,6 @@ console.log(branchsSeasonsListArr);
 
                 <button onClick={() => dispatch(studentCreateModalFunc())}>Tələbə yarat</button>
                 <button onClick={() => dispatch(studentUpdateModalContainerFunc())}>Tələbə dəyiş</button>
-                {/* <button style={{backgroundColor: '#EAAE0D'}} onClick={() => dispatch(studentPaymentCreateModalContainerFunc())}>Tələbə ödəniş məlumatlarını yarat</button> */}
 
             </div>
 
@@ -115,7 +112,6 @@ console.log(branchsSeasonsListArr);
 
                 <button onClick={() => dispatch(teacherCreateModalFunc())}>Müəllim yarat</button>
                 <button onClick={() => dispatch(teacherUpdateModalContainerFunc())}>Müəllim dəyiş</button>
-                {/* <button style={{backgroundColor: '#EAAE0D'}} onClick={() => dispatch(teacherPaymentCreateModalContainerFunc())}>Müəllim ödəniş məlumatlarını yarat</button> */}
 
             </div>
 

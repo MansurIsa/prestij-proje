@@ -24,26 +24,10 @@ import Accounting2Page from './pages/Accounting2Page';
 import BranchsCategory2 from './pages/BranchsCategory2';
 import BranchsStudentsAcountingPage from './pages/BranchsStudentsAcountingPage';
 import BranchsAbiturientsAccountingPage from './pages/BranchsAbiturientsAccountingPage';
-import BranchsMasterAccountingPage from './pages/BranchsMasterAccountingPage';
-import BranchsMiqAccountingPage from './pages/BranchsMiqAccountingPage';
-import BranchsCivilAccountingPage from './pages/BranchsCivilAccountingPage';
-import BranchsForeignLanguageAccountingPage from './pages/BranchsForeignLanguageAccountingPage';
-import BranchsComputerCourseAccountingPage from './pages/BranchsComputerCourseAccountingPage';
-import BranchsAccountingAccountingPage from './pages/BranchsAccountingAccountingPage';
-import BranchsHighSchoolAccountingPage from './pages/BranchsHighSchoolAccountingPage';
-import BranchPreSchoolAccountingPage from './pages/BranchPreSchoolAccountingPage';
-import BranchPrimarySchoolAccountingPage from './pages/BranchPrimarySchoolAccountingPage';
+
 import BranchsTeachersAccountingPage from './pages/BranchsTeachersAccountingPage';
 import BranchsAccountingAbiturient from './pages/BranchsAccountingAbiturient';
-import BranchsAccountingMaster from './pages/BranchsAccountingMaster';
-import BranchsAccountingMiq from './pages/BranchsAccountingMiq';
-import BranchsAccountingCivil from './pages/BranchsAccountingCivil';
-import BranchsAccountingComputerCourse from './pages/BranchsAccountingComputerCourse';
-import BranchsAccountingForeignLang from './pages/BranchsAccountingForeignLang';
-import BranchsAccountingAccounting from './pages/BranchsAccountingAccounting';
-import BranchsAccountingHighSchool from './pages/BranchsAccountingHighSchool';
-import BranchsAccountingPreSchool from './pages/BranchsAccountingPreSchool';
-import BranchsAccountingPrimarySchool from './pages/BranchsAccountingPrimarySchool';
+
 import BranchsAccountingTeachers from './pages/BranchsAccountingTeachers';
 import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteRegister from './components/PrivateRouteRegister';
@@ -153,31 +137,14 @@ const App = () => {
         <Route path='/branchs-teachers-accounting' element={<PrivateRoute Element={BranchsTeachersAccountingPage} />} />
         <Route path='/branchs-students-accounting' element={<PrivateRoute Element={BranchsStudentsAcountingPage} />} />
         <Route path='/branchs-abiturient-accounting' element={<PrivateRoute Element={BranchsAbiturientsAccountingPage} />} />
-        {/* <Route path='/branchs-master-accounting' element={<PrivateRoute Element={BranchsMasterAccountingPage} />} />
-        <Route path='/branchs-miq-accounting' element={<PrivateRoute Element={BranchsMiqAccountingPage} />} />
-        <Route path='/branchs-civil-accounting' element={<PrivateRoute Element={BranchsCivilAccountingPage} />} />
-        <Route path='/branchs-foreignlanguage-accounting' element={<PrivateRoute Element={BranchsForeignLanguageAccountingPage} />} />
-        <Route path='/branchs-computercourse-accounting' element={<PrivateRoute Element={BranchsComputerCourseAccountingPage} />} />
-        <Route path='/branchs-accounting-accounting' element={<PrivateRoute Element={BranchsAccountingAccountingPage} />} />
-        <Route path='/branchs-highschool-accounting' element={<PrivateRoute Element={BranchsHighSchoolAccountingPage} />} />
-        <Route path='/branchs-preschool-accounting' element={<PrivateRoute Element={BranchPreSchoolAccountingPage} />} />
-        <Route path='/branchs-primaryschool-accounting' element={<PrivateRoute Element={BranchPrimarySchoolAccountingPage} />} /> */}
-
+       
         <Route path="/accounting" element={<PrivateRoute Element={Accounting2Page} />} />
 
 
 
 
         <Route path='/branchs-accounting-abiturient' element={<PrivateRoute Element={BranchsAccountingAbiturient} />} />
-        {/* <Route path='/branchs-accounting-master' element={<PrivateRoute Element={BranchsAccountingMaster} />} />
-        <Route path='/branchs-accounting-miq' element={<PrivateRoute Element={BranchsAccountingMiq} />} />
-        <Route path='/branchs-accounting-civil' element={<PrivateRoute Element={BranchsAccountingCivil} />} />
-        <Route path='/branchs-accounting-computer-course' element={<PrivateRoute Element={BranchsAccountingComputerCourse} />} />
-        <Route path='/branchs-accounting-foreignlanguage' element={<PrivateRoute Element={BranchsAccountingForeignLang} />} />
-        <Route path='/branchs-accounting-accounting2' element={<PrivateRoute Element={BranchsAccountingAccounting} />} />
-        <Route path='/branchs-accounting-highschool' element={<PrivateRoute Element={BranchsAccountingHighSchool} />} />
-        <Route path='/branchs-accounting-preschool' element={<PrivateRoute Element={BranchsAccountingPreSchool} />} />
-        <Route path='/branchs-accounting-primaryschool' element={<PrivateRoute Element={BranchsAccountingPrimarySchool} />} /> */}
+       
         <Route path='/branchs-accounting-teachers' element={<PrivateRoute Element={BranchsAccountingTeachers} />} />
 
         <Route path="*" render={redirectToHome} />

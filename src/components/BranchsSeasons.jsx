@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAccountingAbiturientMonthPaymentList, getAccountingSeasonMonthList, getBranchsAbiturientsList, getBranchsAccountingList, getBranchsBlockAbiturientsList, getBranchsBlocksList, getBranchsCivilList, getBranchsCivilSubjectstList, getBranchsClassAbiturientsList, getBranchsClassesList, getBranchsComputerCourseAllList, getBranchsComputerCourseList, getBranchsComputerList, getBranchsForeignLanguageList, getBranchsForeignLanguageList2, getBranchsGroupAbiturientsList, getBranchsGroupMasterList, getBranchsGroupsList, getBranchsHandleHighSchoolClassList, getBranchsHandleHighSchoolGroupList, getBranchsSeasonsList, getBranchsTeachersList } from '../actions/MainAction';
+import { getAccountingAbiturientMonthPaymentList,  getBranchsSeasonsList } from '../actions/MainAction';
 import { FaChevronDown } from 'react-icons/fa';
-import { monthCreateModalContainerFunc, seasonCreateModalFunc, seasonUpdateModalContainerFunc, seasonUpdateModalFunc, seasonsSelectChange } from '../redux/MainReducer';
+import {  seasonCreateModalFunc, seasonUpdateModalContainerFunc,  seasonsSelectChange } from '../redux/MainReducer';
 import SeasonCreateModal from './modals/SeasonCreateModal';
 import SeasonUpdateModal from './modals/SeasonUpdateModal';
 import SeasonUpdateModalContainer from './modals/SeasonUpdateModalContainer';
@@ -16,7 +16,6 @@ const BranchsSeasons = ({ id }) => {
 
 
     useEffect(() => {
-        // dispatch(getBranchsSeasonsList(localStorage.getItem('branchId')))
         dispatch(getBranchsSeasonsList(id))
     }, [dispatch, id])
 
@@ -24,28 +23,12 @@ const BranchsSeasons = ({ id }) => {
     console.log(seasonSelectValue);
     console.log(id);
 
-    // const seasonsSelectChange=(e)=>{
-    //     setSeasonSelectValue(e.target.value==''?branchsSeasonsListArr[0].id: e.target.value)
-    //     dispatch(seasonsSelectChange2(e.target.value))
-    //     // dispatch(getBranchsTeachersList(e.target.value))
-    // }
-
-    // useEffect(() => {
-    //     const storedSeason = localStorage.getItem('selectedSeason');
-    //     if (storedSeason) {
-    //         dispatch(seasonsSelectChange(storedSeason));
-    //     }
-    // }, [dispatch]);
-    // 
-
+   
 
     const seasonsSelectChange1 = (e) => {
 
         const selectedSeason = e.target.value;
-        // dispatch(seasonsSelectChange(selectedSeason))
-        // // dispatch(getAccountingAbiturientMonthPaymentList(monthSelectValue));
-        // localStorage.setItem('selectedSeason', selectedSeason);
-
+       
 
         if (!refreshed) {
             dispatch(seasonsSelectChange(selectedSeason))
@@ -53,7 +36,6 @@ const BranchsSeasons = ({ id }) => {
             setRefreshed(true);
             dispatch(getAccountingAbiturientMonthPaymentList(monthSelectValue));
 
-            // Sayfayı yenilemek için aşağıdaki kodu kullanabilirsiniz
             window.location.reload();
         }
         // dispatch(getAccountingAbiturientMonthPaymentList(monthSelectValue));
@@ -77,7 +59,6 @@ const BranchsSeasons = ({ id }) => {
         // dispatch(getBranchsHandleHighSchoolClassList(selectedSeason))
         // dispatch(getBranchsHandleHighSchoolGroupList(selectedSeason))
     }
-    // console.log(selectedSeason);
 
     let getSelectedSeason = localStorage.getItem('selectedSeason')
     console.log(getSelectedSeason);
@@ -100,7 +81,6 @@ const BranchsSeasons = ({ id }) => {
             </div>
             <button onClick={()=>dispatch(seasonCreateModalFunc())}>Sezon yarat</button>
             <button onClick={()=>dispatch(seasonUpdateModalContainerFunc())}>Sezon dəyiş</button>
-            {/* <button style={{backgroundColor: '#EAAE0D'}} onClick={()=>dispatch(monthCreateModalContainerFunc())}>Ayları yarat</button> */}
 
             {seasonCreateModal && <SeasonCreateModal/>}
             {seasonUpdateModalContainer && <SeasonUpdateModalContainer/>}

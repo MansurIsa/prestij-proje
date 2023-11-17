@@ -26,25 +26,17 @@ const AccountingStudentTotalDay = () => {
         paymentTotal += accountingStudentMonthPaymentListArr[i].payment_amount
     }
 
-    let activeTotal = accountingStudentMonthPaymentListArr.filter(data => data.student.status == 'DE')
     
 
    
     return (
         <table className='accounting_abiturient_total_container'>
             <tr >
-                {/* <th>
-                    Ümumi abiturientlərin sayı
-                </th> */}
+               
                 <th>
                    Bu gün ödəniş etmiş abiturientlərin sayı
                 </th>
-                {/* <th>
-                    Aktiv abiturientlərin sayı
-                </th> */}
-                {/* <th>
-                    Ümumi abiturientlərin ödənişlərinin cəmi
-                </th> */}
+                
                 <th>
                   Bu gün ödəniş etmiş abiturientlərin ödənişlərinin cəmi
                 </th>
@@ -52,18 +44,11 @@ const AccountingStudentTotalDay = () => {
 
             </tr>
             <tr className='branchs_students_card'>
-                {/* <td className="branchs_students_inner_card">
-                    {accountingStudentMonthPaymentListArr?.length}
-                </td> */}
+                
                 <td className="branchs_students_inner_card">
                     {total?.filter(data=>data?.payment_date===formattedDate)?.length}
                 </td>
-                {/* <td className="branchs_students_inner_card">
-                    {activeTotal?.length}
-                </td>
-                <td className="branchs_students_inner_card">
-                    {paymentTotal}
-                </td> */}
+               
                 <td className="branchs_students_inner_card">
                     {paidTotal}
                 </td>

@@ -14,11 +14,7 @@ const BranchsCategory2 = () => {
             <BranchsSeasons id={id} />
             <BranchsServices2 id={id} />
             <BranchsCategoryStudentCreate/>
-            {/* <BranchsClasses/> */}
-
-            {/* <div className='information_container container'>
-                Qeyd: Sezon,Tələbə və Müəllim yaratdıqda müvafiq olaraq sarı rəngli buttonlara toxunmaq lazımdır
-            </div> */}
+            
 
         </div>
     )

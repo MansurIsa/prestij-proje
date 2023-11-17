@@ -37,7 +37,6 @@ const Accounting2Page = () => {
         (loggedInUser?.is_accountant == false && loggedInUser?.is_staff == true) ?
           <div className="accounting_create container">
             <button onClick={notification} className='accounting_create_btn'>Bildirişlər</button>
-            {/* <button onClick={goRegister} className='accounting_create_btn'>İstifadəçi yarat</button> */}
             <button onClick={goRegister} className='accounting_create_btn'>Mühasib yarat</button>
             <button onClick={()=>dispatch(accountantChangeModalContainerFunc())} className='accounting_create_btn'>Mühasib Dəyiş</button>
           </div>

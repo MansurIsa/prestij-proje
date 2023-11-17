@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 import AccountingAbiturientCard from './AccountingAbiturientCard'
 import EditStudentModalContainer from './modals/EditStudentModalContainer'
 
 const AccountingAbiturientTable = () => {
-    const dispatch = useDispatch()
-    const { monthSelectValue, accountingAbiturientMonthPaymentListArr,accountingStudentMonthPaymentListArr,editStudentModalContainer } = useSelector(state => state.Data);
+    const {  accountingAbiturientMonthPaymentListArr,accountingStudentMonthPaymentListArr,editStudentModalContainer } = useSelector(state => state.Data);
 
     
     console.log(accountingStudentMonthPaymentListArr);
@@ -68,7 +67,7 @@ const AccountingAbiturientTable = () => {
                     Ödəniş məlumatlarını dəyiş
                 </th>
             </tr>
-            {/* accountingStudentMonthPaymentListArr */}
+            
             {
                  accountingStudentMonthPaymentListArr?.map((data, i) => {
                     return <AccountingAbiturientCard key={i} data={data} />
