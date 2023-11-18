@@ -21,10 +21,10 @@ const AccountingStudentTotalDay = () => {
             paidTotal += total?.filter(data=>data?.payment_date===formattedDate)[i].payment_amount
         }
     }
-    let paymentTotal = 0;
-    for (let i = 0; i < accountingStudentMonthPaymentListArr.length; i++) {
-        paymentTotal += accountingStudentMonthPaymentListArr[i].payment_amount
-    }
+    // let paymentTotal = 0;
+    // for (let i = 0; i < accountingStudentMonthPaymentListArr.length; i++) {
+    //     paymentTotal += accountingStudentMonthPaymentListArr[i].payment_amount
+    // }
 
     
 

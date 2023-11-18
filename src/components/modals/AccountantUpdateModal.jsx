@@ -18,7 +18,7 @@ const AccountantUpdateModal = () => {
 
     useEffect(() => {
         dispatch(getBranchsList(loggedInEmail))
-    }, [dispatch])
+    }, [dispatch,loggedInEmail])
 
     console.log(branchsListArr);
 

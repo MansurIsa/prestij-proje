@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { branchUpdateModalFunc, modalCloseFunc, modalOverlayFunc } from '../../redux/MainReducer'
-import BranchUpdateModal from './BranchUpdateModal'
 
 const BranchUpdateModalContainer = () => {
     const dispatch = useDispatch()

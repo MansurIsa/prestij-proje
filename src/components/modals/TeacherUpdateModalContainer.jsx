@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { modalCloseFunc, modalOverlayFunc, teacherUpdateModalFunc } from '../../redux/MainReducer'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { getBranchsTeachersList } from '../../actions/MainAction';
 
 const TeacherUpdateModalContainer = () => {

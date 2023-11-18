@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { categoryChange, classUpdateCategoryChange, classesUpdateNameFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
+import {  classUpdateCategoryChange, classesUpdateNameFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'

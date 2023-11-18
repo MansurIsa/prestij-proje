@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Navigate, Routes } from 'react-router-dom';
+import {  Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({Element }) => {
   const isLoggedIn = localStorage.getItem('ACCESS_TOKEN');

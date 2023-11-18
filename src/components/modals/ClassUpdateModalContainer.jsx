@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { classCreateModalFunc, classesUpdateModalFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
+import {  classesUpdateModalFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '../../redux/MainReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { getclassesList } from '../../actions/MainAction'
 import axios from 'axios'

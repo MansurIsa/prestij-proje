@@ -23,11 +23,11 @@ const AccountingStudentsTotalDay = () => {
         }
     }
     let paymentTotal = 0;
-    for (let i = 0; i < accountingAbiturientMonthPaymentListArr.length; i++) {
-        paymentTotal += accountingAbiturientMonthPaymentListArr[i].payment_amount
-    }
+    // for (let i = 0; i < accountingAbiturientMonthPaymentListArr.length; i++) {
+    //     paymentTotal += accountingAbiturientMonthPaymentListArr[i].payment_amount
+    // }
 
-    let activeTotal = accountingAbiturientMonthPaymentListArr.filter(data => data.student.status == 'DE')
+    // let activeTotal = accountingAbiturientMonthPaymentListArr.filter(data => data.student.status == 'DE')
     
 
   return (

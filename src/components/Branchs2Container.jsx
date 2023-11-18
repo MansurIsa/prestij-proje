@@ -11,11 +11,11 @@ const Branchs2Container = () => {
 
   useEffect(() => {
     dispatch(getUser(loggedInEmail))
-  }, [dispatch])
+  }, [dispatch,loggedInEmail])
 
   useEffect(() => {
     dispatch(getBranchsList(loggedInEmail))
-  }, [dispatch])
+  }, [dispatch,loggedInEmail])
 
   console.log(loggedInUser);
   console.log(branchsListArr);

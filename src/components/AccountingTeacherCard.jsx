@@ -42,7 +42,7 @@ const AccountingTeacherCard = ({ data }) => {
         dispatch(getAccountingMonthTeachersPaymentList(id))
     }
     return (
-        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference == 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' : 'black' }}>
+        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference === 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' : 'black' }}>
             <td style={{ cursor: "pointer" }} onClick={() => handleTeachers(data.teacher.id)}>
                 {`${data.teacher.first_name} ${data.teacher.last_name}`}
             </td>
@@ -54,7 +54,7 @@ const AccountingTeacherCard = ({ data }) => {
                 {data.teacher.wp_number}
             </td>
             <td>
-                {data.teacher.status == 'FM' ? 'Fixed Maaş' : 'TS' ? 'Tələbə sayı' : 'QE' ? 'Qeyd edilməyib' : ''}
+                {data.teacher.status === 'FM' ? 'Fixed Maaş' : 'TS' ? 'Tələbə sayı' : 'QE' ? 'Qeyd edilməyib' : ''}
             </td>
             <td>
                 {data.teacher.specialty}

@@ -29,7 +29,7 @@ const BranchsAccountingTeachersCard = ({ data }) => {
 
     const daysDifference = calculateDateDifference(startDate, endDate);
     return (
-        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference == 0 ? 'purple' : daysDifference < 0 && daysDifference >= -3 ? '#196EDA' : daysDifference < -3 ? 'red' : 'black' }}>
+        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference === 0 ? 'purple' : daysDifference < 0 && daysDifference >= -3 ? '#196EDA' : daysDifference < -3 ? 'red' : 'black' }}>
             <td>
                 {`${data.teacher.first_name} ${data.teacher.last_name}`}
             </td>
@@ -41,7 +41,7 @@ const BranchsAccountingTeachersCard = ({ data }) => {
                 {data.teacher.wp_number}
             </td>
             <td>
-                {data.teacher.status == 'FM' ? 'Fixed Maaş' : 'TS' ? 'Tələbə sayı' : 'QE' ? 'Qeyd edilməyib' : ''}
+                {data.teacher.status === 'FM' ? 'Fixed Maaş' : 'TS' ? 'Tələbə sayı' : 'QE' ? 'Qeyd edilməyib' : ''}
             </td>
             <td>
                 {data.teacher.specialty}

@@ -10,7 +10,7 @@ const AccountingStudentTable = () => {
     useEffect(() => {
         dispatch(getBranchsStudentsList(selectedSeason))
         dispatch(getAccountingAbiturientMonthPaymentList(localStorage.getItem('selectedMonth')))
-    }, [dispatch])
+    }, [dispatch,selectedSeason])
     const {accountingAbiturientMonthPaymentListArr } = useSelector(state => state.Data)
     console.log(accountingAbiturientMonthPaymentListArr);
     return (

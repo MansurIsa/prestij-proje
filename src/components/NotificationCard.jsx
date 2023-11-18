@@ -1,11 +1,9 @@
-import axios from 'axios';
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import React from 'react'
+// import { useNavigate } from 'react-router-dom';
 
 const NotificationCard = ({data}) => {
     // const [checkBoxVal,setCheckBoxVal]=useState(false)
-    const navigate=useNavigate()
+    // const navigate=useNavigate()
     // const readStatus=(e,id)=>{
     //     setCheckBoxVal(e.target.checked)
     //     console.log(e.target.checked);
@@ -53,9 +51,9 @@ const NotificationCard = ({data}) => {
             <p>{data.content}</p>
             <p>Tarix: <span>{data.pub_date.substring(0,10)}</span></p>
             <p>Vaxt: <span>{data.pub_date.substring(11,16)}</span></p>
-            <p>Status: <span>{data.status=='OM'? 'Oxunmayıb': data.status== 'O'? 'Oxunub': ''}</span> </p>
+            <p>Status: <span>{data.status==='OM'? 'Oxunmayıb': data.status=== 'O'? 'Oxunub': ''}</span> </p>
             {/* <input  onChange={(e)=>readStatus(e,data.id)} type="checkbox" /> */}
-            <p>Tip: <span>{data.type=='U'? 'Yenilənmə olunub': data.type=='D'? 'Silinmə olunub': data.type=='A'? 'Əlavə olunub': ''}</span></p>
+            <p>Tip: <span>{data.type==='U'? 'Yenilənmə olunub': data.type==='D'? 'Silinmə olunub': data.type==='A'? 'Əlavə olunub': ''}</span></p>
         </div>
     )
 }

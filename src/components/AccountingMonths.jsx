@@ -9,7 +9,7 @@ import { getAccountingAbiturientMonthPaymentList, getAccountingSeasonMonthList,
     getBranchsSeasonsList } from '../actions/MainAction';
 
 const AccountingMonths = ({ id }) => {
-    const { seasonSelectValue, accountingSeasonMonthListArr, monthSelectValue, accountingAbiturientMonthPaymentListArr, accountingStudentMonthPaymentListArr, branchsSeasonsListArr } = useSelector(state => state.Data);
+    const { seasonSelectValue, accountingSeasonMonthListArr, monthSelectValue, accountingAbiturientMonthPaymentListArr, accountingStudentMonthPaymentListArr } = useSelector(state => state.Data);
     console.log(accountingSeasonMonthListArr);
     console.log(accountingAbiturientMonthPaymentListArr);
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ const AccountingMonths = ({ id }) => {
 
 
 
-    let selectedSeason = localStorage.getItem('selectedSeason')
+    // let selectedSeason = localStorage.getItem('selectedSeason')
 
 
 

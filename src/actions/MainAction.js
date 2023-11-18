@@ -22,7 +22,7 @@ import {headerLoading, getBannerListArr, getBranchListArr, getContactInfoListArr
 
 export const getBannerList=()=>async dispatch=>{
     dispatch(headerLoading())
-    return await axios.get(baseUrl+"prestij/"+ "banners-list/")
+    return await axios.get(`${baseUrl}prestij/banners-list/`)
     .then(resp=>{
         console.log(resp);
         
@@ -33,7 +33,7 @@ export const getBannerList=()=>async dispatch=>{
 }
 
 export const getContactInfoList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "contactinformation-list/")
+    return await axios.get(`${baseUrl}prestij/contactinformation-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getContactInfoListArr(resp.data))
@@ -43,7 +43,7 @@ export const getContactInfoList=()=>async dispatch=>{
 }
 
 export const getServicesList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "service-list/")
+    return await axios.get(`${baseUrl}prestij/service-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getServicesListArr(resp.data))
@@ -54,7 +54,7 @@ export const getServicesList=()=>async dispatch=>{
 
 
 export const getNewsList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "news-list/")
+    return await axios.get(`${baseUrl}prestij/news-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getNewsListArr(resp.data))
@@ -64,7 +64,7 @@ export const getNewsList=()=>async dispatch=>{
 }
 
 export const getVideoGalleryList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "videogallery-list/")
+    return await axios.get(`${baseUrl}prestij/videogallery-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getVideoGalleryListArr(resp.data))
@@ -74,7 +74,7 @@ export const getVideoGalleryList=()=>async dispatch=>{
 }
 
 export const getFotoGalleryList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "photogallery-list/")
+    return await axios.get(`${baseUrl}prestij/photogallery-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getFotoGalleryListArr(resp.data))
@@ -83,7 +83,7 @@ export const getFotoGalleryList=()=>async dispatch=>{
     })
 }
 export const getTeachersList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "teacher-list/")
+    return await axios.get(`${baseUrl}prestij/teacher-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getTeachersListArr(resp.data))
@@ -93,7 +93,7 @@ export const getTeachersList=()=>async dispatch=>{
 }
 
 export const getSuccessList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "success-list/")
+    return await axios.get(`${baseUrl}prestij/success-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getSuccessListArr(resp.data))
@@ -102,7 +102,7 @@ export const getSuccessList=()=>async dispatch=>{
     })
 }
 export const getSuccessItemList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "successitem-list/")
+    return await axios.get(`${baseUrl}prestij/successitem-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getSuccessItemListArr(resp.data))
@@ -112,7 +112,7 @@ export const getSuccessItemList=()=>async dispatch=>{
 }
 
 export const getNewsRetrieveList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ `news-retrieve/${id}/`)
+    return await axios.get(`${baseUrl}prestij/news-retrieve/${id}/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getNewsRetrieveObj(resp.data))
@@ -122,7 +122,7 @@ export const getNewsRetrieveList=(id)=>async dispatch=>{
 }
 
 export const getServiceRetrieveList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ `service-retrieve/${id}/`)
+    return await axios.get(`${baseUrl}prestij/service-retrieve/${id}/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getServiceRetrieveObj(resp.data))
@@ -132,7 +132,7 @@ export const getServiceRetrieveList=(id)=>async dispatch=>{
 }
 
 export const getTeacherRetrieveList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ `teacher-retrieve/${id}/`)
+    return await axios.get(`${baseUrl}prestij/teacher-retrieve/${id}/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getTeacherRetrieveObj(resp.data))
@@ -143,7 +143,7 @@ export const getTeacherRetrieveList=(id)=>async dispatch=>{
 
 export const getSettingsList=()=>async dispatch=>{
     dispatch(otherHeaderLoading())
-    return await axios.get(baseUrl+"prestij/"+ "settings-list/")
+    return await axios.get(`${baseUrl}prestij/settings-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getSettingsListArr(resp.data))
@@ -154,7 +154,7 @@ export const getSettingsList=()=>async dispatch=>{
 
 
 export const getBranchList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "branch-list/")
+    return await axios.get(`${baseUrl}prestij/branch-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getBranchListArr(resp.data))
@@ -165,7 +165,7 @@ export const getBranchList=()=>async dispatch=>{
 
 
 export const getEditionList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ "edition-list/")
+    return await axios.get(`${baseUrl}prestij/edition-list/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getEditionListArr(resp.data))
@@ -175,7 +175,7 @@ export const getEditionList=()=>async dispatch=>{
 }
 
 export const getPubliciationRetrieveList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"prestij/"+ `edition-retrieve/${id}/`)
+    return await axios.get(`${baseUrl}prestij/edition-retrieve/${id}/`)
     .then(resp=>{
         console.log(resp);
         dispatch(getEditionRetrieveObj(resp.data))
@@ -185,7 +185,7 @@ export const getPubliciationRetrieveList=(id)=>async dispatch=>{
 }
 
 export const getBranchsList=(email)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+"branch-list/"+email,{
+    return await axios.get(`${baseUrl}service/branch-list/${email}`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -200,7 +200,7 @@ export const getBranchsList=(email)=>async dispatch=>{
 
 
 export const getBranchsSeasonsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "branch-season-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/branch-season-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -214,7 +214,7 @@ export const getBranchsSeasonsList=(id)=>async dispatch=>{
 }
 
 export const getBranchsStudentsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "season-student-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/season-student-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -228,7 +228,7 @@ export const getBranchsStudentsList=(id)=>async dispatch=>{
 }
 
 export const getBranchsTeachersList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "season-teacher-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/season-teacher-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -242,7 +242,7 @@ export const getBranchsTeachersList=(id)=>async dispatch=>{
 }
 
 export const getBranchsAbiturientsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "abiturient-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/abiturient-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -255,7 +255,7 @@ export const getBranchsAbiturientsList=(id)=>async dispatch=>{
     })
 }
 export const getBranchsBlockAbiturientsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "block-abiturient-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/block-abiturient-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -270,7 +270,7 @@ export const getBranchsBlockAbiturientsList=(id)=>async dispatch=>{
 
 
 export const getBranchsBlocksList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "abiturient-block-list/",{
+    return await axios.get(`${baseUrl}service/abiturient-block-list/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -284,7 +284,7 @@ export const getBranchsBlocksList=()=>async dispatch=>{
 }
 
 export const getBranchsClassesList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "abiturient-class-list/",{
+    return await axios.get(`${baseUrl}service/abiturient-class-list/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -297,7 +297,7 @@ export const getBranchsClassesList=()=>async dispatch=>{
     })
 }
 export const getBranchsSubjectsList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "abiturient-subject-list/",{
+    return await axios.get(`${baseUrl}service/abiturient-subject-list/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -312,7 +312,7 @@ export const getBranchsSubjectsList=()=>async dispatch=>{
 
 
 export const getBranchsGroupsList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "abiturient-group-list/",{
+    return await axios.get(`${baseUrl}service/abiturient-group-list/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -327,7 +327,7 @@ export const getBranchsGroupsList=()=>async dispatch=>{
 
 
 export const getBranchsClassAbiturientsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "class-abiturient-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/class-abiturient-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -341,7 +341,7 @@ export const getBranchsClassAbiturientsList=(id)=>async dispatch=>{
 }
 
 export const getBranchsSubjectAbiturientsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "subject-abiturient-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/subject-abiturient-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -355,7 +355,7 @@ export const getBranchsSubjectAbiturientsList=(id)=>async dispatch=>{
 }
 
 export const getBranchsGroupAbiturientsList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "group-abiturient-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/group-abiturient-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -371,7 +371,7 @@ export const getBranchsGroupAbiturientsList=(id)=>async dispatch=>{
 
 
 export const getBranchsAccountingList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"service/"+ "accounting-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}service/accounting-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -388,7 +388,7 @@ export const getBranchsAccountingList=(id)=>async dispatch=>{
 
 
 export const getAccountingSeasonMonthList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"accounting/"+ "season-month-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}accounting/season-month-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -402,7 +402,7 @@ export const getAccountingSeasonMonthList=(id)=>async dispatch=>{
 }
 
 export const getAccountingTeacherMonthPaymentList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"accounting/"+ "teacher-month-payment-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}accounting/teacher-month-payment-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -418,7 +418,7 @@ export const getAccountingTeacherMonthPaymentList=(id)=>async dispatch=>{
 
 
 export const getAccountingAbiturientMonthPaymentList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"accounting/"+ "student-month-payment-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}accounting/student-month-payment-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -433,7 +433,7 @@ export const getAccountingAbiturientMonthPaymentList=(id)=>async dispatch=>{
 
 
 export const getAccountingStudentMonthPaymentList=(id,id2)=>async dispatch=>{
-    return await axios.get(baseUrl+"accounting/"+ "student-category-month-payment-list/"+ `${id}/${id2}/`,{
+    return await axios.get(`${baseUrl}accounting/student-category-month-payment-list/${id}/${id2}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -452,7 +452,7 @@ export const getAccountingStudentMonthPaymentList=(id,id2)=>async dispatch=>{
 
 
 export const getAccountingMonthAbiturientPaymentList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"accounting/"+ "month-student-payment-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}accounting/month-student-payment-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -470,7 +470,7 @@ export const getAccountingMonthAbiturientPaymentList=(id)=>async dispatch=>{
 
 
 export const getAccountingMonthTeachersPaymentList=(id)=>async dispatch=>{
-    return await axios.get(baseUrl+"accounting/"+ "month-teacher-payment-list/"+ `${id}/`,{
+    return await axios.get(`${baseUrl}accounting/month-teacher-payment-list/${id}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -484,7 +484,7 @@ export const getAccountingMonthTeachersPaymentList=(id)=>async dispatch=>{
 }
 
 export const getUser=(email)=>async dispatch=>{
-    return await axios.get(baseUrl+"account/account/"+ `${email}/`,{
+    return await axios.get(`${baseUrl}account/account/${email}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -501,7 +501,7 @@ export const getUser=(email)=>async dispatch=>{
 
 
 export const getNotificationList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"notification/notification-list/",{
+    return await axios.get(`${baseUrl}notification/notification-list/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -517,7 +517,7 @@ export const getNotificationList=()=>async dispatch=>{
 
 
 export const getCategoryList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/category-list-create/",{
+    return await axios.get(`${baseUrl}service/category-list-create/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -536,7 +536,7 @@ export const getCategoryList=()=>async dispatch=>{
 
 
 export const getclassesList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/class-list-create/",{
+    return await axios.get(`${baseUrl}service/class-list-create/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -552,7 +552,7 @@ export const getclassesList=()=>async dispatch=>{
 
 
 export const getGroupsList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/group-list-create/",{
+    return await axios.get(`${baseUrl}service/group-list-create/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -568,7 +568,7 @@ export const getGroupsList=()=>async dispatch=>{
 
 
 export const getLanguageList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/language-list-create/",{
+    return await axios.get(`${baseUrl}service/language-list-create/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -584,7 +584,7 @@ export const getLanguageList=()=>async dispatch=>{
 
 
 export const getBlockList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/block-list-create/",{
+    return await axios.get(`${baseUrl}service/block-list-create/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -600,7 +600,7 @@ export const getBlockList=()=>async dispatch=>{
 
 
 export const getSubjectList=()=>async dispatch=>{
-    return await axios.get(baseUrl+"service/subject-list-create/",{
+    return await axios.get(`${baseUrl}service/subject-list-create/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }
@@ -616,7 +616,7 @@ export const getSubjectList=()=>async dispatch=>{
 
 
 export const getAccountants=()=>async dispatch=>{
-    return await axios.get(baseUrl+"account/accountants/",{
+    return await axios.get(`${baseUrl}account/accountants/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }

@@ -22,10 +22,10 @@ const BranchsTeachersAccountingPage = () => {
         <AccountingMonths/>
         <AccountingTeacherTable/>
         {
-          (loggedInUser?.is_accountant==false && loggedInUser?.is_staff==true)? <AccountingTeachersTotal/>: null
+          (loggedInUser?.is_accountant===false && loggedInUser?.is_staff===true)? <AccountingTeachersTotal/>: null
         }
         {
-          (loggedInUser?.is_accountant==false && loggedInUser?.is_staff==true)? <AccountingTeachersTotalDay/>: null
+          (loggedInUser?.is_accountant===false && loggedInUser?.is_staff===true)? <AccountingTeachersTotalDay/>: null
         }
         
         <AccountingStudentsStatusColor/>

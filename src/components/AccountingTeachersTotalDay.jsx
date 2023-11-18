@@ -22,10 +22,10 @@ const AccountingTeachersTotalDay = () => {
             paidTotal += total?.filter(data=>data?.payment_date===formattedDate)[i].payment_amount
         }
     }
-    let paymentTotal = 0;
-    for (let i = 0; i < accountingTeacherMonthPaymentListArr.length; i++) {
-        paymentTotal += accountingTeacherMonthPaymentListArr[i].payment_amount
-    }
+    // let paymentTotal = 0;
+    // for (let i = 0; i < accountingTeacherMonthPaymentListArr.length; i++) {
+    //     paymentTotal += accountingTeacherMonthPaymentListArr[i].payment_amount
+    // }
 
     // let activeTotal = accountingTeacherMonthPaymentListArr.filter(data => data.student.status == 'DE')
     

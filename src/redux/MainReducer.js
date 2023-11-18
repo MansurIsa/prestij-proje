@@ -1036,7 +1036,7 @@ export const MainSlice = createSlice({
             // state.seasonStudentUpdateId
             console.log(action.payload.season);
 
-            let idX = state.branchsSeasonsListArr.find(data => data.id == action.payload.season.id)
+            let idX = state.branchsSeasonsListArr.find(data => data.id === action.payload.season.id)
 
             console.log(idX);
 

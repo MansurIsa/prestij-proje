@@ -34,7 +34,7 @@ const Accounting2Page = () => {
   return (
     <div className='accounting_page_container'>
       {
-        (loggedInUser?.is_accountant == false && loggedInUser?.is_staff == true) ?
+        (loggedInUser?.is_accountant === false && loggedInUser?.is_staff === true) ?
           <div className="accounting_create container">
             <button onClick={notification} className='accounting_create_btn'>Bildirişlər</button>
             <button onClick={goRegister} className='accounting_create_btn'>Mühasib yarat</button>
@@ -51,7 +51,7 @@ const Accounting2Page = () => {
 
       </div>
       {
-        (loggedInUser?.is_accountant == false && loggedInUser?.is_staff == true)?
+        (loggedInUser?.is_accountant === false && loggedInUser?.is_staff === true)?
         <div className="branchs_create container">
         <button onClick={()=>dispatch(branchCreateModalFunc())} className="accounting_create_btn">Filial yarat</button>
         <button onClick={()=>dispatch(branchUpdateModalContainerFunc())} className="accounting_create_btn">Filial dəyiş</button>

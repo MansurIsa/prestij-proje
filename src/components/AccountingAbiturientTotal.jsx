@@ -15,7 +15,7 @@ const AccountingAbiturientTotal = () => {
         paymentTotal+=accountingStudentMonthPaymentListArr[i].payment_amount
     }
 
-    let activeTotal=accountingStudentMonthPaymentListArr.filter(data=>data.student.status=='DE')
+    let activeTotal=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='DE')
     console.log(activeTotal);
 
 

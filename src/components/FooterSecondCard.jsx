@@ -26,7 +26,7 @@ const FooterSecondCard = ({data}) => {
                 <Link target='_blank' to=''>{data.address}</Link>
             </div>
             <div className="footer_second_card_map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8100.819169276442!2d49.82305707568814!3d40.38121389190752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307dbd4095cbf1%3A0xa3ad337b0af2671f!2zMTM5IFNhbGF0xLFuIMaPc2fJmXJvdmEsIEJha8SxIDEwMDk!5e0!3m2!1sen!2saz!4v1688913940446!5m2!1sen!2saz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe title='' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8100.819169276442!2d49.82305707568814!3d40.38121389190752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307dbd4095cbf1%3A0xa3ad337b0af2671f!2zMTM5IFNhbGF0xLFuIMaPc2fJmXJvdmEsIEJha8SxIDEwMDk!5e0!3m2!1sen!2saz!4v1688913940446!5m2!1sen!2saz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     )

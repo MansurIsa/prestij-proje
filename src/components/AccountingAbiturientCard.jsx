@@ -46,7 +46,7 @@ const AccountingAbiturientCard = ({ data }) => {
        dispatch(getAccountingMonthAbiturientPaymentList(id)) 
     }
     return (
-        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference == 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' : 'black' }}>
+        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference === 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' : 'black' }}>
             <td  style={{cursor: "pointer"}} onClick={()=>handleAbiturient(data.student.id)}>
                 {`${data.student.first_name} ${data.student.last_name}`}
             </td>
@@ -61,7 +61,7 @@ const AccountingAbiturientCard = ({ data }) => {
             </td>
 
             <td >
-                {data.student.status == 'D' ? 'Dondurub' : 'DE' ? 'Davam Edir' : 'B' ? 'Bitirilib' : ''}
+                {data.student.status === 'D' ? 'Dondurub' : 'DE' ? 'Davam Edir' : 'B' ? 'Bitirilib' : ''}
             </td>
 
             <td >
@@ -87,20 +87,20 @@ const AccountingAbiturientCard = ({ data }) => {
                 {data.student.sector}
             </td>
             <td >
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_date}
+                {(data.student.status==='D' || data.student.status==='B')? <CgMathMinus/> : data.payment_date}
             </td>
             <td >
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.paid_date}
+                {(data.student.status==='D' || data.student.status==='B')? <CgMathMinus/> : data.paid_date}
             </td>
             <td >
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_type==='N'? 'Nağd': data.payment_type==='HK'? 'Hesaba köçürmə': ''}
+                {(data.student.status==='D' || data.student.status==='B')? <CgMathMinus/> : data.payment_type==='N'? 'Nağd': data.payment_type==='HK'? 'Hesaba köçürmə': ''}
             </td>
             <td >
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.payment_amount}
+                {(data.student.status==='D' || data.student.status==='B')? <CgMathMinus/> : data.payment_amount}
             </td>
 
             <td >
-                {(data.student.status=='D' || data.student.status=='B')? <CgMathMinus/> : data.status ? 'Ödənilib' : 'Ödənilməyib'}
+                {(data.student.status==='D' || data.student.status==='B')? <CgMathMinus/> : data.status ? 'Ödənilib' : 'Ödənilməyib'}
             </td>
             <td style={{fontSize: '20px', color: '#196EDA'}}>
                 <FaEdit onClick={()=>dispatch(editStudentModalContainerFunc(data))}/>

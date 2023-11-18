@@ -32,37 +32,55 @@ const HeaderSliderContainer = () => {
    
 
 
-    let headerArr = [
-        {
-            id: 1,
-            img: HeaderFirstImg,
-            headerOne: 'İmtahan nəticələri üçün daxil olun'
-        },
-        {
-            id: 2,
-            img: HeaderSecondImg,
-            headerOne: 'İmtahan nəticələri üçün daxil olun1'
-        },
-        {
-            id: 3,
-            img: HeaderThirdImg,
-            headerOne: 'İmtahan nəticələri üçün daxil olun2'
-        },
-        {
-            id: 4,
-            img: HeaderFourImg,
-            headerOne: 'İmtahan nəticələri üçün daxil olun3'
-        },
-        {
-            id: 5,
-            img: HeaderFiveImg,
-            headerOne: 'İmtahan nəticələri üçün daxil olun4'
-        }
-    ]
+    // let headerArr = [
+    //     {
+    //         id: 1,
+    //         img: HeaderFirstImg,
+    //         headerOne: 'İmtahan nəticələri üçün daxil olun'
+    //     },
+    //     {
+    //         id: 2,
+    //         img: HeaderSecondImg,
+    //         headerOne: 'İmtahan nəticələri üçün daxil olun1'
+    //     },
+    //     {
+    //         id: 3,
+    //         img: HeaderThirdImg,
+    //         headerOne: 'İmtahan nəticələri üçün daxil olun2'
+    //     },
+    //     {
+    //         id: 4,
+    //         img: HeaderFourImg,
+    //         headerOne: 'İmtahan nəticələri üçün daxil olun3'
+    //     },
+    //     {
+    //         id: 5,
+    //         img: HeaderFiveImg,
+    //         headerOne: 'İmtahan nəticələri üçün daxil olun4'
+    //     }
+    // ]
 
 
     
 
+
+    // useEffect(() => {
+        
+
+
+    //     const interval = setInterval(() => {
+    //         if (swiperRef.current && swiperRef.current.swiper) {
+    //             setActiveIndex((prevIndex) => (prevIndex + 1) % bannerListArr?.length);
+    //             swiperRef.current.swiper.slideNext();
+
+    //         }
+
+
+
+    //     }, 5000);
+
+    //     return () => clearInterval(interval);
+    // }, [activeIndex]);
 
     useEffect(() => {
         
@@ -80,7 +98,7 @@ const HeaderSliderContainer = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [activeIndex]);
+    }, [swiperRef, bannerListArr]);
 
 
 

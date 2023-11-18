@@ -19,11 +19,11 @@ const BranchsAbiturientsAccountingPage = () => {
       <AccountingAbiturientTable />
 
       {
-        (loggedInUser?.is_accountant == false && loggedInUser?.is_staff == true) ? <AccountingAbiturientTotal /> : null
+        (loggedInUser?.is_accountant === false && loggedInUser?.is_staff === true) ? <AccountingAbiturientTotal /> : null
       }
 
       {
-        (loggedInUser?.is_accountant == false && loggedInUser?.is_staff == true) ? <AccountingStudentTotalDay /> : null
+        (loggedInUser?.is_accountant === false && loggedInUser?.is_staff === true) ? <AccountingStudentTotalDay /> : null
       }
 
       <AccountingStudentsStatusColor />

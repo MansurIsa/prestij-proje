@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import AccountingTeacherCard from './AccountingTeacherCard';
 
 const AccountingTeacherTable = () => {
-    const { accountingTeacherMonthPaymentListArr, branchsTeachersListArr } = useSelector(state => state.Data)
+    const { accountingTeacherMonthPaymentListArr } = useSelector(state => state.Data)
     console.log(accountingTeacherMonthPaymentListArr);
     return (
         <table>
