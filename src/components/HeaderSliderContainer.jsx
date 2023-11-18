@@ -15,7 +15,7 @@ import HeaderLoading from './loading/HeaderLoading';
 
 const HeaderSliderContainer = () => {
     const swiperRef = useRef(null);
-    const [ setActiveIndex] = useState(0);
+    // const [activeIndex, setActiveIndex] = useState(0);
 
     const dispatch = useDispatch();
     const bannerListArr = useSelector(state => state.Data.bannerListArr)
@@ -84,7 +84,7 @@ const HeaderSliderContainer = () => {
 
         const interval = setInterval(() => {
             if (swiperRef.current && swiperRef.current.swiper) {
-                setActiveIndex((prevIndex) => (prevIndex + 1) % bannerListArr?.length);
+                // setActiveIndex((prevIndex) => (prevIndex + 1) % bannerListArr?.length);
                 swiperRef.current.swiper.slideNext();
 
             }
@@ -94,7 +94,7 @@ const HeaderSliderContainer = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [setActiveIndex,swiperRef, bannerListArr]);
+    }, [swiperRef, bannerListArr]);
 
 
 
