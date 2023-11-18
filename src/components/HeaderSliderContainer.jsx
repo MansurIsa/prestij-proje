@@ -94,7 +94,7 @@ const HeaderSliderContainer = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [swiperRef, bannerListArr]);
+    }, [setActiveIndex,swiperRef, bannerListArr]);
 
 
 
