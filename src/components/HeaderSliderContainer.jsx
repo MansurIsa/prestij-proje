@@ -4,11 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import HeaderFirstImg from '../images/headerFirstImg.jpeg'
-import HeaderSecondImg from '../images/headerSecondImg.jpeg'
-import HeaderThirdImg from '../images/headerThird.jpeg'
-import HeaderFourImg from '../images/headerFourImg.jpeg'
-import HeaderFiveImg from '../images/headerFiveImg.jpeg'
+
 
 import 'swiper/css/effect-fade';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,7 +15,7 @@ import HeaderLoading from './loading/HeaderLoading';
 
 const HeaderSliderContainer = () => {
     const swiperRef = useRef(null);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [ setActiveIndex] = useState(0);
 
     const dispatch = useDispatch();
     const bannerListArr = useSelector(state => state.Data.bannerListArr)

@@ -74,7 +74,7 @@ const AccountingStudentAbiturientCard = ({ data }) => {
                 {(data.student.status === 'D' || data.student.status === 'B') ? <CgMathMinus /> : data.payment_amount}
             </td>
             <td >
-                {(data.student.status === 'D' || data.student.status == 'B') ? <CgMathMinus /> : data.status ? 'Ödənilib' : 'Ödənilməyib'}
+                {(data.student.status === 'D' || data.student.status === 'B') ? <CgMathMinus /> : data.status ? 'Ödənilib' : 'Ödənilməyib'}
             </td>
         </tr>
     )
