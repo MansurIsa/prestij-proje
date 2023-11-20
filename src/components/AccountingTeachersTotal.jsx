@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaManatSign } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 
 const AccountingTeachersTotal = () => {
@@ -41,10 +42,10 @@ const AccountingTeachersTotal = () => {
                     {total?.length}
                 </td>
                 <td className="branchs_students_inner_card">
-                    {paymentTotal}
+                    {paymentTotal}<FaManatSign className='manat_icon'/>
                 </td>
                 <td className="branchs_students_inner_card">
-                    {paidTotal}
+                    {paidTotal}<FaManatSign className='manat_icon'/>
                 </td>
 
             </tr>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaManatSign } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 
 const AccountingTeachersTotalDay = () => {
@@ -8,58 +9,82 @@ const AccountingTeachersTotalDay = () => {
     const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
     const formattedDate = `${year}-${month}-${day}`;
-    
-    
+
+
     const { accountingTeacherMonthPaymentListArr } = useSelector(state => state.Data)
-    
+
+    console.log(accountingTeacherMonthPaymentListArr);
+
     let total = accountingTeacherMonthPaymentListArr.filter(data => data.status === true)
-    
+
     let paidTotal = 0;
-    
-    
-    if (total?.length>0 && total?.filter(data=>data?.payment_date===formattedDate)) {
-        for (let i = 0; i < total?.filter(data=>data?.payment_date===formattedDate).length; i++) {
-            paidTotal += total?.filter(data=>data?.payment_date===formattedDate)[i].payment_amount
+
+
+    if (total?.length > 0 && total?.filter(data => data?.paid_date === formattedDate)) {
+        for (let i = 0; i < total?.filter(data => data?.paid_date === formattedDate).length; i++) {
+            paidTotal += total?.filter(data => data?.paid_date === formattedDate)[i].payment_amount
         }
     }
-    // let paymentTotal = 0;
-    // for (let i = 0; i < accountingTeacherMonthPaymentListArr.length; i++) {
-    //     paymentTotal += accountingTeacherMonthPaymentListArr[i].payment_amount
-    // }
-
-    // let activeTotal = accountingTeacherMonthPaymentListArr.filter(data => data.student.status == 'DE')
     
+    console.log(total?.filter(data=>data?.paid_date===formattedDate && data.payment_type==='N'));
+    
+
+    let paidNTotal=0;
+   let paidNTotalArr=total?.length>0 && total?.filter(data=>data?.paid_date===formattedDate && data?.payment_type==='N')
+
+   if(paidNTotalArr){
+    for(let i=0;i<paidNTotalArr.length;i++){
+        paidNTotal+=paidNTotalArr[i].payment_amount
+    }
+   }
+
+    console.log(paidNTotal);
+    
+    let paidHKTotal=0;
+   let paidHKTotalArr=total?.length>0 && total?.filter(data=>data?.paid_date===formattedDate && data?.payment_type==='HK')
+
+   if(paidHKTotalArr){
+    for(let i=0;i<paidHKTotalArr.length;i++){
+        paidHKTotal+=paidHKTotalArr[i].payment_amount
+    }
+   }
+
+    console.log(paidHKTotal);
 
     return (
         <table className='accounting_abiturient_total_container'>
             <tr>
-                {/* <th>
-                    Ümumi müəllimlərin sayı
-                </th> */}
+
                 <th>
                     Bu gün ödəniş edilmiş müəllimlərin sayı
                 </th>
-                {/* <th>
-                    Ümumi müəllimlərin ödənişlərinin cəmi
-                </th> */}
+
                 <th>
-                Bu gün ödəniş edilmiş müəllimlərin ödənişlərinin cəmi
+                    Bu gün ödəniş edilmiş müəllimlərin ödənişlərinin cəmi
+                </th>
+                <th>
+                    Bu gün ödəniş edilmiş müəllimlərin Nağd ödənişlərinin cəmi
+                </th>
+                <th>
+                    Bu gün ödəniş edilmiş müəllimlərin Hesaba köçürülən ödənişlərinin cəmi
                 </th>
 
 
             </tr>
             <tr className='branchs_students_card'>
-                {/* <td className="branchs_students_inner_card">
-                    {accountingTeacherMonthPaymentListArr?.length}
-                </td> */}
+                
                 <td className="branchs_students_inner_card">
-                {total?.filter(data=>data?.payment_date===formattedDate)?.length}
+                    {total?.filter(data => data?.paid_date === formattedDate)?.length}
                 </td>
-                {/* <td className="branchs_students_inner_card">
-                    {paymentTotal}
-                </td> */}
+                
                 <td className="branchs_students_inner_card">
-                    {paidTotal}
+                    {paidTotal}<FaManatSign className='manat_icon'/>
+                </td>
+                <td className="branchs_students_inner_card">
+                    {paidNTotal}<FaManatSign className='manat_icon'/>
+                </td>
+                <td className="branchs_students_inner_card">
+                    {paidHKTotal}<FaManatSign className='manat_icon'/>
                 </td>
 
             </tr>

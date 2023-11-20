@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AccountingStudentsStatusColor = () => {
+const AccountingTeachersStatusColor = () => {
     return (
         <div className='accounting_students_status_color_container container'>
             <div className="accounting_students_status_color_card">
@@ -24,16 +24,9 @@ const AccountingStudentsStatusColor = () => {
                 <p>Ödənişi bugün olanlar</p>
             </div>
            
-            <div className="accounting_students_status_color_card">
-                <div></div>
-                <p>Donduran tələbələr</p>
-            </div>
-            <div className="accounting_students_status_color_card">
-                <div></div>
-                <p>Bitirmiş tələbələr</p>
-            </div>
+            
         </div>
     )
 }
 
-export default AccountingStudentsStatusColor
+export default AccountingTeachersStatusColor

@@ -366,7 +366,8 @@ export const initialState = {
     accountantSurname: "",
     accountantEmail: "",
     isAccountantValue: false,
-    accountantBranchSelectValue: ""
+    accountantBranchSelectValue: "",
+
 
 
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { FaManatSign } from "react-icons/fa6";
 
-const AccountingAbiturientTotal = () => {
+
+const AccountingAbiturientTotal = ({categoryName}) => {
     const {accountingStudentMonthPaymentListArr}=useSelector(state=>state.Data)
     let total=accountingStudentMonthPaymentListArr.filter(data=>data.status===true)
     let paidTotal=0;
@@ -18,24 +20,37 @@ const AccountingAbiturientTotal = () => {
     let activeTotal=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='DE')
     console.log(activeTotal);
 
+    console.log(accountingStudentMonthPaymentListArr);
+
+    let finishedTotalArr=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='B')
+    console.log(finishedTotalArr);
+
+    let stoppedTotalArr=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='D')
+    console.log(stoppedTotalArr);
 
     return (
         <table className='accounting_abiturient_total_container'>
             <tr >
                 <th>
-                    Ümumi abiturientlərin sayı
+                    Ümumi {categoryName?.name}lərin sayı
                 </th>
                 <th>
-                    Ödəniş etmiş abiturientlərin sayı
+                    Ödəniş etmiş {categoryName?.name}lərin sayı
                 </th>
                 <th>
-                    Aktiv abiturientlərin sayı
+                    Aktiv {categoryName?.name}lərin sayı
                 </th>
                 <th>
-                    Ümumi abiturientlərin ödənişlərinin cəmi
+                    Bitirmiş {categoryName?.name}lərin sayı
                 </th>
                 <th>
-                    Ödəniş etmiş abiturientlərin ödənişlərinin cəmi
+                    Dondurmuş {categoryName?.name}lərin sayı
+                </th>
+                <th>
+                    Ümumi {categoryName?.name}lərin ödənişlərinin cəmi
+                </th>
+                <th>
+                    Ödəniş etmiş {categoryName?.name}lərin ödənişlərinin cəmi
                 </th>
 
 
@@ -51,10 +66,16 @@ const AccountingAbiturientTotal = () => {
                     {activeTotal?.length}
                 </td>
                 <td className="branchs_students_inner_card">
-                    {paymentTotal}
+                    {finishedTotalArr?.length}
                 </td>
                 <td className="branchs_students_inner_card">
-                    {paidTotal}
+                    {stoppedTotalArr?.length}
+                </td>
+                <td className="branchs_students_inner_card">
+                    {paymentTotal}<FaManatSign className='manat_icon'/>
+                </td>
+                <td className="branchs_students_inner_card">
+                    {paidTotal}<FaManatSign className='manat_icon'/>
                 </td>
 
             </tr>

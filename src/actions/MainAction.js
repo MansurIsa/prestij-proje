@@ -451,8 +451,8 @@ export const getAccountingStudentMonthPaymentList=(id,id2)=>async dispatch=>{
 
 
 
-export const getAccountingMonthAbiturientPaymentList=(id)=>async dispatch=>{
-    return await axios.get(`${baseUrl}accounting/month-student-payment-list/${id}/`,{
+export const getAccountingMonthAbiturientPaymentList=(id,id2)=>async dispatch=>{
+    return await axios.get(`${baseUrl}accounting/month-student-payment-list/${id}/${id2}/`,{
         headers:{
             Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
         }

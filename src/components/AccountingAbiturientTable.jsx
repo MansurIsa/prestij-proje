@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import AccountingAbiturientCard from './AccountingAbiturientCard'
 import EditStudentModalContainer from './modals/EditStudentModalContainer'
 
-const AccountingAbiturientTable = () => {
+const AccountingAbiturientTable = ({categoryName}) => {
     const {  accountingAbiturientMonthPaymentListArr,accountingStudentMonthPaymentListArr,editStudentModalContainer } = useSelector(state => state.Data);
 
     
@@ -14,7 +14,7 @@ const AccountingAbiturientTable = () => {
         <table>
             <tr>
                 <th >
-                    Abiturientlər
+                    {categoryName?.name}
                 </th>
                 <th >
                     Telefon nömrəsi 1

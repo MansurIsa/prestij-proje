@@ -1,10 +1,11 @@
 import React from 'react'
+import { FaManatSign } from 'react-icons/fa6';
 import { useSelector } from 'react-redux'
 
 const AccountingStudentsTotal = () => {
     const { accountingAbiturientMonthPaymentListArr} = useSelector(state => state.Data)
 
-    
+    console.log(accountingAbiturientMonthPaymentListArr);
 
     let total = accountingAbiturientMonthPaymentListArr.filter(data => data.status === true)
     let paidTotal = 0;
@@ -20,6 +21,12 @@ const AccountingStudentsTotal = () => {
     let activeTotalAbiturient = accountingAbiturientMonthPaymentListArr.filter(data => data.student.status === 'DE')
     
 
+    let finishedTotalArr=accountingAbiturientMonthPaymentListArr.filter(data=>data.student.status==='B')
+    console.log(finishedTotalArr);
+
+    let stoppedTotalArr=accountingAbiturientMonthPaymentListArr.filter(data=>data.student.status==='D')
+    console.log(stoppedTotalArr);
+
     return (
         <table className='accounting_abiturient_total_container'>
             <tr>
@@ -27,41 +34,47 @@ const AccountingStudentsTotal = () => {
                     Ümumi tələbələrin sayı
                 </th>
                 <th>
-                    Ödəniş edilmiş tələbələrin sayı
+                    Ödəniş etmiş tələbələrin sayı
                 </th>
                 <th>
                     Aktiv tələbələrin sayı
                 </th>
                 <th>
+                    Bitirmiş tələbələrin sayı
+                </th>
+                <th>
+                    Dondurmuş tələbələrin sayı
+                </th>
+                <th>
                     Ümumi tələbələrin ödənişlərinin cəmi
                 </th>
                 <th>
-                    Ödəniş edilmiş tələbələrin ödənişlərinin cəmi
+                    Ödəniş etmiş tələbələrin ödənişlərinin cəmi
                 </th>
 
 
             </tr>
             <tr className='branchs_students_card'>
                 <td className="branchs_students_inner_card">
-                    {
-                        accountingAbiturientMonthPaymentListArr?.length
-
-
-                    }
+                    {accountingAbiturientMonthPaymentListArr?.length}
                 </td>
                 <td className="branchs_students_inner_card">
                     {total?.length}
                 </td>
                 <td className="branchs_students_inner_card">
-                    {activeTotalAbiturient?.length
-                       
-                    }
+                    {activeTotalAbiturient?.length}
                 </td>
                 <td className="branchs_students_inner_card">
-                    {paymentTotal}
+                    {finishedTotalArr?.length}
                 </td>
                 <td className="branchs_students_inner_card">
-                    {paidTotal}
+                    {stoppedTotalArr?.length}
+                </td>
+                <td className="branchs_students_inner_card">
+                    {paymentTotal}<FaManatSign className='manat_icon'/>
+                </td>
+                <td className="branchs_students_inner_card">
+                    {paidTotal}<FaManatSign className='manat_icon'/>
                 </td>
 
             </tr>

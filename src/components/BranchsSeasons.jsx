@@ -62,7 +62,7 @@ const BranchsSeasons = ({ id }) => {
 
     let getSelectedSeason = localStorage.getItem('selectedSeason')
     console.log(getSelectedSeason);
-    let c = branchsSeasonsListArr.find(data => data.id === getSelectedSeason)
+    let c = branchsSeasonsListArr.find(data => data.id === +getSelectedSeason)
     console.log(c);
     
     return (

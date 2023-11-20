@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from '../actions/MainAction'
 import AccountingTeachersTotalDay from '../components/AccountingTeachersTotalDay'
 import EditTeacherModalContainer from '../components/modals/EditTeacherModalContainer'
+import AccountingTeachersStatusColor from '../components/AccountingTeachersStatusColor'
 
 const BranchsTeachersAccountingPage = () => {
   const {loggedInUser,editTeacherModalContainer}=useSelector(state=>state.Data)
@@ -28,7 +29,7 @@ const BranchsTeachersAccountingPage = () => {
           (loggedInUser?.is_accountant===false && loggedInUser?.is_staff===true)? <AccountingTeachersTotalDay/>: null
         }
         
-        <AccountingStudentsStatusColor/>
+        <AccountingTeachersStatusColor/>
         {editTeacherModalContainer && <EditTeacherModalContainer/>}
     </div>
   )

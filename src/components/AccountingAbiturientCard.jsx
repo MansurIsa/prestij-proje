@@ -43,10 +43,10 @@ const AccountingAbiturientCard = ({ data }) => {
     const handleAbiturient=(id)=>{
         console.log(id);
         navigate('/branchs-accounting-abiturient')
-       dispatch(getAccountingMonthAbiturientPaymentList(id)) 
+       dispatch(getAccountingMonthAbiturientPaymentList(id,data?.category?.id)) 
     }
     return (
-        <tr style={{ color: data.status ? 'green' : daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference === 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' : 'black' }}>
+        <tr className='table_tr_style' style={{ color: data.status ? 'green' : data.student.status==='D'? '#ccc': data.student.status==='B'? '#00f2ff': daysDifference <= 3 && daysDifference > 0 ? '#EAAE0D' : daysDifference === 0 ? 'purple' : daysDifference<0 && daysDifference>=-3? '#196EDA': daysDifference < -3 ? 'red' :  'black' }}>
             <td  style={{cursor: "pointer"}} onClick={()=>handleAbiturient(data.student.id)}>
                 {`${data.student.first_name} ${data.student.last_name}`}
             </td>
@@ -61,7 +61,7 @@ const AccountingAbiturientCard = ({ data }) => {
             </td>
 
             <td >
-                {data.student.status === 'D' ? 'Dondurub' : 'DE' ? 'Davam Edir' : 'B' ? 'Bitirilib' : ''}
+                {data.student.status === 'D' ?  'Dondurub' : data.student.status ==='DE' ? 'Davam Edir' : data.student.status ==='B' ? 'Bitirib' : ''}
             </td>
 
             <td >

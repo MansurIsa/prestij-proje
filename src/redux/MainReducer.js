@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { initialState } from "./initialState";
 
 
+
 export const MainSlice = createSlice({
     name: "MAIN_SLICE",
     initialState: initialState,
@@ -1289,7 +1290,12 @@ export const MainSlice = createSlice({
         },
         accountantBranchSelectFunc: (state,action)=>{
             state.accountantBranchSelectValue=action.payload
-        }
+        },
+
+       
+
+
+        
 
 
     }
@@ -1664,6 +1670,10 @@ export const {
     accountantSurnameFunc,
     accountantEmailFunc,
     isAccountantFunc,
-    accountantBranchSelectFunc
+    accountantBranchSelectFunc,
+
+
+
+   
 
 } = MainSlice.actions;
