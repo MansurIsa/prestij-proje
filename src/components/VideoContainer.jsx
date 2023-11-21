@@ -76,10 +76,18 @@ const VideoContainer = () => {
                 } */}
 
 
-                {/* <SwiperSlide className='video_card'>
+                <SwiperSlide className='video_card'>
 
                     <iframe src="https://www.youtube.com/embed/_LZEDM2tGLw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+                </SwiperSlide>
+                <SwiperSlide className='video_card'>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/grcSG42uOXg?si=TEpwPj0so70haSd0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </SwiperSlide>
+                <SwiperSlide className='video_card'>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8v3naz9DF2o?si=6L2wq_RD9W5Or6-t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </SwiperSlide>
                 <SwiperSlide className='video_card'>
 
@@ -91,16 +99,6 @@ const VideoContainer = () => {
                     <iframe src="https://www.youtube.com/embed/_LZEDM2tGLw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                 </SwiperSlide>
-                <SwiperSlide className='video_card'>
-
-                    <iframe src="https://www.youtube.com/embed/_LZEDM2tGLw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-                </SwiperSlide>
-                <SwiperSlide className='video_card'>
-
-                    <iframe src="https://www.youtube.com/embed/_LZEDM2tGLw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-                </SwiperSlide> */}
 
 
             </Swiper>
