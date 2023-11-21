@@ -18,7 +18,7 @@ export const MainSlice = createSlice({
 
         },
         getServicesListArr: (state, action) => {
-            state.servicesListArr = action.payload
+            state.servicesListArr = action.payload.reverse()
         },
         getNewsListArr: (state, action) => {
             state.newsListArr = action.payload
@@ -1293,6 +1293,7 @@ export const MainSlice = createSlice({
         },
 
        
+       
 
 
         
@@ -1671,6 +1672,7 @@ export const {
     accountantEmailFunc,
     isAccountantFunc,
     accountantBranchSelectFunc,
+
 
 
 

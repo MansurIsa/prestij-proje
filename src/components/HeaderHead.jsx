@@ -38,30 +38,45 @@ const HeaderHead = () => {
     return (
         <div className='header_head_container_bg'>
             <div className="header_head_container container">
-                
+
                 {
                     contactInfoArr[0]?.is_active ?
                         <ul className='header_first_list'>
 
                             <li>
                                 <GoMail className='header_first_list_icon' />
+                                {
+                                    contactInfoArr.length > 0 && (
+                                        <Link to={`mailto:${contactInfoArr[0]?.email}`}>{contactInfoArr[0]?.email}</Link>
 
-                                <Link to={contactInfoArr.length && contactInfoArr[0]?.email}>{contactInfoArr[0]?.email}</Link>
+                                    )
+                                }
+
 
                             </li>
+
+                            {/* <li>
+                                <ImMobile className='header_first_list_icon' />
+                                <Link to={contactInfoArr.length && contactInfoArr[0]?.contact_number}>{contactInfoArr[0]?.contact_number}</Link>
+                            </li> */}
 
                             <li>
                                 <ImMobile className='header_first_list_icon' />
-                                <Link to={contactInfoArr.length && contactInfoArr[0]?.contact_number}>{contactInfoArr[0]?.contact_number}</Link>
+                                {contactInfoArr.length > 0 && (
+                                    <Link to=''>
+                                        {contactInfoArr[0]?.contact_number}
+                                    </Link>
+                                )}
                             </li>
+
 
                         </ul>
                         : null
                 }
-                
+
 
                 <ul className='header_second_list'>
-                    
+
                     <li>
                         <Link to={''}><IoSearch className='header_first_list_icon header_second_list_search_icon' /></Link>
                     </li>
@@ -86,7 +101,7 @@ const HeaderHead = () => {
 
                 <div className="fixed_search">
                     <input placeholder='Search...' type="text" />
-                    <IoSearch className='popup_search_icon'/>
+                    <IoSearch className='popup_search_icon' />
                 </div>
             </div>
         </div>

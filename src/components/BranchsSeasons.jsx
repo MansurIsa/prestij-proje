@@ -38,32 +38,15 @@ const BranchsSeasons = ({ id }) => {
 
             window.location.reload();
         }
-        // dispatch(getAccountingAbiturientMonthPaymentList(monthSelectValue));
-        // dispatch(getBranchsAbiturientsList(selectedSeason))
-        // dispatch(getBranchsTeachersList(selectedSeason))
-        // dispatch(getBranchsAccountingList(selectedSeason))
-        // dispatch(getBranchsBlockAbiturientsList(selectedSeason))
-        // dispatch(getBranchsBlocksList(selectedSeason))
-        // dispatch(getBranchsCivilList(selectedSeason))
-        // dispatch(getBranchsCivilSubjectstList(selectedSeason))
-        // dispatch(getBranchsClassAbiturientsList(selectedSeason))
-        // dispatch(getBranchsClassesList(selectedSeason))
-        // dispatch(getBranchsComputerCourseAllList(selectedSeason))
-        // dispatch(getBranchsComputerCourseList(selectedSeason))
-        // dispatch(getBranchsComputerList(selectedSeason))
-        // dispatch(getBranchsForeignLanguageList(selectedSeason))
-        // dispatch(getBranchsForeignLanguageList2(selectedSeason))
-        // dispatch(getBranchsGroupAbiturientsList(selectedSeason))
-        // dispatch(getBranchsGroupMasterList(selectedSeason))
-        // dispatch(getBranchsGroupsList(selectedSeason))
-        // dispatch(getBranchsHandleHighSchoolClassList(selectedSeason))
-        // dispatch(getBranchsHandleHighSchoolGroupList(selectedSeason))
+        
     }
 
     let getSelectedSeason = localStorage.getItem('selectedSeason')
     console.log(getSelectedSeason);
     let c = branchsSeasonsListArr.find(data => data.id === +getSelectedSeason)
     console.log(c);
+
+    
     
     return (
         <div className='season_select_container'>

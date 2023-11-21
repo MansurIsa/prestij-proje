@@ -615,7 +615,7 @@ const OtherCourseOnlineRegisterFormContainer = () => {
     return (
         <div className='other_cv_send_form_container'>
 
-            <div className='branchs_seasons'>
+            <div className='branchs_seasons course_online_register_select'>
                 <select onChange={categoryChange} value={selectedCategory}>
                     <option value="">Kateqoriya seçin</option>
                     <option value="müəllim">Müəllim</option>

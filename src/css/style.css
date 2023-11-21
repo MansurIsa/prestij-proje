@@ -3178,3 +3178,10 @@ table .table_tr_style td{
 .manat_icon{
     font-size: 1.2rem;
 }
+.course_online_register_select{
+    margin-bottom: 20px;
+}
+#angleOne,
+#angleTwo{
+    display: none;
+}

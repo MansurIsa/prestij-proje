@@ -41,7 +41,7 @@ const App = () => {
   const navigate = useNavigate();
 
   const redirectToHome = () => {
-    navigate('/prestij-project');
+    navigate('/');
   };
 
   useEffect(() => {

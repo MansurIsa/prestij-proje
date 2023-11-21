@@ -69,7 +69,7 @@
         gap: 10px;
         z-index: 99 !important;
         width: 300px;
-        overflow: auto !important;
+        /* overflow: auto !important; */
         padding-left: 30px;
         transition: all 0.5s ease-in-out;
 
@@ -89,6 +89,7 @@
         padding: 0px !important;
         height: auto;
         margin-bottom: 10px;
+        /* background-color: red; */
     }
 
     .bars_icon {
@@ -113,12 +114,15 @@
         align-items: center;
     }
 
-    .nav_inner_list ul {
-        position: relative;
-        display: none;
+    .nav_inner_list_child,
+    .nav_inner_list_child2 {
+       display: none;
         padding-left: 20px;
         padding-right: 10px;
-        width: auto;
+        width: 200px;
+        height: auto;
+        margin-top: 10px;
+
 
     }
 
@@ -130,22 +134,29 @@
         font-size: 1.1rem;
     }
 
-    .nav_inner_list ul.active_inner_list {
+    #angleOne:checked~.nav_inner_list_child {
         display: block;
+        position: static;
+        width: 100%;
+
+        
     }
 
-    .nav_inner_list:hover ul {
-        top: 10px;
-
+    #angleTwo:checked~.nav_inner_list_child2 {
+        display: block;
+        position: static;
+        width: 100%;
 
     }
+
+  
 
 
     .header_second_card {
         min-width: 280px;
     }
 
-    .other_contact_content p{
+    .other_contact_content p {
         font-size: 1.2rem;
     }
 
@@ -234,22 +245,27 @@
     .other_cv_send_form_input_container {
         flex-wrap: wrap;
     }
-    .other_contact_cards{
+
+    .other_contact_cards {
         flex-direction: column-reverse;
     }
-    .contact_section{
+
+    .contact_section {
         background-position: right;
     }
-    .other_contact_content{
+
+    .other_contact_content {
         width: 100%;
     }
+
     .other_contact_form_card input,
-    .other_contact_form_card textarea{
+    .other_contact_form_card textarea {
         border-bottom: 1px solid var(--black);
         color: var(--black);
     }
+
     .other_contact_form_card input::placeholder,
-    .other_contact_form_card textarea::placeholder{
+    .other_contact_form_card textarea::placeholder {
         color: var(--black);
     }
 }
@@ -307,7 +323,8 @@
     .other_cv_send_form_card p {
         font-size: 1.3rem;
     }
-    .other_cv_send_form_card h3{
+
+    .other_cv_send_form_card h3 {
         font-size: 2.2rem;
     }
 
@@ -375,17 +392,20 @@
     .section_header_link {
         font-size: 1.4rem;
     }
-    .other_luck_container{
-        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+
+    .other_luck_container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
-      }
-      .other_luck_card{
+    }
+
+    .other_luck_card {
         min-width: 300px;
-        
-      }
-      .other_luck_card img{
+
+    }
+
+    .other_luck_card img {
         height: 250px;
-      }
+    }
 
 }
 
@@ -417,7 +437,7 @@
     .other_header_main_container h1 {
         font-size: 2.4rem;
     }
-    
+
 
     .header_middle_container_content button {
         font-size: 1.5rem;
@@ -427,6 +447,7 @@
     .section_header {
         font-size: 3rem;
     }
+
     .fixed_search {
         max-width: 300px;
         min-width: 250px;
@@ -446,6 +467,7 @@
 }
 
 @media screen and (max-width: 390px) {
+
     .header_middle_container_content h1,
     .other_header_main_container h1 {
         font-size: 2.2rem;
@@ -472,7 +494,7 @@
         height: 12px;
     }
 
-    
+
 }
 
 @media screen and (max-width: 680px) {
@@ -583,10 +605,13 @@
         max-width: 240px;
         flex: 1;
     }
-    .other_contact_cards{
+
+    .other_contact_cards {
         gap: 30px;
     }
-    .other_contact_content, .other_contact_form{
+
+    .other_contact_content,
+    .other_contact_form {
         flex: 1;
     }
 }
@@ -622,17 +647,15 @@
 @media screen and (max-width: 620px) {
     .footer_end_container {
         flex-direction: column;
-        
+
     }
 
     .footer_end_link li a {
         font-size: 1.4rem;
     }
-    .footer_end_link{
-        
 
-    }
+    .footer_end_link {}
 
-    
+
 
 }

@@ -18,14 +18,14 @@ const Nav = () => {
 
 
     useEffect(() => {
-        let angleIcon = document.querySelectorAll('.angle_icon')
-        let navInnerListUl = document.querySelectorAll('.nav_inner_list>ul')
-        console.log(navInnerListUl);
-        for (let i = 0; i < angleIcon.length; i++) {
-            angleIcon[i].addEventListener('click', () => {
-                navInnerListUl[i].classList.toggle('active_inner_list')
-            })
-        }
+        // let angleIcon = document.querySelectorAll('.angle_icon')
+        // let navInnerListUl = document.querySelectorAll('.nav_inner_list>ul')
+        // console.log(navInnerListUl);
+        // for (let i = 0; i < angleIcon.length; i++) {
+        //     angleIcon[i].addEventListener('click', () => {
+        //         navInnerListUl[i].classList.toggle('active_inner_list')
+        //     })
+        // }
 
         let barsIcon = document.querySelector('.bars_icon')
         let closeIcon = document.querySelector('.close_icon')
@@ -62,10 +62,13 @@ const Nav = () => {
                         <li className='nav_inner_list'>
                             <div className='angle_link'>
                                 <Link to='/xidmetlerimiz'>XİDMƏTLƏRİMİZ</Link>
-                                <GoTriangleDown className='angle_icon' />
-                            </div>
+                                <label htmlFor="angleOne">
+                                    <GoTriangleDown className='angle_icon' />
+                                </label>
 
-                            <ul>
+                            </div>
+                            <input type="checkbox" id='angleOne'/>
+                            <ul className='nav_inner_list_child'>
                                 {
                                     servicesListArr?.map((data, i) => {
                                         return (
@@ -75,6 +78,7 @@ const Nav = () => {
                                         )
                                     })
                                 }
+                                
 
 
                             </ul>
@@ -93,10 +97,13 @@ const Nav = () => {
                         <li className='nav_inner_list galarey_list'>
                             <div className='angle_link'>
                                 <Link to='/foto'>Qalareya</Link>
-                                <GoTriangleDown className='angle_icon' />
+                                <label htmlFor="angleTwo">
+                                    <GoTriangleDown className='angle_icon' />
+                                </label>
                             </div>
+                            <input type="checkbox" id='angleTwo'/>
 
-                            <ul>
+                            <ul className='nav_inner_list_child2'>
                                 <li>
                                     <Link to='/foto'>FOTO</Link>
                                 </li>
@@ -130,14 +137,14 @@ const Nav = () => {
                             <Link to='/elaqe'>Əlaqə</Link>
                         </li> : null
                 }
-                
+
 
 
 
 
             </ul>
             <FaBars className="bars_icon" />
-            
+
 
         </nav>
     )

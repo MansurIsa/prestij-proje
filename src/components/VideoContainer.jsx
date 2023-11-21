@@ -64,7 +64,7 @@ const VideoContainer = () => {
                 className="mySwiper"
             >
 
-                {
+                {/* {
                     videoGalleryListArr?.map((data, i) => {
                         return (
                             <SwiperSlide key={i} className='video_card'>
@@ -73,7 +73,7 @@ const VideoContainer = () => {
                             </SwiperSlide>
                         )
                     })
-                }
+                } */}
 
 
                 {/* <SwiperSlide className='video_card'>
