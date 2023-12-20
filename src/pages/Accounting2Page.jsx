@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Branchs2Container from '../components/Branchs2Container'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -9,13 +9,14 @@ import BranchUpdateModal from '../components/modals/BranchUpdateModal'
 import BranchDeleteModalContainer from '../components/modals/BranchDeleteModalContainer'
 import AccountantChangeModalContainer from '../components/modals/AccountantChangeModalContainer'
 import AccountantUpdateModal from '../components/modals/AccountantUpdateModal'
+import { getNotificationList } from '../actions/MainAction'
 
 const Accounting2Page = () => {
 
   const navigate = useNavigate()
   const dispatch=useDispatch()
   const { loggedInEmail, loggedInUser,branchCreateModal,branchUpdateModalContainer,branchUpdateModal,branchDeleteModalContainer,
-    accountantChangeModalContainer,accountantUpdateModal } = useSelector(state => state.Data)
+    accountantChangeModalContainer,accountantUpdateModal,unreadCount } = useSelector(state => state.Data)
 
   console.log(loggedInEmail);
   console.log(loggedInUser);
@@ -28,15 +29,22 @@ const Accounting2Page = () => {
     navigate('/notification')
   }
 
+  useEffect(()=>{
+    dispatch(getNotificationList())
+  },[dispatch])
+
 
   localStorage.removeItem('selectedSeason')
   localStorage.removeItem('selectedMonth')
+
+
+  console.log(unreadCount);
   return (
     <div className='accounting_page_container'>
       {
         (loggedInUser?.is_accountant === false && loggedInUser?.is_staff === true) ?
           <div className="accounting_create container">
-            <button onClick={notification} className='accounting_create_btn'>Bildirişlər</button>
+            <button onClick={notification} className='accounting_create_btn'>Bildirişlər({unreadCount})</button>
             <button onClick={goRegister} className='accounting_create_btn'>Mühasib yarat</button>
             <button onClick={()=>dispatch(accountantChangeModalContainerFunc())} className='accounting_create_btn'>Mühasib Dəyiş</button>
           </div>

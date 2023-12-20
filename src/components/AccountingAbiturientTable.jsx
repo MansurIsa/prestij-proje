@@ -4,12 +4,17 @@ import { useSelector } from 'react-redux'
 import AccountingAbiturientCard from './AccountingAbiturientCard'
 import EditStudentModalContainer from './modals/EditStudentModalContainer'
 
-const AccountingAbiturientTable = ({categoryName}) => {
+const AccountingAbiturientTable = ({categoryName,id}) => {
     const {  accountingAbiturientMonthPaymentListArr,accountingStudentMonthPaymentListArr,editStudentModalContainer } = useSelector(state => state.Data);
 
     
     console.log(accountingStudentMonthPaymentListArr);
     console.log(accountingAbiturientMonthPaymentListArr);
+
+    const deStudents = accountingStudentMonthPaymentListArr.filter(item => item.student.status === 'DE');
+    const dStudents = accountingStudentMonthPaymentListArr.filter(item => item.student.status === 'D');
+    const bStudents = accountingStudentMonthPaymentListArr.filter(item => item.student.status === 'B');
+
     return (
         <table>
             <tr>
@@ -69,11 +74,11 @@ const AccountingAbiturientTable = ({categoryName}) => {
             </tr>
             
             {
-                 accountingStudentMonthPaymentListArr?.map((data, i) => {
+                 [...deStudents,...dStudents,...bStudents]?.map((data, i) => {
                     return <AccountingAbiturientCard key={i} data={data} />
                 })
             }
-            {editStudentModalContainer && <EditStudentModalContainer/>}
+            {editStudentModalContainer && <EditStudentModalContainer categoryId={id}/>}
         </table>
     )
 }

@@ -43,7 +43,7 @@ const EditTeacherModalContainer = () => {
                     confirmButtonText: "OK",
                     width: "400px"
                 }).then(function () {
-                    navigate(`/branchs-category/${localStorage.getItem('branchId')}`)
+                    navigate(`/branchs-teachers-accounting`)
                     if (!refreshed) {
                         dispatch(setRefreshed())
                         window.location.reload();
@@ -61,7 +61,7 @@ const EditTeacherModalContainer = () => {
 
             }).then(function () {
 
-                navigate(`/branchs-category/${localStorage.getItem('branchId')}`)
+                navigate(`/branchs-teachers-accounting`)
                 if (!refreshed) {
                     dispatch(setRefreshed())
                     window.location.reload();

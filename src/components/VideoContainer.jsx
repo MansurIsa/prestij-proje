@@ -64,7 +64,7 @@ const VideoContainer = () => {
                 className="mySwiper"
             >
 
-                {/* {
+                {
                     videoGalleryListArr?.map((data, i) => {
                         return (
                             <SwiperSlide key={i} className='video_card'>
@@ -73,10 +73,10 @@ const VideoContainer = () => {
                             </SwiperSlide>
                         )
                     })
-                } */}
+                }
 
 
-                <SwiperSlide className='video_card'>
+                {/* <SwiperSlide className='video_card'>
 
                     <iframe src="https://www.youtube.com/embed/_LZEDM2tGLw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -98,7 +98,7 @@ const VideoContainer = () => {
 
                     <iframe src="https://www.youtube.com/embed/_LZEDM2tGLw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-                </SwiperSlide>
+                </SwiperSlide> */}
 
 
             </Swiper>
@@ -116,3 +116,6 @@ const VideoContainer = () => {
 }
 
 export default VideoContainer
+
+
+

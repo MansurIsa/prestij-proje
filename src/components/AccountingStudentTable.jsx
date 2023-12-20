@@ -13,6 +13,12 @@ const AccountingStudentTable = () => {
     }, [dispatch,selectedSeason])
     const {accountingAbiturientMonthPaymentListArr } = useSelector(state => state.Data)
     console.log(accountingAbiturientMonthPaymentListArr);
+
+
+    const deStudents = accountingAbiturientMonthPaymentListArr.filter(item => item.student.status === 'DE');
+    const dStudents = accountingAbiturientMonthPaymentListArr.filter(item => item.student.status === 'D');
+    const bStudents = accountingAbiturientMonthPaymentListArr.filter(item => item.student.status === 'B');
+
     return (
         <table>
         <tr>
@@ -49,7 +55,7 @@ const AccountingStudentTable = () => {
             </th>
         </tr>
         {
-            accountingAbiturientMonthPaymentListArr?.map((data, i) => {
+            [...deStudents,...dStudents,...bStudents]?.map((data, i) => {
                 return <AccountingStudentAbiturientCard key={i} data={data} />
             })
         }

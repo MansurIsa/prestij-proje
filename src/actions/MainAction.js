@@ -17,7 +17,8 @@ import {headerLoading, getBannerListArr, getBranchListArr, getContactInfoListArr
      getAccountingMonthTeachersPaymentListArr, 
     getLoggedInUser, getNotificationListArr, getCategoryListArr, getClassesListArr, getGroupsListArr, 
     getLanguageListArr, getBlockListArr, getSubjectListArr, getAccountingStudentMonthPaymentListArr, 
-    getAccountantsFunc } from "../redux/MainReducer";
+    getAccountantsFunc, 
+    setUnreadCount} from "../redux/MainReducer";
 
 
 export const getBannerList=()=>async dispatch=>{
@@ -509,6 +510,7 @@ export const getNotificationList=()=>async dispatch=>{
     .then(resp=>{
         console.log(resp);
         dispatch(getNotificationListArr(resp.data))
+        dispatch(setUnreadCount(resp.data.filter(notification => notification.status === 'OM').length))
         
     }).catch(err=>{
         console.log(err);

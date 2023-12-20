@@ -27,7 +27,7 @@ const BranchsAbiturientsAccountingPage = () => {
   return (
     <div>
       <AccountingMonths id={id} />
-      <AccountingAbiturientTable categoryName={categoryName} />
+      <AccountingAbiturientTable categoryName={categoryName} id={id} />
 
       {
         (loggedInUser?.is_accountant === false && loggedInUser?.is_staff === true) ? <AccountingAbiturientTotal categoryName={categoryName}/> : null

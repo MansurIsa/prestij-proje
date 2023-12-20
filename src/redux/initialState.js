@@ -128,6 +128,7 @@ export const initialState = {
     loggedInUser: {},
     loggedInEmail: "",
     notificationListArr: [],
+    unreadCount: 0,
     courseOnlineRegTeacherFullName: '',
     courseOnlineRegTeacherEmail: '',
     courseOnlineRegTeacherMobilNumber: '',

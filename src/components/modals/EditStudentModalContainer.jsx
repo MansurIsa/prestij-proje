@@ -6,7 +6,7 @@ import { baseUrl } from '../../MAIN_API'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 
-const EditStudentModalContainer = () => {
+const EditStudentModalContainer = ({categoryId}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { editPaymentStudent, editPaymentStudentDate, editPaymentStudentAmount, editPaymentStudentType, editPaymentStudentStatus, refreshed, editPaidStudentDate } = useSelector(state => state.Data)
@@ -43,7 +43,7 @@ const EditStudentModalContainer = () => {
                     confirmButtonText: "OK",
                     width: "400px"
                 }).then(function () {
-                    navigate(`/branchs-category/${localStorage.getItem('branchId')}`)
+                    navigate(`/category/${categoryId}`)
                     if (!refreshed) {
                         dispatch(setRefreshed())
                         window.location.reload();
@@ -61,7 +61,7 @@ const EditStudentModalContainer = () => {
 
             }).then(function () {
 
-                navigate(`/branchs-category/${localStorage.getItem('branchId')}`)
+                navigate(`/category/${categoryId}`)
                 if (!refreshed) {
                     dispatch(setRefreshed())
                     window.location.reload();

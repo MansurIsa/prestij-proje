@@ -3067,6 +3067,19 @@ table{
     border-radius: 6px;
 
 }
+.notification_btn_container{
+    display: flex;
+    justify-content: flex-end;
+}
+.notification_btn_container button{
+    background: var(--purple);
+    color: var(--white);
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    font-size: 1.6rem;
+    border-radius: 6px;
+}
 .branchs_category_student_create .season_select_container{
     padding: 0;
 }

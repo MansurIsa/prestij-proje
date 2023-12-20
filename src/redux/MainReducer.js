@@ -469,6 +469,9 @@ export const MainSlice = createSlice({
         getNotificationListArr: (state, action) => {
             state.notificationListArr = action.payload
         },
+        setUnreadCount: (state, action) => {
+            state.unreadCount = action.payload
+        },
         courseOnlineRegTeacherFullNameFunc: (state, action) => {
             state.courseOnlineRegTeacherFullName = action.payload
         },
@@ -1455,6 +1458,7 @@ export const {
     getLoggedInUser,
     getLoggedInEmail,
     getNotificationListArr,
+    setUnreadCount,
     courseOnlineRegTeacherFullNameFunc,
     courseOnlineRegTeacherEmailFunc,
     courseOnlineRegTeacherMobilNumberFunc,

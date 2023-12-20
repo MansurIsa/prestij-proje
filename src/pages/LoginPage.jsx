@@ -14,6 +14,8 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const settingsListArr = useSelector(state => state.Data.settingsListArr);
 
+   
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loginErrPsw, setLogErrPsw] = useState("")
