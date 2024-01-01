@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/prestij-proje/static/css/main.400d35a5.css",
-    "main.js": "/prestij-proje/static/js/main.eb5e8693.js",
+    "main.js": "/prestij-proje/static/js/main.3f4643a8.js",
     "static/media/tip4.jpeg": "/prestij-proje/static/media/tip4.f40296defb734cb054c9.jpeg",
     "static/media/footer-bg.png": "/prestij-proje/static/media/footer-bg.6365403ddea0775b47df.png",
     "static/media/tip1.png": "/prestij-proje/static/media/tip1.a8870951665a54415fec.png",
@@ -14,10 +14,10 @@
     "static/media/bg-newletter.webp": "/prestij-proje/static/media/bg-newletter.0093d61d852d2dd9b5b0.webp",
     "index.html": "/prestij-proje/index.html",
     "main.400d35a5.css.map": "/prestij-proje/static/css/main.400d35a5.css.map",
-    "main.eb5e8693.js.map": "/prestij-proje/static/js/main.eb5e8693.js.map"
+    "main.3f4643a8.js.map": "/prestij-proje/static/js/main.3f4643a8.js.map"
   },
   "entrypoints": [
     "static/css/main.400d35a5.css",
-    "static/js/main.eb5e8693.js"
+    "static/js/main.3f4643a8.js"
   ]
 }
