@@ -1977,9 +1977,9 @@ nav {
 }
 
 .latest_news_card h3 {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-family: 'Merriweather Sans', sans-serif;
-    line-height: 25px;
+    line-height: 20px;
 }
 
 .other_about_content h5 {
@@ -3198,3 +3198,76 @@ table .table_tr_style td{
 #angleTwo{
     display: none;
 }
+
+.other_exam_results_container{
+    height: 200px;
+    max-width: 400px;
+    background-color: var(--white);
+    box-shadow: 0 0 9px rgba(69, 69, 69, 0.23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0.5px solid var(--purple);
+}
+
+.other_exam_results_container::before{
+   position: absolute;
+    content: '';
+    height: 220px;
+    width: 400px;
+    background: -webkit-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+    box-shadow: 0 0 9px rgba(69, 69, 69, 0.23);
+    transform: rotate(-3deg);
+    z-index: -999999;
+    /* background-color: red; */
+    top: 0px;
+    border: 0.5px solid var(--purple);
+    
+
+}
+
+.other_exam_results_container::after{
+    position: absolute;
+     content: '';
+     height: 220px;
+     width: 400px;
+     background: -webkit-linear-gradient(top, rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
+     box-shadow: 0 0 9px rgba(69, 69, 69, 0.23);
+     transform: rotate(2deg);
+     z-index: -1;
+     /* background-color: red; */
+     top: 0px;
+     border: 0.5px solid var(--purple);
+     
+ 
+ }
+
+ .exam_results_inp_icon{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 300px;
+    border: 0.2px solid var(--purple);
+    padding: 10px;
+ }
+ .exam_results_inp_icon input{
+    
+    
+    width: 90%;
+    border: none;
+    outline: none;
+    background: none;
+ }
+
+ input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+

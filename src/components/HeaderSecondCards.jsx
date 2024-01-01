@@ -11,10 +11,14 @@ const HeaderSecondCards = () => {
         navigate('/course-online-register')
     }
 
+    const onlineExamResults=()=>{
+        navigate('/imtahan-neticeleri')
+    }
+
     
     return (
         <ul className='header_second_cards_container container'>
-            <li className="header_second_card">
+            <li onClick={onlineExamResults} className="header_second_card">
                 <div>
                     <img src={OnlineExamResultIcon} alt="" />
                     

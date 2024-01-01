@@ -33,6 +33,7 @@ import PrivateRoute from './components/PrivateRoute';
 import PrivateRouteRegister from './components/PrivateRouteRegister';
 import NotificationPage from './pages/NotificationPage';
 import CourseOnlineRegisterPage from './pages/CourseOnlineRegisterPage';
+import ExamResults from './pages/ExamResults';
 
 const App = () => {
   const dispatch = useDispatch()
@@ -54,7 +55,7 @@ const App = () => {
 
   console.log(loggedInUser);
 
-
+console.log(settingsListArr);
   
 
   return (
@@ -128,6 +129,11 @@ const App = () => {
         <Route path='/course-online-register' element={<CourseOnlineRegisterPage otherPageBanner={settingsListArr[0]?.resume_page_banner} />} />
 
 
+        {
+          settingsListArr[0]?.service_page_active ?
+            <Route path='/imtahan-neticeleri' element={<ExamResults otherPageBanner={settingsListArr[0]?.service_page_banner} />} />
+            : <Route path='*' element={<Home />} />
+        }
 
         <Route path='/register' element={<PrivateRouteRegister Element={RegisterPage} />} />
         <Route path='/notification' element={<PrivateRouteRegister Element={NotificationPage} />} />
