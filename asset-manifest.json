@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/prestij-proje/static/css/main.8188f13a.css",
-    "main.js": "/prestij-proje/static/js/main.af433cc8.js",
+    "main.css": "/prestij-proje/static/css/main.400d35a5.css",
+    "main.js": "/prestij-proje/static/js/main.eb5e8693.js",
     "static/media/tip4.jpeg": "/prestij-proje/static/media/tip4.f40296defb734cb054c9.jpeg",
     "static/media/footer-bg.png": "/prestij-proje/static/media/footer-bg.6365403ddea0775b47df.png",
     "static/media/tip1.png": "/prestij-proje/static/media/tip1.a8870951665a54415fec.png",
@@ -13,11 +13,11 @@
     "static/media/logo_footer.png": "/prestij-proje/static/media/logo_footer.9750975ea82fa88cd4f5.png",
     "static/media/bg-newletter.webp": "/prestij-proje/static/media/bg-newletter.0093d61d852d2dd9b5b0.webp",
     "index.html": "/prestij-proje/index.html",
-    "main.8188f13a.css.map": "/prestij-proje/static/css/main.8188f13a.css.map",
-    "main.af433cc8.js.map": "/prestij-proje/static/js/main.af433cc8.js.map"
+    "main.400d35a5.css.map": "/prestij-proje/static/css/main.400d35a5.css.map",
+    "main.eb5e8693.js.map": "/prestij-proje/static/js/main.eb5e8693.js.map"
   },
   "entrypoints": [
-    "static/css/main.8188f13a.css",
-    "static/js/main.af433cc8.js"
+    "static/css/main.400d35a5.css",
+    "static/js/main.eb5e8693.js"
   ]
 }
