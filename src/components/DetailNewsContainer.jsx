@@ -18,7 +18,7 @@ const DetailNewsContainer = ({ newsRetrieveObj }) => {
 
 
 
-                        <p>{DOMPurify.sanitize(newsRetrieveObj.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')}</p>
+                        <p style={{ whiteSpace: 'pre-line' }}>{DOMPurify.sanitize(newsRetrieveObj.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')}</p>
                     </div> : null
             }
 

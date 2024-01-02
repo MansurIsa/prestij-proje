@@ -63,9 +63,9 @@ const HeaderHead = () => {
                             <li>
                                 <ImMobile className='header_first_list_icon' />
                                 {contactInfoArr.length > 0 && (
-                                    <Link to=''>
-                                        {contactInfoArr[0]?.contact_number}
-                                    </Link>
+
+
+                                    <Link target='_blank' rel="noopener noreferrer" to={`tel: ${contactInfoArr[0]?.contact_number}`}> {contactInfoArr[0]?.contact_number}</Link>
                                 )}
                             </li>
 
@@ -81,16 +81,16 @@ const HeaderHead = () => {
                         <Link to={''}><IoSearch className='header_first_list_icon header_second_list_search_icon' /></Link>
                     </li>
                     <li>
-                        <Link to={''}><BiLogoFacebook className='header_first_list_icon' /></Link>
+                        <Link to="https://www.facebook.com/people/Prestij-S-T%C9%99dris-M%C9%99rk%C9%99zi/100063695514908/"><BiLogoFacebook className='header_first_list_icon' /></Link>
                     </li>
                     <li>
-                        <Link to={''}><LiaInstagram className='header_first_list_icon' /></Link>
+                        <Link to="https://www.instagram.com/prestij_s_tedris_merkezi/"><LiaInstagram className='header_first_list_icon' /></Link>
                     </li>
                     <li>
-                        <Link to={''}><LiaLinkedinIn className='header_first_list_icon' /></Link>
+                        <Link to="https://www.linkedin.com/"><LiaLinkedinIn className='header_first_list_icon' /></Link>
                     </li>
                     <li>
-                        <Link to={''}><AiOutlineYoutube className='header_first_list_icon' /></Link>
+                        <Link to="https://www.youtube.com/@prestij-stdrismrkzi6418"><AiOutlineYoutube className='header_first_list_icon' /></Link>
                     </li>
                 </ul>
             </div>

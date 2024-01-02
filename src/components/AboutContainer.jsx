@@ -20,7 +20,7 @@ const AboutContainer = () => {
               <div className="about_content_card">
                 <h3>PRESTIJ-S TƏDRİS MƏRKƏZİ</h3>
 
-                <p>{DOMPurify.sanitize(settingsListArr[0]?.about_us).replace(/<[^>]+>/g, '')}</p>
+                <p>{DOMPurify.sanitize(settingsListArr[0]?.about_us).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').substring(0,800)}</p>
                 <span style={{
                   position: "absolute",
                   borderRadius: "100vmax"

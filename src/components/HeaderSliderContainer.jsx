@@ -18,13 +18,14 @@ const HeaderSliderContainer = () => {
     // const [activeIndex, setActiveIndex] = useState(0);
 
     const dispatch = useDispatch();
-    const bannerListArr = useSelector(state => state.Data.bannerListArr)
-    const isHeaderLoading = useSelector(state => state.Data.isHeaderLoading)
+    const {bannerListArr,isHeaderLoading} = useSelector(state => state.Data)
     console.log(bannerListArr);
     useEffect(() => {
         dispatch(getBannerList())
     }, [dispatch])
 
+
+    
    
 
 
@@ -139,7 +140,7 @@ const HeaderSliderContainer = () => {
 
                                                             <div className='header_middle_container_content'>
 
-                                                                <h1 className='haeder_one'>
+                                                                {/* <h1 className='haeder_one'>
                                                                    
                                                                     {
 
@@ -150,11 +151,11 @@ const HeaderSliderContainer = () => {
                                                                         })
                                                                     }
 
-                                                                </h1>
+                                                                </h1> */}
 
-                                                                <Link to={data?.link}>
-                                                                    <button><span>Read More</span></button>
-                                                                </Link>
+                                                                {/* <Link to={data?.link}>
+                                                                    <button><span>Daha çox</span></button>
+                                                                </Link> */}
 
 
 

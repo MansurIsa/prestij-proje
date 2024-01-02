@@ -7,6 +7,7 @@ const OtherExamResultsContainer = () => {
     const navigate=useNavigate()
 
     const [examResultsİnpValue, setExamResultsİnpValue] = useState("")
+    const [examResultsErr, setExamResultsErr] = useState("")
 
     const examResultsİnpChange = (e) => {
         setExamResultsİnpValue(e.target.value)
@@ -15,7 +16,13 @@ const OtherExamResultsContainer = () => {
     const examResultsSubmit=(e)=>{
         e.preventDefault()
 
-        window.open(`https://prestij-s.com/oapp/results.php?is_nomresi=${examResultsİnpValue}`, '_blank');
+        if(examResultsİnpValue!==""){
+            window.open(`https://prestij-s.com/oapp/results.php?is_nomresi=${examResultsİnpValue}`, '_blank');
+
+        }else{
+            setExamResultsErr("İş nömrəsi boş ola bilməz!")
+        }
+
 
 
     }
@@ -28,6 +35,7 @@ const OtherExamResultsContainer = () => {
                     <input placeholder='İş nömrəsi' type="number" value={examResultsİnpValue} onChange={examResultsİnpChange} />
 
                 </div>
+                <p>{examResultsErr}</p>
                 <div className='other_contact_form'>
                     <button><span>Göstər</span></button>
                 </div>
@@ -35,6 +43,9 @@ const OtherExamResultsContainer = () => {
 
             </form>
         </div>
+
+
+
 
 
     )

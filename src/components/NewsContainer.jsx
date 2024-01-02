@@ -15,7 +15,7 @@ const NewsContainer = () => {
     const swiperNewsRef = useRef(null);
 
     const dispatch = useDispatch()
-    const newsListArr = useSelector(state => state.Data.newsListArr)
+    const {newsListArr} = useSelector(state => state.Data)
     useEffect(() => {
         dispatch(getNewsList())
     }, [dispatch])
@@ -89,7 +89,7 @@ const NewsContainer = () => {
                                                 <h3 className='new_slider_card_content_header'>{data.title}</h3>
                                                 <div className="new_slider_card_content">
                                                     <h3 >{data.title}</h3>
-                                                    <p>{DOMPurify.sanitize(data.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')}</p>
+                                                    <p>{DOMPurify.sanitize(data.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').length<100?DOMPurify.sanitize(data.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' '): `${DOMPurify.sanitize(data.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').substring(0,100)}...`}</p>
                                                     <div className='news_slider_card_end'>
                                                         <LiaCalendarSolid className='calendar' />
                                                         <span>{data.pub_date}</span>

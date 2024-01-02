@@ -3270,4 +3270,9 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.other_exam_results_container p{
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: var(--youtube);
+}
 

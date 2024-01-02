@@ -654,8 +654,39 @@
         font-size: 1.4rem;
     }
 
-    .footer_end_link {}
+   
 
 
 
+}
+
+@media screen and (max-width: 450px){
+    .other_exam_results_container{
+        
+        max-width: 300px;
+       
+    }
+    
+    .other_exam_results_container::before{
+       
+        width: 300px;
+        
+        
+    
+    }
+    
+    .other_exam_results_container::after{
+       
+         width: 300px;
+         
+         
+     
+     }
+
+     .exam_results_inp_icon{
+        
+        width: 240px;
+        
+     }
+    
 }

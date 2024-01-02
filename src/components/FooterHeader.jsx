@@ -1,6 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const FooterHeader = () => {
+    const navigate=useNavigate()
+
+    const readMoreServices=()=>{
+        navigate('/xidmetlerimiz')
+    }
     return (
         <div className='footer_header_bg'>
             <div className='footer_header_container container'>
@@ -9,7 +15,7 @@ const FooterHeader = () => {
                     <p>Təhsilinizi bizimlə bərabər inkişaf etdirin!</p>
                 </div>
                 <div className="header_middle_container_content footer_read_more">
-                    <button><span>Read More</span></button>
+                    <button onClick={readMoreServices}><span>Daha çox</span></button>
                 </div>
 
             </div>

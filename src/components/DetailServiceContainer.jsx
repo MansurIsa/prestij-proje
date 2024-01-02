@@ -8,7 +8,7 @@ const DetailServiceContainer = ({serviceRetrieveObj}) => {
                 serviceRetrieveObj?.is_active?
                 <div className="detail_news_card">
                 <img src={serviceRetrieveObj.image} alt="" />
-                <p>{DOMPurify.sanitize(serviceRetrieveObj.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')}</p>
+                <p style={{ whiteSpace: 'pre-line' }}>{DOMPurify.sanitize(serviceRetrieveObj.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')}</p>
             </div>: null
             }
            
