@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import {  contactEmailChange, contactMessageChange, contactNameChange, contactSubjectChange } from '../redux/MainReducer'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 const OtherContactForm = () => {
     const dispatch = useDispatch()
+    const navigate=useNavigate()
     const { contactNameValue, contactEmailValue, contactSubjectValue, contactMessageValue } = useSelector(state => state.Data)
 
     const contactSubmit=async(e)=>{
@@ -26,12 +28,12 @@ const OtherContactForm = () => {
 
                 Swal.fire({
                     title: "Təbriklər!",
-                    text: "CV məlumatları uğurla göndərildi",
+                    text: "Mesaj uğurla göndərildi",
                     icon: "success",
                     confirmButtonText: "OK",
                     customClass: "contact_create_modal"
                 }).then(function () {
-                    window.location.href = "/elaqe";
+                    navigate("/elaqe")
                 });
             }
         }).catch(err=>{

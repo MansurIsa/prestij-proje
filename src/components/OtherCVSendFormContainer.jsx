@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { achievementsChange, achievementsSecondChange, achievementsThirdChange, addressChange, birthDateChange, companyNameAddressFieldChange, companyNameAddressFieldSecondChange, companyNameAddressFieldThirdChange, dateOfParticipationStartEndChange, dateOfParticipationStartEndSecondChange, dateOfParticipationStartEndThirdChange, emailChange, fullNameFatherChange, homeNumberChange, mobileNumberChange, otherAchievmentsChange, placeOfExecutedChange, placeOfExecutedSecondChange, placeOfExecutedThirdChange, positionMainObligationChange, positionMainObligationSecondChange, positionMainObligationThirdChange, qualificationChange, qualificationDegreeChange, qualificationDegreeSecondChange, qualificationDegreeThirdChange, qualificationSecondChange, qualificationThirdChange, reasonForLeavingChange, reasonForLeavingSecondChange, reasonForLeavingThirdChange, recommendMobileNumberChange, recommendMobileNumberSecondChange, recommendfullNameFatherChange, recommendfullNameFatherSecondChange, relatedToChange, relatedToSecondChange, resultRateAverageChange, resultRateAverageSecondChange, resultRateAverageThirdChange, studiedDateStartEndChange, studiedDateStartEndSecondChange, studiedDateStartEndThirdChange, studiedUniversityChange, studiedUniversitySecondChange, studiedUniversityThirdChange, subjectToTeachChange, vacancyNameChange, workedDateStartEndChange, workedDateStartEndSecondChange, workedDateStartEndThirdChange } from '../redux/MainReducer';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const OtherCVSendFormContainer = () => {
     const dispatch=useDispatch();
+    const navigate=useNavigate()
     const {vacancyName, subjectToTeach, fullNameFather, homeNumber, email, mobileNumber,birthDate, address, workedDateStartEnd, companyNameAddressField, positionMainObligation
         ,reasonForLeaving, workedDateStartEndSecond, companyNameAddressFieldSecond, positionMainObligationSecond, reasonForLeavingSecond, workedDateStartEndThird, companyNameAddressFieldThird
         , positionMainObligationThird, reasonForLeavingThird, studiedDateStartEnd, studiedUniversity, qualificationDegree, resultRateAverage, studiedDateStartEndSecond, studiedUniversitySecond
@@ -81,14 +83,14 @@ const OtherCVSendFormContainer = () => {
 
                 Swal.fire({
                     title: "Təbriklər!",
-                    text: "Mesaj göndərildi",
+                    text: "CV məlumatları uğurla göndərildi",
                     icon: "success",
                     confirmButtonText: "OK",
                     // width: "400px"
                     customClass: "contact_create_modal"
                 }).then(function () {
                     // Redirect the user
-                    window.location.href = "/cv-gonder";
+                    navigate("/cv-gonder")
                 });
             }
         }).catch(err=>{
