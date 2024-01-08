@@ -24,12 +24,29 @@ const Home = () => {
     dispatch(getTeachersList())
   }, [dispatch])
 
-  console.log(teachersListArr.filter(data => data.is_active === true));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // console.log(teachersListArr.filter(data => data.is_active === true));
   return (
     <div>
       <Helmet>
-        <title>Əsas səhifə</title>
+        <title>Prestij-s tədris mərkəzi</title>
+        <meta name="description" content="Prestij-s tədris mərkəzi" />
+        <meta name="keywords" content="Prestij-S, Tedris merkezi, Prestij-S Tedris merkezi, Ingilis dili kurslar, xarici dil kurslar, abituriyent hazirliqi, magistr hazirliqi, rus dili kurslari, suruculuk kurslari, kompyuter kurslari, Dil hazirliqi, Texnikumlara hazirliq, Mektebeqeder hazirliq, Ibtidai hazirliq, Tibb kurslari, Muhasibatliq kurslari, Dovlet qulluguna hazirliq, Tedris merkezi, Ali mekteblere hazirliq, hazirliq kurslar" />
+        <link rel="canonical" href="https://prestij-s.com/" />
+        <meta property="og:locale" content="az_AZ" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Prestij-s tədris mərkəzi" />
+        <meta property="og:description" content="Prestij-s tədris mərkəzi" />
+        <meta property="og:url" content="https://prestij-s.com/" />
+        <meta property="og:site_name" content="PRESTIJ-S" />
+
+
+
       </Helmet>
+      
       <header className='home_header'>
         <HeaderHead />
         <HeaderMainContainer />

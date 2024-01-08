@@ -19,7 +19,13 @@ const DetailPublicationPage = ({otherPageBanner}) => {
   }, [dispatch,id])
 // }, [dispatch])
 
-  console.log(editionRetrieveObj);
+  // console.log(editionRetrieveObj);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
+
+
   return (
     <div>
       <Helmet>

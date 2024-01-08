@@ -71,7 +71,7 @@ const LoginPage = () => {
 
     return (
         <div className="login_container">
-            <div id='register' className="login">
+            <div id='login' className="login">
                 {
                     settingsListArr[0]?.favicon_active ?
                         <img className='logo' src={settingsListArr[0]?.favicon} alt="" />

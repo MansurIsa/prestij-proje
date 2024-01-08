@@ -101,7 +101,7 @@ const OtherCVSendFormContainer = () => {
 
             }).then(function () {
 
-                window.location.href = "/elaqe";
+                navigate("/cv-gonder")
             })
         })
     }

@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 import { branchChangeAccount } from '../redux/MainReducer';
+import { baseUrl } from '../MAIN_API';
 
 const RegisterPage = () => {
 
@@ -63,7 +64,7 @@ const RegisterPage = () => {
         }
 
         console.log(data);
-        axios('https://prestijs.pythonanywhere.com/api/account/account-create/', {
+        axios(`${baseUrl}account/account-create/`, {
             method: "POST",
             data
         }).then(resp => {

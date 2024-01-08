@@ -44,7 +44,7 @@ const OtherContactForm = () => {
 
             }).then(function () {
 
-                window.location.href = "/cv-gonder";
+                navigate("/elaqe")
             })
         })
     }

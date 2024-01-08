@@ -18,7 +18,14 @@ const DetailServicePage = ({ otherPageBanner }) => {
   }, [dispatch,id])
 // }, [dispatch])
 
-  console.log(serviceRetrieveObj);
+  // console.log(serviceRetrieveObj);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
+
+
   return (
     <div>
       <Helmet>

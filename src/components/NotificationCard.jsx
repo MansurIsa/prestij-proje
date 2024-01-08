@@ -71,14 +71,14 @@ const NotificationCard = ({ data }) => {
             <p>Tarix: <span>{data.pub_date.substring(0, 10)}</span></p>
             <p>Vaxt: <span>{data.pub_date.substring(11, 16)}</span></p>
             <p>Tip: <span>{data.type === 'U' ? 'Yenilənmə olunub' : data.type === 'D' ? 'Silinmə olunub' : data.type === 'A' ? 'Əlavə olunub' : ''}</span></p>
-            {data.status === 'OM' && (
+            {/* {data.status === 'OM' && (
                 <div className="notification_btn_container">
                     <button onClick={() => markNotificationAsRead(data.id)}>
                         Oxunmayıb
                     </button>
                 </div>
 
-            )}
+            )} */}
         </div>
     )
 }
