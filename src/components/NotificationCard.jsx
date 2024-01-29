@@ -29,7 +29,6 @@ const NotificationCard = ({ data }) => {
             },
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

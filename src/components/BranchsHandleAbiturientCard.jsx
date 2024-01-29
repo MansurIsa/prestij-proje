@@ -1,7 +1,6 @@
 import React from 'react'
 
 const BranchsHandleAbiturientCard = ({ data }) => {
-    console.log(data);
     return (
         
         <div className='branchs_students_card '>

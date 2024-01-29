@@ -12,15 +12,13 @@ const AccountantUpdateModal = () => {
     const navigate = useNavigate()
     const { accountantObj, accountantName, accountantSurname, accountantEmail, isAccountantValue, branchsListArr,
         accountantBranchSelectValue,refreshed } = useSelector(state => state.Data)
-    console.log(accountantObj);
-    console.log(isAccountantValue);
+    
     let loggedInEmail = localStorage.getItem('loggedInEmail')
 
     useEffect(() => {
         dispatch(getBranchsList(loggedInEmail))
     }, [dispatch,loggedInEmail])
 
-    console.log(branchsListArr);
 
     const accountantUpdate = (e) => {
         e.preventDefault()
@@ -33,7 +31,6 @@ const AccountantUpdateModal = () => {
             branch: accountantBranchSelectValue,
         }
 
-        console.log(data);
 
         axios({
             headers: {
@@ -43,7 +40,6 @@ const AccountantUpdateModal = () => {
             url: `${baseUrl}account/account/${accountantObj.email}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

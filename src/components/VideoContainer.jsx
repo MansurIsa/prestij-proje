@@ -18,7 +18,6 @@ const VideoContainer = () => {
         dispatch(getVideoGalleryList())
     }, [dispatch])
 
-    console.log(videoGalleryListArr);
     useEffect(() => {
         const interval = setInterval(() => {
             if (swiperNewsRef.current && swiperNewsRef.current.swiper) {

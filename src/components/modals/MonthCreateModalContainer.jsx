@@ -28,7 +28,6 @@ const MonthCreateModalContainer = () => {
             name: month.name,
             branch: +localStorage.getItem('branchId')
         }
-        console.log(data);
 
         axios({
             headers: {
@@ -38,7 +37,6 @@ const MonthCreateModalContainer = () => {
             url: `${baseUrl}service/season-retrieve-update-delete/${month.id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

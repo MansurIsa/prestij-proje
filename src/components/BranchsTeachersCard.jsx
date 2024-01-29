@@ -1,7 +1,6 @@
 import React from 'react'
 
 const BranchsTeachersCard = ({data}) => {
-    console.log(data);
     return (
         <div className='branchs_students_card'>
             <div className="branchs_students_inner_card">

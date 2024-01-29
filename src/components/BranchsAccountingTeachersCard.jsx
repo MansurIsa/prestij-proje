@@ -12,7 +12,6 @@ const BranchsAccountingTeachersCard = ({ data }) => {
     }
 
     const formattedDate = formatCurrentDate();
-    console.log(formattedDate);
 
     function calculateDateDifference(startDate, endDate) {
         const start = new Date(startDate);

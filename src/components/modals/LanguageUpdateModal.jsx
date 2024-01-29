@@ -18,7 +18,6 @@ const LanguageUpdateModal = () => {
             categories: classUpdateSelectValue
         }
 
-        console.log(data);
 
         axios({
             headers: {
@@ -28,7 +27,6 @@ const LanguageUpdateModal = () => {
             url: `${baseUrl}service/language-retrieve-update-delete/${+id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

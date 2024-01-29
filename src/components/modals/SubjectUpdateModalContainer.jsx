@@ -17,7 +17,6 @@ const SubjectUpdateModalContainer = () => {
 
     const { refreshed, subjectListArr } = useSelector(state => state.Data)
 
-    console.log(subjectListArr);
 
 
     const subjectDeleteFunc = (id) => {
@@ -29,7 +28,6 @@ const SubjectUpdateModalContainer = () => {
             method: "DELETE",
 
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

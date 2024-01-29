@@ -30,7 +30,6 @@ const StudentCreateModal = () => {
         , languageListArr, studentCreateLanguage, categoryListArr, branchsTeachersListArr, 
         blockListArr, subjectListArr, refreshed } = useSelector(state => state.Data)
 
-    console.log(branchsTeachersListArr);
 
     const [selectValue, setSelectValue] = useState([])
     const [blocksSelectValue, setBlocksSelectValue] = useState([])
@@ -41,8 +40,7 @@ const StudentCreateModal = () => {
 
 
     const studentCreateSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+        
         setCategoriesSelectValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
@@ -58,14 +56,11 @@ const StudentCreateModal = () => {
     };
     
 
-    console.log(categoriesSelectValue);
-
-    console.log(blockListArr);
+   
 
 
     const studentCreateTeacherSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+       
         setTeachersSelectValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
@@ -81,12 +76,10 @@ const StudentCreateModal = () => {
     };
 
 
-    console.log(teachersSelectValue);
 
 
     const studentCreateBlockSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+       
         setBlocksSelectValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
@@ -101,12 +94,10 @@ const StudentCreateModal = () => {
         });
     };
 
-    console.log(blocksSelectValue);
 
 
     const studentCreateSubjectSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+       
         setSelectValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
@@ -121,7 +112,6 @@ const StudentCreateModal = () => {
         });
     };
 
-    console.log(selectValue);
 
 
     const studentCreate = (e) => {
@@ -147,7 +137,6 @@ const StudentCreateModal = () => {
             blocks: blocksSelectValue,
             subjects: selectValue
         }
-        console.log(data);
 
 
 
@@ -159,7 +148,6 @@ const StudentCreateModal = () => {
             url: `${baseUrl}service/student-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

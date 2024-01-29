@@ -11,15 +11,13 @@ import { getCategoryList } from '../actions/MainAction'
 const BranchsAbiturientsAccountingPage = () => {
   const { id } = useParams()
   const dispatch=useDispatch()
-  console.log(id);
 
   useEffect(()=>{
     dispatch(getCategoryList())
   },[dispatch])
 
   const { loggedInUser,categoryListArr } = useSelector(state => state.Data)
-  console.log(loggedInUser);
-  console.log(categoryListArr);
+ 
 
 
   let categoryName=categoryListArr.find(x=>x?.id===+id)

@@ -17,7 +17,6 @@ const StudentPaymentCreateModalContainer = () => {
 
 
     const { refreshed, branchsStudentsListArr } = useSelector(state => state.Data)
-    console.log(branchsStudentsListArr);
 
 
     const [clickedStudentPayment, setClickedStudentPayment] = useState([]);
@@ -58,7 +57,6 @@ const StudentPaymentCreateModalContainer = () => {
                 return subject.name
             })
         }
-        console.log(data);
         axios({
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -67,7 +65,6 @@ const StudentPaymentCreateModalContainer = () => {
             url: `${baseUrl}service/student-retrieve-update-delete/${dataStudent.id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

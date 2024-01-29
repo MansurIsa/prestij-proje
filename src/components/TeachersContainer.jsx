@@ -22,7 +22,6 @@ const TeachersContainer = () => {
         dispatch(getTeachersList())
     }, [dispatch])
 
-    console.log(teachersListArr);
 
    
 

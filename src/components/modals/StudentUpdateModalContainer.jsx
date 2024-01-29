@@ -16,7 +16,6 @@ const StudentUpdateModalContainer = () => {
     },[dispatch])
 
     const {branchsStudentsListArr,refreshed}=useSelector(state=>state.Data)
-    console.log(branchsStudentsListArr);
 
 
     const studentDeleteFunc=(id)=>{
@@ -28,7 +27,6 @@ const StudentUpdateModalContainer = () => {
             method: "DELETE",
 
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

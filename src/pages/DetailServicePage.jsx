@@ -18,7 +18,6 @@ const DetailServicePage = ({ otherPageBanner }) => {
   }, [dispatch,id])
 // }, [dispatch])
 
-  // console.log(serviceRetrieveObj);
 
 
   useEffect(() => {

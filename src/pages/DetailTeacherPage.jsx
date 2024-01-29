@@ -9,7 +9,6 @@ import DetailTeacherContainer from '../components/DetailTeacherContainer';
 
 const DetailTeacherPage = ({otherPageBanner}) => {
     const { id } = useParams()
-    // console.log(id);
     const dispatch = useDispatch();
   const {teacherRetrieveObj} = useSelector(state => state.Data);
 
@@ -18,7 +17,6 @@ const DetailTeacherPage = ({otherPageBanner}) => {
   }, [dispatch,id])
 // }, [])
 
-  // console.log(teacherRetrieveObj);
 
   useEffect(() => {
     window.scrollTo(0, 0);

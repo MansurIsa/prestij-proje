@@ -11,7 +11,6 @@ const BranchsContainer = () => {
         dispatch(getBranchsList())
     },[dispatch])
 
-    console.log(branchsListArr);
   return (
     <div className='branchs_container'>
         {

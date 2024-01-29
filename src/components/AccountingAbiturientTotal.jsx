@@ -18,15 +18,11 @@ const AccountingAbiturientTotal = ({categoryName}) => {
     }
 
     let activeTotal=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='DE')
-    console.log(activeTotal);
-
-    console.log(accountingStudentMonthPaymentListArr);
+  
 
     let finishedTotalArr=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='B')
-    console.log(finishedTotalArr);
 
     let stoppedTotalArr=accountingStudentMonthPaymentListArr.filter(data=>data.student.status==='D')
-    console.log(stoppedTotalArr);
 
     return (
         <table className='accounting_abiturient_total_container'>

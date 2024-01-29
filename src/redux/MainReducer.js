@@ -388,7 +388,6 @@ export const MainSlice = createSlice({
         },
         monthSelectChange: (state, action) => {
             state.monthSelectValue = action.payload
-            console.log(action.payload);
             state.changeMonth = true
         },
         getAccountingTeacherMonthPaymentListArr: (state, action) => {
@@ -1038,11 +1037,9 @@ export const MainSlice = createSlice({
             state.studentUpdateSubjects = action.payload.subjects
 
             // state.seasonStudentUpdateId
-            console.log(action.payload.season);
 
             let idX = state.branchsSeasonsListArr.find(data => data.id === action.payload.season.id)
 
-            console.log(idX);
 
             state.seasonStudentUpdateId = idX.id
 
@@ -1144,7 +1141,6 @@ export const MainSlice = createSlice({
             state.teacherUpdateModalContainer = true
         },
         teacherUpdateModalFunc: (state, action) => {
-            console.log(action.payload);
             state.teacherUpdateModal = true
             state.teacherObj=action.payload
             state.teacherUpdateName=action.payload.first_name

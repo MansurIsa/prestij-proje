@@ -5,12 +5,10 @@ import { getBranchsAbiturientsList } from '../actions/MainAction';
 const BranchsAbiturientsContainer = () => {
     const dispatch = useDispatch();
     const { seasonSelectValue, branchsAbiturientsListArr,branchsSeasonsListArr } = useSelector(state => state.Data);
-    console.log(seasonSelectValue);
     useEffect(() => {
         dispatch(getBranchsAbiturientsList(seasonSelectValue))
     }, [dispatch])
 
-    console.log(branchsAbiturientsListArr);
     return (
         <div className='branchs_students_container container'>
             <div className="branchs_students_table_header">

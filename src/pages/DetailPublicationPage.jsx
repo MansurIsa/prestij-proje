@@ -19,7 +19,6 @@ const DetailPublicationPage = ({otherPageBanner}) => {
   }, [dispatch,id])
 // }, [dispatch])
 
-  // console.log(editionRetrieveObj);
 
   useEffect(() => {
     window.scrollTo(0, 0);

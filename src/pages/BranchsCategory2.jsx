@@ -6,7 +6,6 @@ import BranchsCategoryStudentCreate from '../components/BranchsCategoryStudentCr
 
 const BranchsCategory2 = () => {
     const { id } = useParams()
-    console.log(id);
 
 
     return (

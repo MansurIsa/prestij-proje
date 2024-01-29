@@ -9,7 +9,6 @@ import AccountingStudentsTotalDay from '../components/AccountingStudentsTotalDay
 const BranchsStudentsAcountingPage = () => {
   const { loggedInUser } = useSelector(state => state.Data)
 
-  console.log(loggedInUser);
   return (
     <div>
       <AccountingMonths />

@@ -24,7 +24,6 @@ const AccountingStudentsTotalDay = () => {
     //     }
     // }
 
-    console.log(accountingAbiturientMonthPaymentListArr);
 
     let total = accountingAbiturientMonthPaymentListArr.filter(data => data.status === true)
 
@@ -37,7 +36,6 @@ const AccountingStudentsTotalDay = () => {
             paidTotal += total?.filter(data => data?.paid_date === formattedDate)[i].payment_amount
         }
     }
-    console.log(total?.filter(data => data?.paid_date === formattedDate && data.payment_type === 'N'));
 
 
     let paidNTotal = 0;
@@ -49,7 +47,6 @@ const AccountingStudentsTotalDay = () => {
         }
     }
 
-    console.log(paidNTotal);
 
     let paidHKTotal = 0;
     let paidHKTotalArr = total?.length > 0 && total?.filter(data => data?.paid_date === formattedDate && data?.payment_type === 'HK')
@@ -60,7 +57,6 @@ const AccountingStudentsTotalDay = () => {
         }
     }
 
-    console.log(paidHKTotal);
 
 
     return (

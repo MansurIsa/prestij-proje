@@ -44,7 +44,6 @@ const TeacherCreateModal = () => {
             url: `${baseUrl}service/teacher-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

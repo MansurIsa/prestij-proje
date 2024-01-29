@@ -11,7 +11,6 @@ const OtherLuckContainer = () => {
         dispatch(getSuccessItemList())
     }, [dispatch])
 
-    console.log(successItemListArr);
     return (
         <div className='other_luck_parent container'>
             <div className="other_about_content">

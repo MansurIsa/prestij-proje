@@ -18,14 +18,14 @@ const HeaderSliderContainer = () => {
     // const [activeIndex, setActiveIndex] = useState(0);
 
     const dispatch = useDispatch();
-    const { bannerListArr, isHeaderLoading } = useSelector(state => state.Data)
+    const {bannerListArr,isHeaderLoading} = useSelector(state => state.Data)
     useEffect(() => {
         dispatch(getBannerList())
     }, [dispatch])
 
 
-
-
+    
+   
 
 
     // let headerArr = [
@@ -57,11 +57,11 @@ const HeaderSliderContainer = () => {
     // ]
 
 
-
+    
 
 
     // useEffect(() => {
-
+        
 
 
     //     const interval = setInterval(() => {
@@ -79,7 +79,7 @@ const HeaderSliderContainer = () => {
     // }, [activeIndex]);
 
     useEffect(() => {
-
+        
 
 
         const interval = setInterval(() => {
@@ -116,7 +116,7 @@ const HeaderSliderContainer = () => {
                         grabCursor
                         autoplay={true}
                         effect='fade'
-
+                        
                         pagination={{ type: 'bullets', clickable: true }}
                         modules={[Keyboard, Pagination, Navigation, EffectFade]}
                         className="mySwiper header_slider_cards_container"
@@ -127,7 +127,7 @@ const HeaderSliderContainer = () => {
                                 return (
                                     <>
                                         {
-                                            data?.is_active === true ?
+                                            data?.is_active ?
                                                 <SwiperSlide key={i} style={{
                                                     background: `url(${data?.image})`,
                                                     backgroundRepeat: 'no-repeat',
@@ -140,25 +140,21 @@ const HeaderSliderContainer = () => {
                                                             <div className='header_middle_container_content'>
 
                                                                 <h1 className='haeder_one'>
-
+                                                                   
                                                                     {
-                                                                        data.title !== null ?
 
-                                                                            Array.from(data.title)?.map((z, i) => {
-                                                                                return (
-                                                                                    <span>{z}</span>
-                                                                                )
-                                                                            }) : null
+                                                                        Array.from(data?.title).map((z, i) => {
+                                                                            return (
+                                                                                <span>{z}</span>
+                                                                            )
+                                                                        })
                                                                     }
 
                                                                 </h1>
-                                                                {
-                                                                    data.link !== null ?
-                                                                        <Link to={data?.link}>
-                                                                            <button><span>Daha çox</span></button>
-                                                                        </Link>: null
-                                                                }
 
+                                                                <Link to={data?.link}>
+                                                                    <button><span>Daha çox</span></button>
+                                                                </Link>
 
 
 
@@ -178,7 +174,7 @@ const HeaderSliderContainer = () => {
                         }
 
 
-
+                        
 
 
 

@@ -4,7 +4,6 @@ import BranchsAccountingTeachersCard from '../components/BranchsAccountingTeache
 
 const BranchsAccountingTeachers = () => {
     const { accountingMonthTeachersPaymentListArr } = useSelector(state => state.Data)
-    console.log(accountingMonthTeachersPaymentListArr);
     return (
         <table className='handle_student_table'>
             <tr>

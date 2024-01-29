@@ -28,7 +28,6 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // console.log(teachersListArr.filter(data => data.is_active === true));
   return (
     <div>
       <Helmet>
@@ -54,25 +53,25 @@ const Home = () => {
       <main>
         <MainFirstCards />
         <section>
-          <SectionHeader sectionHeader="Xəbərlər" sectionLink="Kursumuz haqqında ən son yenilikləri xəbərlər bölməsindən izləyin!" />
+          <SectionHeader sectionHeader="Xəbərlər" sectionLink="Kursumuz haqqında ən son yenilikləri xəbərlər bölməsindən izləyin!" sectionLinkPath="/xeberler" />
           <News />
         </section>
         <section className='services_section'>
           <ServicesHeaderImg />
-          <SectionHeader sectionHeader="Xidmətlərimiz" sectionLink="Bizim kursumuz sizə aşağıdakı xidmətləri yüksək səviyyədə göstərir!" />
+          <SectionHeader sectionHeader="Xidmətlərimiz" sectionLink="Bizim kursumuz sizə aşağıdakı xidmətləri yüksək səviyyədə göstərir!" sectionLinkPath="/xidmetlerimiz" />
           <Services />
         </section>
         <section>
-          <SectionHeader sectionHeader="Videoqalereya" sectionLink="Bütün videolara baxmaq üçün bura daxil olun »" />
+          <SectionHeader sectionHeader="Videoqalereya" sectionLink="Bütün videolara baxmaq üçün bura daxil olun »" sectionLinkPath="/video"/>
           <VideoContainer />
         </section>
         <section>
-          <SectionHeader sectionHeader="Haqqımızda" sectionLink="Bizim kursumuz sizə aşağıdakı xidmətləri yüksək səviyyədə göstərir!" />
+          <SectionHeader sectionHeader="Haqqımızda" sectionLink="Kursumuz haqqında ətraflı məlumat üçün bura daxil olun" sectionLinkPath="/haqqimizda"/>
           <About />
         </section>
         {teachersListArr.filter(data => data.is_active === true).length > 0 ?
           <section className='teachers_section'>
-            <SectionHeader sectionHeader="Müəllimlərimiz" sectionLink="Kursumuzda dərs deyən yüksək səviyyəli müəllimlərimiz!" />
+            <SectionHeader sectionHeader="Müəllimlərimiz" sectionLink="Kursumuzda dərs deyən yüksək səviyyəli müəllimlərimiz!" sectionLinkPath="/"/>
             <Teachers />
           </section> : null
         }

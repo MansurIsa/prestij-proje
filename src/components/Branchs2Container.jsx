@@ -6,7 +6,6 @@ import { getBranchsList, getUser } from '../actions/MainAction';
 const Branchs2Container = () => {
   const dispatch = useDispatch()
   const { branchsListArr, loggedInUser } = useSelector(state => state.Data);
-  console.log(branchsListArr);
   let loggedInEmail = localStorage.getItem('loggedInEmail')
 
   useEffect(() => {
@@ -17,8 +16,6 @@ const Branchs2Container = () => {
     dispatch(getBranchsList(loggedInEmail))
   }, [dispatch,loggedInEmail])
 
-  console.log(loggedInUser);
-  console.log(branchsListArr);
 
 
 

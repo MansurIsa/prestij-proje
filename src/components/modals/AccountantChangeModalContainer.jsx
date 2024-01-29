@@ -16,7 +16,6 @@ const AccountantChangeModalContainer = () => {
         dispatch(getAccountants())
     },[dispatch])
 
-    console.log(accountants);
 
 
     const accountantDelete=(el)=>{
@@ -27,7 +26,6 @@ const AccountantChangeModalContainer = () => {
             method: "DELETE",
             url: `${baseUrl}account/account/${el.email}/`,
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

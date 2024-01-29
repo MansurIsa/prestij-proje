@@ -23,7 +23,6 @@ const ClassUpdateModalContainer = () => {
             method: "DELETE",
 
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

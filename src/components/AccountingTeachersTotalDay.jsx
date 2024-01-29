@@ -13,7 +13,6 @@ const AccountingTeachersTotalDay = () => {
 
     const { accountingTeacherMonthPaymentListArr } = useSelector(state => state.Data)
 
-    console.log(accountingTeacherMonthPaymentListArr);
 
     let total = accountingTeacherMonthPaymentListArr.filter(data => data.status === true)
 
@@ -26,7 +25,6 @@ const AccountingTeachersTotalDay = () => {
         }
     }
     
-    console.log(total?.filter(data=>data?.paid_date===formattedDate && data.payment_type==='N'));
     
 
     let paidNTotal=0;
@@ -38,7 +36,6 @@ const AccountingTeachersTotalDay = () => {
     }
    }
 
-    console.log(paidNTotal);
     
     let paidHKTotal=0;
    let paidHKTotalArr=total?.length>0 && total?.filter(data=>data?.paid_date===formattedDate && data?.payment_type==='HK')
@@ -49,7 +46,6 @@ const AccountingTeachersTotalDay = () => {
     }
    }
 
-    console.log(paidHKTotal);
 
     return (
         <table className='accounting_abiturient_total_container'>

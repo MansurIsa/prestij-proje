@@ -11,7 +11,6 @@ const TeacherUpdateModalContainer = () => {
     },[dispatch])
 
     const {branchsTeachersListArr}=useSelector(state=>state.Data)
-    console.log(branchsTeachersListArr);
     return (
         <div className="modal_container">
             <div onClick={() => dispatch(modalOverlayFunc())} className='overlay'></div>

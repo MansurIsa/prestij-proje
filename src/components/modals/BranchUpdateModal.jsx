@@ -16,8 +16,7 @@ const BranchUpdateModal = () => {
 
     const branchUpdate=(e,id)=>{
         e.preventDefault()
-        console.log(id,e);
-        console.log(branchUpdateName);
+        
         const data={
             name: branchUpdateName
         }
@@ -29,7 +28,6 @@ const BranchUpdateModal = () => {
             url: `${baseUrl}service/branch-retrieve-update-delete/${id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

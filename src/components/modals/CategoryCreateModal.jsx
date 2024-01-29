@@ -24,7 +24,6 @@ const CategoryCreateModal = () => {
             url: `${baseUrl}service/category-list-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

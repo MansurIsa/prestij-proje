@@ -18,8 +18,7 @@ const Accounting2Page = () => {
   const { loggedInEmail, loggedInUser,branchCreateModal,branchUpdateModalContainer,branchUpdateModal,branchDeleteModalContainer,
     accountantChangeModalContainer,accountantUpdateModal,unreadCount } = useSelector(state => state.Data)
 
-  console.log(loggedInEmail);
-  console.log(loggedInUser);
+
 
   const goRegister = () => {
     navigate('/register')
@@ -38,7 +37,6 @@ const Accounting2Page = () => {
   localStorage.removeItem('selectedMonth')
 
 
-  console.log(unreadCount);
   return (
     <div className='accounting_page_container'>
       {

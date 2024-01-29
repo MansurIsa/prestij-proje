@@ -18,7 +18,6 @@ const OtherContactContent = () => {
     const { branchListArr } = useSelector(state => state.Data);
 
 
-    console.log(branchListArr);
 
 
     useEffect(() => {

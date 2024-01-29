@@ -19,7 +19,6 @@ const SeasonUpdateModalContainer = () => {
             method: "DELETE",
             url: `${baseUrl}service/season-retrieve-update-delete/${id}/`
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

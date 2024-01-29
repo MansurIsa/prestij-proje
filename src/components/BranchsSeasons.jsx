@@ -11,7 +11,6 @@ import MonthCreateModalContainer from './modals/MonthCreateModalContainer';
 const BranchsSeasons = ({ id }) => {
     const [refreshed, setRefreshed] = useState(false);
     const { branchsId, branchsSeasonsListArr, seasonSelectValue, monthSelectValue,seasonCreateModal,seasonUpdateModal,seasonUpdateModalContainer,monthCreateModalContainer } = useSelector(state => state.Data)
-    console.log(branchsId);
     const dispatch = useDispatch();
 
 
@@ -19,9 +18,7 @@ const BranchsSeasons = ({ id }) => {
         dispatch(getBranchsSeasonsList(id))
     }, [dispatch, id])
 
-    console.log(branchsSeasonsListArr);
-    console.log(seasonSelectValue);
-    console.log(id);
+
 
    
 
@@ -42,9 +39,7 @@ const BranchsSeasons = ({ id }) => {
     }
 
     let getSelectedSeason = localStorage.getItem('selectedSeason')
-    console.log(getSelectedSeason);
     let c = branchsSeasonsListArr.find(data => data.id === +getSelectedSeason)
-    console.log(c);
 
     
     

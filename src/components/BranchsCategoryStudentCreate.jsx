@@ -58,7 +58,6 @@ const BranchsCategoryStudentCreate = () => {
         teacherPaymentCreateModalContainer,
         branchsSeasonsListArr } = useSelector(state => state.Data)
 
-console.log(branchsSeasonsListArr);
 
 
     return (

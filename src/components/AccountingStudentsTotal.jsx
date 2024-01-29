@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 const AccountingStudentsTotal = () => {
     const { accountingAbiturientMonthPaymentListArr} = useSelector(state => state.Data)
 
-    console.log(accountingAbiturientMonthPaymentListArr);
 
     let total = accountingAbiturientMonthPaymentListArr.filter(data => data.status === true)
     let paidTotal = 0;
@@ -22,10 +21,8 @@ const AccountingStudentsTotal = () => {
     
 
     let finishedTotalArr=accountingAbiturientMonthPaymentListArr.filter(data=>data.student.status==='B')
-    console.log(finishedTotalArr);
 
     let stoppedTotalArr=accountingAbiturientMonthPaymentListArr.filter(data=>data.student.status==='D')
-    console.log(stoppedTotalArr);
 
     return (
         <table className='accounting_abiturient_total_container'>

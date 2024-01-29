@@ -8,7 +8,6 @@ import CategoryListCard from './CategoryListCard'
 const BranchsServices2 = ({ id }) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    console.log(id);
 
 
 
@@ -25,7 +24,6 @@ const BranchsServices2 = ({ id }) => {
         dispatch(getCategoryList())
     }, [dispatch])
     const {  categoryListArr } = useSelector(state => state.Data)
-    console.log(categoryListArr);
     return (
         <div className='branchs_services container'>
 

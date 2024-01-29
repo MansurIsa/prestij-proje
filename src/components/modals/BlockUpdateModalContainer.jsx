@@ -17,7 +17,6 @@ const BlockUpdateModalContainer = () => {
 
     const { refreshed, blockListArr } = useSelector(state => state.Data)
 
-    console.log(blockListArr);
 
 
     const blockDeleteFunc = (id) => {
@@ -29,7 +28,6 @@ const BlockUpdateModalContainer = () => {
             method: "DELETE",
 
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

@@ -12,7 +12,6 @@ const ServicesContainer = () => {
         dispatch(getServicesList())
     },[dispatch])
 
-    console.log(servicesListArr);
     return (
         <div className='services_container cards container'>
             

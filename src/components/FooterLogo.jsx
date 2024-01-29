@@ -16,7 +16,7 @@ const FooterLogo = () => {
   }, [dispatch])
 
   return (
-    <Link to='/prestij-proje'>
+    <Link to='/'>
         {
           settingsListArr[0]?.logo_active ?
             <img className='logo' src={settingsListArr[0]?.logo} alt="" />

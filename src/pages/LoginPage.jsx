@@ -4,6 +4,7 @@ import { getSettingsList } from '../actions/MainAction';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import {  useNavigate } from 'react-router-dom';
+import { baseUrl } from '../MAIN_API';
 
 const LoginPage = () => {
     localStorage.removeItem('ACCESS_TOKEN')
@@ -45,11 +46,10 @@ const LoginPage = () => {
             email: email,
             password: password
         }
-        axios('https://prestijs.pythonanywhere.com/api/token/',{
+        axios(`${baseUrl}token/`,{
             method: "POST",
             data
         }).then(resp=>{
-            console.log(resp.data.access);
             if(resp.data.access){
                 navigate('/accounting')
                 localStorage.setItem('ACCESS_TOKEN',resp.data.access)
@@ -67,7 +67,6 @@ const LoginPage = () => {
         })
     }
 
-    console.log(settingsListArr);
 
     return (
         <div className="login_container">

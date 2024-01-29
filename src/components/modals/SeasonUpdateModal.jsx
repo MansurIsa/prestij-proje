@@ -11,7 +11,6 @@ const SeasonUpdateModal = () => {
     const navigate = useNavigate()
     const { refreshed,seasonUpdateName,seasonObj } = useSelector(state => state.Data)
 
-    console.log(seasonObj);
     const seasonUpdate=(e,id)=>{
         e.preventDefault()
 
@@ -19,7 +18,6 @@ const SeasonUpdateModal = () => {
             name: seasonUpdateName,
             branch: +localStorage.getItem('branchId')
         }
-        console.log(data);
 
         axios({
             headers: {
@@ -29,7 +27,6 @@ const SeasonUpdateModal = () => {
             url: `${baseUrl}service/season-retrieve-update-delete/${id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

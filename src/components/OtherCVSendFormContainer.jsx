@@ -4,6 +4,7 @@ import { achievementsChange, achievementsSecondChange, achievementsThirdChange, 
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from '../MAIN_API';
 
 const OtherCVSendFormContainer = () => {
     const dispatch=useDispatch();
@@ -75,10 +76,10 @@ const OtherCVSendFormContainer = () => {
         }
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/resume-create/",
+            url: `${baseUrl}prestij/resume-create/`,
             data
         }).then(resp=>{
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({

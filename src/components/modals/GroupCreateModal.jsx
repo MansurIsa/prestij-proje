@@ -17,7 +17,6 @@ const GroupCreateModal = () => {
             name: groupsCreateName,
             categories: +categorySelectValue
         }
-        console.log(data);
 
         axios({
             headers: {
@@ -27,7 +26,6 @@ const GroupCreateModal = () => {
             url: `${baseUrl}service/group-list-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

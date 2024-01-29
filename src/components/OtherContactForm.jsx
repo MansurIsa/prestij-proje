@@ -23,7 +23,6 @@ const OtherContactForm = () => {
             url: "https://prestijs.pythonanywhere.com/api/prestij/contact-create/",
             data
         }).then(resp=>{
-            console.log(resp.data);
             if (resp.status === 201) {
 
                 Swal.fire({

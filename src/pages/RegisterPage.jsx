@@ -14,7 +14,6 @@ const RegisterPage = () => {
     const navigate = useNavigate();
     const { settingsListArr,branchsListArr,branchSelectAccountValue } = useSelector(state => state.Data);
 
-    console.log(branchSelectAccountValue);
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [email, setEmail] = useState("")
@@ -22,7 +21,6 @@ const RegisterPage = () => {
     const [regErrPsw, setRegErrPsw] = useState("")
     const [isAccountant, setIsAccountant] = useState(false)
 
-    console.log(branchsListArr);
     useEffect(() => {
         dispatch(getSettingsList())
     }, [dispatch])
@@ -63,12 +61,10 @@ const RegisterPage = () => {
             branch: +branchSelectAccountValue
         }
 
-        console.log(data);
         axios(`${baseUrl}account/account-create/`, {
             method: "POST",
             data
         }).then(resp => {
-            console.log(resp);
             Swal.fire({
                 title: "Created",
                 text: "User created",

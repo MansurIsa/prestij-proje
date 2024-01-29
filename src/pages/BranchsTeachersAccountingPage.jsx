@@ -13,7 +13,6 @@ const BranchsTeachersAccountingPage = () => {
   const {loggedInUser,editTeacherModalContainer}=useSelector(state=>state.Data)
   const dispatch=useDispatch()
 
-  console.log(loggedInUser);
 
   useEffect(()=>{
     dispatch(getUser(localStorage.getItem('loggedInEmail')))

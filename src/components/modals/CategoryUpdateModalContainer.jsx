@@ -20,7 +20,6 @@ const CategoryUpdateModalContainer = () => {
           url: `${baseUrl}service/category-retrieve-update-delete/${id}/`,
         })
           .then((resp) => {
-            console.log(resp);
             if (resp.status === 204) {
               Swal.fire({
                 title: "Kateqoriya silindi",

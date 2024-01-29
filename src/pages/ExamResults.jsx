@@ -14,7 +14,7 @@ const ExamResults = ({otherPageBanner}) => {
   return (
     <div>
     <Helmet>
-        <title>Xidmətlərimiz</title>
+        <title>Imtahan nəticələri</title>
     </Helmet>
     <OtherHeader otherPageBanner={otherPageBanner} otherHeaderMainContent="İmtahan Nəticələri" otherHeaderPagesLink="İMTAHAN NƏTİCƏLƏRİ" />
     <main>

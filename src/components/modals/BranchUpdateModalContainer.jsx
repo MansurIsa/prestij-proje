@@ -5,7 +5,6 @@ import { branchUpdateModalFunc, modalCloseFunc, modalOverlayFunc } from '../../r
 const BranchUpdateModalContainer = () => {
     const dispatch = useDispatch()
     const { branchsListArr } = useSelector(state => state.Data)
-    console.log(branchsListArr);
     return (
         <div className="modal_container">
             <div onClick={() => dispatch(modalOverlayFunc())} className='overlay'></div>

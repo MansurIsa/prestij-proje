@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 const FooterSecondCard = ({ data }) => {
 
-    console.log(data);
     return (
         <div className="footer_second_card">
             <h4>{data.name}</h4>

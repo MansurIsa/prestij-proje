@@ -10,8 +10,7 @@ import { getAccountingAbiturientMonthPaymentList, getAccountingSeasonMonthList,
 
 const AccountingMonths = ({ id }) => {
     const { seasonSelectValue, accountingSeasonMonthListArr, monthSelectValue, accountingAbiturientMonthPaymentListArr, accountingStudentMonthPaymentListArr } = useSelector(state => state.Data);
-    console.log(accountingSeasonMonthListArr);
-    console.log(accountingAbiturientMonthPaymentListArr);
+   
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -39,9 +38,7 @@ const AccountingMonths = ({ id }) => {
 
     const monthSelectChange1 = (e) => {
 
-        console.log(e.target);
         const selectedMonth = e.target.value;
-        console.log(selectedMonth);
         localStorage.setItem('selectedMonth', selectedMonth)
         dispatch(monthSelectChange(selectedMonth));
         dispatch(getAccountingTeacherMonthPaymentList(selectedMonth));
@@ -62,10 +59,7 @@ const AccountingMonths = ({ id }) => {
     };
 
 
-    console.log(monthSelectValue);
-
-    console.log(accountingStudentMonthPaymentListArr);
-    console.log(accountingAbiturientMonthPaymentListArr);
+   
     return (
         <div className="season_select_container">
             <div className='branchs_seasons'>

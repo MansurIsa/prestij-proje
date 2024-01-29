@@ -9,7 +9,6 @@ import { Helmet } from 'react-helmet'
 
 const DetailNewsPage = ({ otherPageBanner }) => {
     const { id } = useParams()
-    // console.log(id);
 
 
 
@@ -21,7 +20,6 @@ const DetailNewsPage = ({ otherPageBanner }) => {
         dispatch(getNewsRetrieveList(id))
     }, [dispatch,id])
 // }, [id])
-    // console.log(newsRetrieveObj);
     
 
     useEffect(() => {

@@ -17,7 +17,6 @@ const LanguageUpdateModalContainer = () => {
 
     const { refreshed,languageListArr } = useSelector(state => state.Data)
 
-    console.log(languageListArr);
 
 
     const languageDeleteFunc=(id)=>{

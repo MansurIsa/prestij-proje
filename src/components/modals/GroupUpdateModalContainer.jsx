@@ -17,7 +17,6 @@ const GroupUpdateModalContainer = () => {
 
     const { refreshed,groupsListArr } = useSelector(state => state.Data)
 
-    console.log(groupsListArr);
 
 
     const groupsDeleteFunc=(id)=>{
@@ -29,7 +28,6 @@ const GroupUpdateModalContainer = () => {
             method: "DELETE",
 
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

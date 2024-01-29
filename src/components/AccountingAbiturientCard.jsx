@@ -7,7 +7,6 @@ import { FaEdit } from 'react-icons/fa';
 import { editStudentModalContainerFunc } from '../redux/MainReducer';
 
 const AccountingAbiturientCard = ({ data }) => {
-    console.log(data);
     const navigate=useNavigate()
     const dispatch=useDispatch()
 
@@ -22,7 +21,6 @@ const AccountingAbiturientCard = ({ data }) => {
     }
 
     const formattedDate = formatCurrentDate();
-    console.log(formattedDate);
 
     function calculateDateDifference(startDate, endDate) {
         const start = new Date(startDate);
@@ -38,10 +36,8 @@ const AccountingAbiturientCard = ({ data }) => {
     const endDate = data.payment_date;   // Bitiş tarihi (YYYY-MM-DD)
 
     const daysDifference = calculateDateDifference(startDate, endDate);
-    console.log(daysDifference);
 
     const handleAbiturient=(id)=>{
-        console.log(id);
         navigate('/branchs-accounting-abiturient')
        dispatch(getAccountingMonthAbiturientPaymentList(id,data?.category?.id)) 
     }

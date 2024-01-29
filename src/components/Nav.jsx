@@ -14,7 +14,6 @@ const Nav = () => {
         dispatch(getSettingsList())
     }, [dispatch])
 
-    console.log(servicesListArr);
 
 
     useEffect(() => {

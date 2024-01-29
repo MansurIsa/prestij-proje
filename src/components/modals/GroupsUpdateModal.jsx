@@ -17,7 +17,6 @@ const GroupsUpdateModal = () => {
             name: groupsUpdateName,
             categories: classUpdateSelectValue
         }
-        console.log(data);
 
         axios({
             headers: {
@@ -27,7 +26,6 @@ const GroupsUpdateModal = () => {
             url: `${baseUrl}service/group-retrieve-update-delete/${+id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

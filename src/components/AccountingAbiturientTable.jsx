@@ -5,11 +5,10 @@ import AccountingAbiturientCard from './AccountingAbiturientCard'
 import EditStudentModalContainer from './modals/EditStudentModalContainer'
 
 const AccountingAbiturientTable = ({categoryName,id}) => {
-    const {  accountingAbiturientMonthPaymentListArr,accountingStudentMonthPaymentListArr,editStudentModalContainer } = useSelector(state => state.Data);
+    const {  accountingStudentMonthPaymentListArr,editStudentModalContainer } = useSelector(state => state.Data);
 
     
-    console.log(accountingStudentMonthPaymentListArr);
-    console.log(accountingAbiturientMonthPaymentListArr);
+  
 
     const deStudents = accountingStudentMonthPaymentListArr.filter(item => item.student.status === 'DE');
     const dStudents = accountingStudentMonthPaymentListArr.filter(item => item.student.status === 'D');

@@ -20,7 +20,6 @@ const NewsContainer = () => {
         dispatch(getNewsList())
     }, [dispatch])
 
-    console.log(newsListArr);
     useEffect(() => {
         const interval = setInterval(() => {
             if (swiperNewsRef.current && swiperNewsRef.current.swiper) {

@@ -19,7 +19,6 @@ const BranchDeleteModalContainer = () => {
             method: "DELETE",
             url: `${baseUrl}service/branch-retrieve-update-delete/${id}/`
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 204) {
 
                 Swal.fire({

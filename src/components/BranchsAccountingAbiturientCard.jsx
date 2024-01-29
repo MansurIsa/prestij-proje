@@ -2,7 +2,6 @@ import React from 'react'
 import { CgMathMinus } from 'react-icons/cg';
 
 const BranchsAccountingAbiturientCard = ({ data }) => {
-    console.log(data);
     function formatCurrentDate() {
         const currentDate = new Date();
 
@@ -14,7 +13,6 @@ const BranchsAccountingAbiturientCard = ({ data }) => {
     }
 
     const formattedDate = formatCurrentDate();
-    console.log(formattedDate);
 
     function calculateDateDifference(startDate, endDate) {
         const start = new Date(startDate);

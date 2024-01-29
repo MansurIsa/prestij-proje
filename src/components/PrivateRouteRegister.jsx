@@ -9,9 +9,7 @@ const PrivateRouteRegister = ({ Element }) => {
         dispatch(getUser(localStorage.getItem('loggedInEmail')))
     }, [dispatch])
     const { loggedInUser } = useSelector(state => state.Data);
-    console.log(loggedInUser);
     const isLoggedIn = localStorage.getItem('ACCESS_TOKEN') && loggedInUser.is_accountant === false && loggedInUser.is_staff === true;
-    console.log(isLoggedIn);
     return isLoggedIn===true ? (
         <Element />
     ) : (

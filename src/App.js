@@ -53,9 +53,7 @@ const App = () => {
     dispatch(getUser(localStorage.getItem('loggedInEmail')))
   }, [dispatch])
 
-  console.log(loggedInUser);
-
-console.log(settingsListArr);
+ 
   
 
   return (
@@ -73,7 +71,7 @@ console.log(settingsListArr);
 
 
       <Routes>
-        <Route path='/prestij-proje' element={<Home />} />
+        <Route path='/' element={<Home />} />
         {
           settingsListArr[0]?.about_page_active ?
             <Route path='/haqqimizda' element={<AboutPage otherPageBanner={settingsListArr[0]?.about_page_banner} />} />

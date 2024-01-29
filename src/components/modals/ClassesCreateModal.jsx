@@ -11,7 +11,6 @@ const ClassesCreateModal = () => {
     const navigate = useNavigate()
     const { refreshed,classesCreateName,categoryListArr,categorySelectValue } = useSelector(state => state.Data)
 
-    console.log(categoryListArr);
 
     
     const classesCreate=(e)=>{
@@ -21,7 +20,6 @@ const ClassesCreateModal = () => {
             name: classesCreateName,
             categories: +categorySelectValue
         }
-        console.log(data);
 
         axios({
             headers: {
@@ -31,7 +29,6 @@ const ClassesCreateModal = () => {
             url: `${baseUrl}service/class-list-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

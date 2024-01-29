@@ -12,7 +12,6 @@ const OtherFotoCards = () => {
         dispatch(getFotoGalleryList())
     }, [dispatch])
 
-    console.log(fotoGalleryListArr);
     return (
         <div className='other_foto_cards'>
             {

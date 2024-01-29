@@ -6,12 +6,10 @@ import BranchsTeachersCard from './BranchsTeachersCard';
 const BranchsTeachersContainer = () => {
     const dispatch = useDispatch();
     const { seasonSelectValue, branchsTeachersListArr } = useSelector(state => state.Data);
-    console.log(seasonSelectValue);
     useEffect(() => {
         dispatch(getBranchsTeachersList(seasonSelectValue))
     }, [dispatch])
 
-    console.log(branchsTeachersListArr);
   return (
     <div className='branchs_students_container container'>
             <div className="branchs_students_table_header">

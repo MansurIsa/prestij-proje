@@ -40,12 +40,7 @@ const StudentUpdateModal = () => {
 
     } = useSelector(state => state.Data)
 
-    console.log(studentObj);
-    console.log(studentUpdateClass);
-
-    console.log(categoryListArr);
-    console.log(studentUpdateSeasonSelectValue);
-    console.log(seasonStudentUpdateId);
+   
     useEffect(() => {
         dispatch(getclassesList())
         dispatch(getGroupsList())
@@ -72,20 +67,15 @@ const StudentUpdateModal = () => {
         return data.id
     }))
 
-    console.log(studentUpdateCategoriesValue);
-    console.log(studentUpdateTeachersValue);
-    console.log(studentUpdateBlocksValue);
-    console.log(studentUpdateSubjectsValue);
+   
     const studentCreateSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+       
         setStudentUpdateCategoriesValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
         });
     }
     const selectCategoryRemove = (selectedList, removedItem) => {
-        console.log(selectedList);
         setStudentUpdateCategoriesValue((x) => {
             const updatedSelectedOptions = x.filter(
                 (item) => item !== removedItem.id
@@ -95,15 +85,13 @@ const StudentUpdateModal = () => {
     };
 
     const studentTeacherUpdateSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+       
         setStudentUpdateTeachersValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
         });
     }
     const selectTeacherRemove = (selectedList, removedItem) => {
-        console.log(selectedList);
         setStudentUpdateTeachersValue((x) => {
             const updatedSelectedOptions = x.filter(
                 (item) => item !== removedItem.id
@@ -114,15 +102,13 @@ const StudentUpdateModal = () => {
 
 
     const studentBlocksUpdateSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+       
         setStudentUpdateBlocksValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
         });
     }
     const selectBlocksRemove = (selectedList, removedItem) => {
-        console.log(selectedList);
         setStudentUpdateBlocksValue((x) => {
             const updatedSelectedOptions = x.filter(
                 (item) => item !== removedItem.id
@@ -132,15 +118,13 @@ const StudentUpdateModal = () => {
     };
 
     const studentSubjectsUpdateSelectFunc = (selectedList, selectedItem) => {
-        console.log(selectedList);
-        console.log(selectedItem.id);
+        
         setStudentUpdateSubjectsValue((x) => {
             const updatedSelectedOptions = [...x, selectedItem.id];
             return updatedSelectedOptions;
         });
     }
     const selectSubjectsRemove = (selectedList, removedItem) => {
-        console.log(selectedList);
         setStudentUpdateSubjectsValue((x) => {
             const updatedSelectedOptions = x.filter(
                 (item) => item !== removedItem.id
@@ -151,7 +135,6 @@ const StudentUpdateModal = () => {
     const studentUpdate = (e, id) => {
         e.preventDefault()
 
-        console.log(e, id);
 
 
         const data = {
@@ -175,7 +158,6 @@ const StudentUpdateModal = () => {
             blocks: studentUpdateBlocksValue,
             subjects: studentUpdateSubjectsValue
         }
-        console.log( data);
 
         axios({
             headers: {
@@ -185,7 +167,6 @@ const StudentUpdateModal = () => {
             url: `${baseUrl}service/student-retrieve-update-delete/${id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

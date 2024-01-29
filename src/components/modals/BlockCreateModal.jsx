@@ -18,7 +18,6 @@ const BlockCreateModal = () => {
             name: blockCreateName,
             categories: +categorySelectValue
         }
-        console.log(data);
         axios({
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -27,7 +26,6 @@ const BlockCreateModal = () => {
             url: `${baseUrl}service/block-list-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

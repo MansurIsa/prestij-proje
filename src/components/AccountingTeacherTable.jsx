@@ -4,7 +4,6 @@ import AccountingTeacherCard from './AccountingTeacherCard';
 
 const AccountingTeacherTable = () => {
     const { accountingTeacherMonthPaymentListArr } = useSelector(state => state.Data)
-    console.log(accountingTeacherMonthPaymentListArr);
     return (
         <table>
             <tr>

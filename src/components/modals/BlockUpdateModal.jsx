@@ -18,7 +18,6 @@ const BlockUpdateModal = () => {
             categories: classUpdateSelectValue
         }
 
-        console.log(data);
 
         axios({
             headers: {
@@ -28,7 +27,6 @@ const BlockUpdateModal = () => {
             url: `${baseUrl}service/block-retrieve-update-delete/${+id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

@@ -18,7 +18,6 @@ const SubjectUpdateModal = () => {
             categories: classUpdateSelectValue
         }
 
-        console.log(data);
 
         axios({
             headers: {
@@ -28,7 +27,6 @@ const SubjectUpdateModal = () => {
             url: `${baseUrl}service/subject-retrieve-update-delete/${+id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

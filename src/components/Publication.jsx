@@ -11,7 +11,6 @@ const Publication = () => {
         dispatch(getEditionList())
     },[dispatch])
 
-    console.log(editionListArr);
   return (
     <div className='services_container cards container'>
         {

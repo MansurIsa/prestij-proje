@@ -4,6 +4,7 @@ import { branchNameFunc, modalCloseFunc, modalOverlayFunc, setRefreshed } from '
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { baseUrl } from '../../MAIN_API'
 
 const BranchCreateModal = () => {
     const dispatch = useDispatch()
@@ -17,16 +18,14 @@ const BranchCreateModal = () => {
         const data = {
             name: branchName
         }
-        console.log(data);
         axios({
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`
             },
             method: "POST",
-            url: `https://prestijs.pythonanywhere.com/api/service/branch-create/`,
+            url: `${baseUrl}service/branch-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

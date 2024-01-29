@@ -10,7 +10,6 @@ const OtherNewsCardsContainer = () => {
 
     const dispatch = useDispatch();
     const newsListArr = useSelector(state => state.Data.newsListArr)
-    console.log(newsListArr);
     useEffect(() => {
         dispatch(getNewsList())
     }, [dispatch])

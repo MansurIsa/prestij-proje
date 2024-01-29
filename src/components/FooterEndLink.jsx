@@ -12,7 +12,6 @@ const FooterEndLink = () => {
         dispatch(getSettingsList())
     }, [dispatch])
 
-    console.log(servicesListArr);
     return (
         <ul className='footer_end_link'>
 

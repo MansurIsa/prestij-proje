@@ -15,7 +15,6 @@ const TeacherUpdateModal = () => {
         teacherUpdateSection, teacherUpdateSalary, teacherUpdateStatusValue, teacherUpdatePaymentDate, teacherUpdatePaymentMoney,
         teacherUpdateSeasonSelectValue, branchsSeasonsListArr,refreshed,teacherObj } = useSelector(state => state.Data);
 
-        console.log(teacherUpdateSeasonSelectValue);
         const teacherUpdate=(e,id)=>{
             e.preventDefault()
 
@@ -32,7 +31,6 @@ const TeacherUpdateModal = () => {
                 payment_amount: teacherUpdatePaymentMoney,
                 season: teacherUpdateSeasonSelectValue
             }
-            console.log(data);
             axios({
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('ACCESS_TOKEN')}`

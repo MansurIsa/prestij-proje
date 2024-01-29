@@ -5,7 +5,6 @@ import { getAccountingMonthAbiturientPaymentList } from '../actions/MainAction';
 import { CgMathMinus } from 'react-icons/cg';
 
 const AccountingStudentAbiturientCard = ({ data }) => {
-    console.log(data);
     const navigate=useNavigate()
     const dispatch=useDispatch()
 
@@ -20,7 +19,6 @@ const AccountingStudentAbiturientCard = ({ data }) => {
     }
 
     const formattedDate = formatCurrentDate();
-    console.log(formattedDate);
 
     function calculateDateDifference(startDate, endDate) {
         const start = new Date(startDate);

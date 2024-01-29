@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 const ServicesCard = ({ data }) => {
 
+  console.log(data);
 
   return (
     <Link to={`/xidmetlerimiz/${data.title.replace(/\s/g, '')}/${data.id}`}>

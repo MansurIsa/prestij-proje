@@ -17,7 +17,6 @@ const TeacherPaymentCreateModalContainer = () => {
 
 
     const { refreshed, branchsTeachersListArr } = useSelector(state => state.Data)
-    console.log(branchsTeachersListArr);
 
 
     const [clickedTeacherPayment, setClickedTeacherPayment] = useState([]);
@@ -30,7 +29,6 @@ const TeacherPaymentCreateModalContainer = () => {
 
 
     const teacherPaymentCreate = (teacher) => {
-        console.log(teacher);
 
         const data = {
             first_name: teacher.first_name,
@@ -54,7 +52,6 @@ const TeacherPaymentCreateModalContainer = () => {
             url: `${baseUrl}service/teacher-retrieve-update-delete/${teacher.id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

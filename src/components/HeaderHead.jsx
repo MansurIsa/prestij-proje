@@ -34,7 +34,6 @@ const HeaderHead = () => {
         })
     }, [])
 
-    console.log(contactInfoArr);
     return (
         <div className='header_head_container_bg'>
             <div className="header_head_container container">

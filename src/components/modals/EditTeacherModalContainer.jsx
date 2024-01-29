@@ -10,7 +10,6 @@ const EditTeacherModalContainer = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { editPaymentTeacher, editPaymentTeacherDate, editPaymentTeacherAmount, editPaymentTeacherType, editPaymentTeacherStatus, refreshed, editPaidTeacherDate } = useSelector(state => state.Data)
-    console.log(editPaymentTeacher);
 
     const editPaymentTeacherSubmit = (e, id) => {
         e.preventDefault()
@@ -24,7 +23,6 @@ const EditTeacherModalContainer = () => {
             month: editPaymentTeacher.month.id
         }
 
-        console.log(data);
 
         axios({
             headers: {
@@ -34,7 +32,6 @@ const EditTeacherModalContainer = () => {
             url: `${baseUrl}accounting/teacher-payment-retrieve-update/${id}/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 200) {
 
                 Swal.fire({

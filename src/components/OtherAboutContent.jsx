@@ -11,7 +11,6 @@ const OtherAboutContent = () => {
         dispatch(getSettingsList());
     }, [dispatch]);
 
-    console.log(settingsListArr);
     return (
         <div className='other_about_content'>
             {settingsListArr[0]?.about_active ? (

@@ -5,6 +5,7 @@ import { courseOnlineRegAbiturientClassFunc, courseOnlineRegAbiturientDimFunc, c
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from '../MAIN_API';
 
 const OtherCourseOnlineRegisterFormContainer = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
@@ -70,7 +71,6 @@ const OtherCourseOnlineRegisterFormContainer = () => {
         courseOnlineRegPrimarySchoolMobilNumber,
         courseOnlineRegPrimarySchoolPassportCard,
         courseOnlineRegPrimarySchoolClass,} = useSelector(state => state.Data);
-    console.log(courseOnlineRegTeacherSelect);
 
     const categoryChange = (e) => {
         setSelectedCategory(e.target.value);
@@ -89,14 +89,12 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/teacher-onlineregister-create/",
+            url: `${baseUrl}prestij/teacher-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -141,14 +139,12 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/abiturient-onlineregister-create/",
+            url: `${baseUrl}prestij/abiturient-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -191,14 +187,13 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/master-onlineregister-create/",
+            url: `${baseUrl}prestij/master-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -241,14 +236,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/miq-onlineregister-create/",
+            url: `${baseUrl}prestij/miq-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -289,14 +284,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/civilservice-onlineregister-create/",
+            url: `${baseUrl}prestij/civilservice-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -338,14 +333,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/computercourse-onlineregister-create/",
+            url: `${baseUrl}prestij/computercourse-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -387,14 +382,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/foreignlanguage-onlineregister-create/",
+            url: `${baseUrl}prestij/foreignlanguage-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -435,14 +430,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/accounting-onlineregister-create/",
+            url: `${baseUrl}prestij/accounting-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -484,14 +479,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/highschool-onlineregister-create/",
+            url: `${baseUrl}prestij/highschool-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -529,14 +524,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
             mobile_number: courseOnlineRegPreSchoolMobilNumber,
             identity_card_number: courseOnlineRegPreSchoolPassportCard
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/preschool-onlineregister-create/",
+            url: `${baseUrl}prestij/preschool-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({
@@ -578,14 +573,14 @@ const OtherCourseOnlineRegisterFormContainer = () => {
 
 
         }
-        console.log(data);
+        
 
         axios({
             method: "POST",
-            url: "https://prestijs.pythonanywhere.com/api/prestij/primaryschool-onlineregister-create/",
+            url: `${baseUrl}prestij/primaryschool-onlineregister-create/`,
             data
         }).then(resp => {
-            console.log(resp.data);
+           
             if (resp.status === 201) {
 
                 Swal.fire({

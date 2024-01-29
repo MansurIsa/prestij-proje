@@ -19,7 +19,6 @@ const AccountingTeacherCard = ({ data }) => {
     }
 
     const formattedDate = formatCurrentDate();
-    console.log(formattedDate);
 
     function calculateDateDifference(startDate, endDate) {
         const start = new Date(startDate);
@@ -37,7 +36,6 @@ const AccountingTeacherCard = ({ data }) => {
     const daysDifference = calculateDateDifference(startDate, endDate);
 
     const handleTeachers = (id) => {
-        console.log(id);
         navigate('/branchs-accounting-teachers')
         dispatch(getAccountingMonthTeachersPaymentList(id))
     }

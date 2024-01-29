@@ -16,7 +16,6 @@ const NotificationContainer = () => {
     const [notificationInpValue,setNotificationInpValue]=useState('')
     const [notificationListFilterArr,setNotificationListFilterArr]=useState([])
 
-    console.log(notificationListArr);
     // setUnreadCount
 
 
@@ -26,7 +25,6 @@ const NotificationContainer = () => {
        setNotificationListFilterArr(filterData)
     }
 
-    console.log(notificationInpValue);
     return (
         <div className='notification_container'>
             <div className="other_cv_send_form_input_card">

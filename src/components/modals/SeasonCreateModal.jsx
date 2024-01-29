@@ -17,7 +17,6 @@ const SeasonCreateModal = () => {
             name: seasonCreateName,
             branch: +localStorage.getItem('branchId')
         }
-        console.log(data);
 
         axios({
             headers: {
@@ -27,7 +26,6 @@ const SeasonCreateModal = () => {
             url: `${baseUrl}service/season-create/`,
             data
         }).then(resp => {
-            console.log(resp);
             if (resp.status === 201) {
 
                 Swal.fire({

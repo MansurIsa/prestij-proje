@@ -12,7 +12,6 @@ const AccountingStudentTable = () => {
         dispatch(getAccountingAbiturientMonthPaymentList(localStorage.getItem('selectedMonth')))
     }, [dispatch,selectedSeason])
     const {accountingAbiturientMonthPaymentListArr } = useSelector(state => state.Data)
-    console.log(accountingAbiturientMonthPaymentListArr);
 
 
     const deStudents = accountingAbiturientMonthPaymentListArr.filter(item => item.student.status === 'DE');
