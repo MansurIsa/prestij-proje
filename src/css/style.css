@@ -468,7 +468,23 @@ textarea {
     cursor: pointer;
 
 }
-
+.fixed_up_to_container{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--purple);
+    z-index: 999999;
+    width: 30px;
+    height: 30px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.fixed_up_to{
+    font-size: 2.4rem;
+}
 .header_search_container {
     position: absolute;
     background-color: var(--white);

@@ -17,10 +17,10 @@ const NotificationCard = ({ data }) => {
 
 
     const markNotificationAsRead = (id) => {
-
         const data = {
             status: 'O'
-        }
+        };
+    
         axios({
             method: "PUT",
             url: `${baseUrl}notification/notification-update-delete/${id}/`,
@@ -30,54 +30,57 @@ const NotificationCard = ({ data }) => {
             data
         }).then(resp => {
             if (resp.status === 200) {
-
                 Swal.fire({
                     title: "Dəyişdirildi",
                     icon: "success",
                     confirmButtonText: "OK",
                     width: "400px"
                 }).then(function () {
-                    navigate(`/notification`)
+                    navigate(`/notification`);
                     if (!refreshed) {
                         dispatch(setRefreshed())
                         window.location.reload();
+                       
                     }
-
-
-
-                })
+                });
             }
         }).catch(err => {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: '',
-
             }).then(function () {
-
-                navigate(`/notification`)
+                navigate(`/notification`);
                 if (!refreshed) {
                     dispatch(setRefreshed())
                     window.location.reload();
+                   
                 }
-            })
-        })
-
-    }
+            });
+        });
+    };
     return (
         <div className="notification_card">
             <p>{data.content}</p>
             <p>Tarix: <span>{data.pub_date.substring(0, 10)}</span></p>
             <p>Vaxt: <span>{data.pub_date.substring(11, 16)}</span></p>
             <p>Tip: <span>{data.type === 'U' ? 'Yenilənmə olunub' : data.type === 'D' ? 'Silinmə olunub' : data.type === 'A' ? 'Əlavə olunub' : ''}</span></p>
-            {/* {data.status === 'OM' && (
+            {data.status === 'OM' && (
                 <div className="notification_btn_container">
                     <button onClick={() => markNotificationAsRead(data.id)}>
                         Oxunmayıb
                     </button>
                 </div>
 
-            )} */}
+            )}
+            {data.status === 'O' && (
+                <div className="notification_btn_container">
+                    <button disabled style={{backgroundColor: "green"}}>
+                        Oxunub
+                    </button>
+                </div>
+
+            )}
         </div>
     )
 }

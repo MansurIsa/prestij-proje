@@ -71,7 +71,7 @@ const App = () => {
 
 
       <Routes>
-        <Route path='/prestij-proje' element={<Home />} />
+        <Route path='/' element={<Home />} />
         {
           settingsListArr[0]?.about_page_active ?
             <Route path='/haqqimizda' element={<AboutPage otherPageBanner={settingsListArr[0]?.about_page_banner} />} />
@@ -134,7 +134,7 @@ const App = () => {
         }
 
         <Route path='/register' element={<PrivateRouteRegister Element={RegisterPage} />} />
-        <Route path='/notification' element={<PrivateRouteRegister Element={NotificationPage} />} />
+        <Route path='/notification' element={<NotificationPage/>} />
         <Route path='/login' element={<LoginPage />} />
        
         <Route path='/branchs-category/:id' element={<PrivateRoute Element={BranchsCategory2} />} />
