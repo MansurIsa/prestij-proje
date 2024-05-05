@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/prestij-proje/static/css/main.165cf39a.css",
-    "main.js": "/prestij-proje/static/js/main.a2a18298.js",
-    "static/media/tip4.jpeg": "/prestij-proje/static/media/tip4.f40296defb734cb054c9.jpeg",
-    "static/media/footer-bg.png": "/prestij-proje/static/media/footer-bg.6365403ddea0775b47df.png",
-    "static/media/tip1.png": "/prestij-proje/static/media/tip1.a8870951665a54415fec.png",
-    "static/media/aboutBg.webp": "/prestij-proje/static/media/aboutBg.6753ed37490f3dd79ab1.webp",
-    "static/media/checklist (4).png": "/prestij-proje/static/media/checklist (4).2a4526ddd14ea3bb7ddd.png",
-    "static/media/Contact-us-background.jpeg": "/prestij-proje/static/media/Contact-us-background.8487e4aefbc1192e2ca3.jpeg",
-    "static/media/online-course (1).png": "/prestij-proje/static/media/online-course (1).3dc303b2fbf69c476cbb.png",
-    "static/media/registered (1).png": "/prestij-proje/static/media/registered (1).818f49dc69409b44da7a.png",
-    "static/media/logo_footer.png": "/prestij-proje/static/media/logo_footer.9750975ea82fa88cd4f5.png",
-    "static/media/bg-newletter.webp": "/prestij-proje/static/media/bg-newletter.0093d61d852d2dd9b5b0.webp",
-    "index.html": "/prestij-proje/index.html",
-    "main.165cf39a.css.map": "/prestij-proje/static/css/main.165cf39a.css.map",
-    "main.a2a18298.js.map": "/prestij-proje/static/js/main.a2a18298.js.map"
+    "main.css": "/static/css/main.c58e143b.css",
+    "main.js": "/static/js/main.5f157d19.js",
+    "static/media/tip4.jpeg": "/static/media/tip4.f40296defb734cb054c9.jpeg",
+    "static/media/footer-bg.png": "/static/media/footer-bg.6365403ddea0775b47df.png",
+    "static/media/tip1.png": "/static/media/tip1.a8870951665a54415fec.png",
+    "static/media/aboutBg.webp": "/static/media/aboutBg.6753ed37490f3dd79ab1.webp",
+    "static/media/checklist (4).png": "/static/media/checklist (4).2a4526ddd14ea3bb7ddd.png",
+    "static/media/Contact-us-background.jpeg": "/static/media/Contact-us-background.8487e4aefbc1192e2ca3.jpeg",
+    "static/media/online-course (1).png": "/static/media/online-course (1).3dc303b2fbf69c476cbb.png",
+    "static/media/registered (1).png": "/static/media/registered (1).818f49dc69409b44da7a.png",
+    "static/media/logo_footer.png": "/static/media/logo_footer.9750975ea82fa88cd4f5.png",
+    "static/media/bg-newletter.webp": "/static/media/bg-newletter.0093d61d852d2dd9b5b0.webp",
+    "index.html": "/index.html",
+    "main.c58e143b.css.map": "/static/css/main.c58e143b.css.map",
+    "main.5f157d19.js.map": "/static/js/main.5f157d19.js.map"
   },
   "entrypoints": [
-    "static/css/main.165cf39a.css",
-    "static/js/main.a2a18298.js"
+    "static/css/main.c58e143b.css",
+    "static/js/main.5f157d19.js"
   ]
 }
