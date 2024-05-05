@@ -7,7 +7,7 @@ const HeaderSecond = () => {
     
   
     return (
-        <div className='header_second_container_bg '>
+        <div className='header_second_container_bg bg'>
             <div className="header_second_container container">
                 <Logo/>
                 <Nav/>

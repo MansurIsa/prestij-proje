@@ -7,16 +7,16 @@ const PublicationCard = ({ data }) => {
         <Link to={`/nesrlerimiz/${data.title.replace(/\s/g, '')}/${data.id}`}>
             {
                 data?.is_active ?
-                    <div class="card">
-                        <article>
+                    <div class="publication_card">
+                        
                             <h2>{data.title}</h2>
 
-                            <div class="pic">
+                            <div class="picture">
                                 <img src={data.image} alt=''/>
                             </div>
 
                             <div class="desc">{DOMPurify.sanitize(data.content).replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ')}</div>
-                        </article>
+                       
 
                     </div> : null
             }

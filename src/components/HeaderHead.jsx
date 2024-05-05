@@ -46,7 +46,7 @@ const HeaderHead = () => {
                                 <GoMail className='header_first_list_icon' />
                                 {
                                     contactInfoArr.length > 0 && (
-                                        <Link to={`mailto:${contactInfoArr[0]?.email}`}>{contactInfoArr[0]?.email}</Link>
+                                        <Link target='_blank' to={`mailto:${contactInfoArr[0]?.email}`}>{contactInfoArr[0]?.email}</Link>
 
                                     )
                                 }
@@ -80,16 +80,16 @@ const HeaderHead = () => {
                         <Link to={''}><IoSearch className='header_first_list_icon header_second_list_search_icon' /></Link>
                     </li>
                     <li>
-                        <Link to="https://www.facebook.com/people/Prestij-S-T%C9%99dris-M%C9%99rk%C9%99zi/100063695514908/"><BiLogoFacebook className='header_first_list_icon' /></Link>
+                        <Link target='_blank' to="https://www.facebook.com/people/Prestij-S-T%C9%99dris-M%C9%99rk%C9%99zi/100063695514908/"><BiLogoFacebook className='header_first_list_icon' /></Link>
                     </li>
                     <li>
-                        <Link to="https://www.instagram.com/prestij_s_tedris_merkezi/"><LiaInstagram className='header_first_list_icon' /></Link>
+                        <Link target='_blank' to="https://www.instagram.com/prestij_s_tedris_merkezi/"><LiaInstagram className='header_first_list_icon' /></Link>
                     </li>
                     <li>
-                        <Link to="https://www.linkedin.com/"><LiaLinkedinIn className='header_first_list_icon' /></Link>
+                        <Link target='_blank' to="https://www.linkedin.com/"><LiaLinkedinIn className='header_first_list_icon' /></Link>
                     </li>
                     <li>
-                        <Link to="https://www.youtube.com/@prestij-stdrismrkzi6418"><AiOutlineYoutube className='header_first_list_icon' /></Link>
+                        <Link target='_blank' to="https://www.youtube.com/@prestij-stdrismrkzi6418"><AiOutlineYoutube className='header_first_list_icon' /></Link>
                     </li>
                 </ul>
             </div>

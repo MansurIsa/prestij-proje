@@ -191,6 +191,15 @@
 }
 
 @media screen and (max-width: 768px) {
+    .home_header{
+        height: 60vh;
+    }
+    .header_main_container{
+        height: 56vh;
+    }
+    .header_slider_cards_container{
+        height: 56vh;
+    }
     .header_first_list li a {
         font-size: 1.3rem;
     }
@@ -523,7 +532,7 @@
         font-size: 1.6rem;
     }
 
-    .other_service_content .services_container {
+    .other_service_content .services_container, .publication_container {
         max-width: 600px;
 
     }

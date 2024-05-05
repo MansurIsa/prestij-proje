@@ -20,15 +20,15 @@ const NewsContainer = () => {
         dispatch(getNewsList())
     }, [dispatch])
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (swiperNewsRef.current && swiperNewsRef.current.swiper) {
-                swiperNewsRef.current.swiper.slideNext();
-            }
-        }, 8000);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         if (swiperNewsRef.current && swiperNewsRef.current.swiper) {
+    //             swiperNewsRef.current.swiper.slideNext();
+    //         }
+    //     }, 8000);
 
-        return () => clearInterval(interval);
-    }, []);
+    //     return () => clearInterval(interval);
+    // }, []);
     return (
         <div className='news_container container'>
 
@@ -42,9 +42,9 @@ const NewsContainer = () => {
                     enabled: true,
                 }}
                 grabCursor
-                autoplay={{
-                    delay: 3000
-                }}
+                // autoplay={{
+                //     delay: 3000
+                // }}
                 breakpoints={{
                     200: {
                         slidesPerView: 1,

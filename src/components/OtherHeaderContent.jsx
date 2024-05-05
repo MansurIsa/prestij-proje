@@ -1,8 +1,11 @@
 import React from 'react'
 
-const OtherHeaderContent = ({otherHeaderMainContent}) => {
+const OtherHeaderContent = ({ otherHeaderMainContent }) => {
   return (
-    <h1>{otherHeaderMainContent}</h1>
+    <div style={{ width: "100%"}} className="container">
+      <h1>{otherHeaderMainContent}</h1>
+    </div>
+
   )
 }
 

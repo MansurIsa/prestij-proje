@@ -12,7 +12,7 @@ const Publication = () => {
     },[dispatch])
 
   return (
-    <div className='services_container cards container'>
+    <div className=' publication_container container'>
         {
             editionListArr?.map((data,i)=>{
                 return <PublicationCard key={i} data={data}/>
