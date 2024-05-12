@@ -488,6 +488,9 @@
         /* padding-top: 4vh; */
         margin-top: 4vh;
     }
+    .other_header_main_container{
+        height: 21vh;
+    }
 }
 
 @media screen and (max-width: 390px) {
