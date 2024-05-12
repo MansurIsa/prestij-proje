@@ -14,6 +14,9 @@ const FooterEndLink = () => {
 
     return (
         <ul className='footer_end_link'>
+            <li className='nav_inner_list'>
+                <Link to='/'>Əsas səhifə »</Link>
+            </li>
 
             {
                 settingsListArr[0]?.about_page_active ?

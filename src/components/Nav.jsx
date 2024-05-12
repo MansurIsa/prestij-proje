@@ -43,6 +43,10 @@ const Nav = () => {
                 <div className="close_parent">
                     <CgClose className='close_icon' />
                 </div>
+                <li className='nav_inner_list'>
+                    <Link to='/'>ƏSAS SƏHİFƏ</Link>
+                </li>
+
                 {
                     settingsListArr[0]?.about_page_active ?
                         <li className='nav_inner_list'>
@@ -66,7 +70,7 @@ const Nav = () => {
                                 </label>
 
                             </div>
-                            <input type="checkbox" id='angleOne'/>
+                            <input type="checkbox" id='angleOne' />
                             <ul className='nav_inner_list_child'>
                                 {
                                     servicesListArr?.map((data, i) => {
@@ -77,7 +81,7 @@ const Nav = () => {
                                         )
                                     })
                                 }
-                                
+
 
 
                             </ul>
@@ -100,7 +104,7 @@ const Nav = () => {
                                     <GoTriangleDown className='angle_icon' />
                                 </label>
                             </div>
-                            <input type="checkbox" id='angleTwo'/>
+                            <input type="checkbox" id='angleTwo' />
 
                             <ul className='nav_inner_list_child2'>
                                 <li>
