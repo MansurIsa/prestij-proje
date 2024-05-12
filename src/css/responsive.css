@@ -476,15 +476,15 @@
         font-size: 3rem;
     }
     .home_header{
-        height: 30vh;
+        height: 25vh;
         
     }
     .header_main_container{
-        height: 26vh ;
+        height: 21vh ;
         /* padding-top: 4vh; */
     }
     .header_slider_cards_container{
-        height: 26vh ;
+        height: 21vh ;
         /* padding-top: 4vh; */
         margin-top: 4vh;
     }
