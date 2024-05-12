@@ -15,13 +15,13 @@ const OtherLuckContainer = () => {
 
     return (
         <div className='other_luck_parent container'>
-            <div className="other_about_content">
+            {/* <div className="other_about_content">
                 {
                     successListArr?.map((data, i) => {
                         return data.is_active ? <h5 key={i}>{data.title}</h5> : null
                     })
                 }
-            </div>
+            </div> */}
             <div className="other_luck_container">
                 {
                     successItemListArr?.map((data, i) => {
