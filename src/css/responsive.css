@@ -116,7 +116,7 @@
 
     .nav_inner_list_child,
     .nav_inner_list_child2 {
-       display: none;
+        display: none;
         padding-left: 20px;
         padding-right: 10px;
         width: 200px;
@@ -139,7 +139,7 @@
         position: static;
         width: 100%;
 
-        
+
     }
 
     #angleTwo:checked~.nav_inner_list_child2 {
@@ -149,7 +149,7 @@
 
     }
 
-  
+
 
 
     .header_second_card {
@@ -191,15 +191,18 @@
 }
 
 @media screen and (max-width: 768px) {
-    .home_header{
+    .home_header {
         height: 60vh;
     }
-    .header_main_container{
+
+    .header_main_container {
         height: 56vh;
     }
-    .header_slider_cards_container{
+
+    .header_slider_cards_container {
         height: 56vh;
     }
+
     .header_first_list li a {
         font-size: 1.3rem;
     }
@@ -337,7 +340,7 @@
         font-size: 2.2rem;
     }
 
-  
+
 
 
 
@@ -475,21 +478,31 @@
         color: var(--white);
         font-size: 3rem;
     }
-    .home_header{
+
+    .home_header {
         height: 25vh;
-        
+
     }
-    .header_main_container{
-        height: 21vh ;
+
+    .header_main_container {
+        height: 21vh;
         /* padding-top: 4vh; */
     }
-    .header_slider_cards_container{
-        height: 21vh ;
+
+    .header_slider_cards_container {
+        height: 21vh;
         /* padding-top: 4vh; */
         margin-top: 4vh;
     }
-    .other_header_main_container{
+
+    .other_header_main_container {
         height: 21vh;
+
+    }
+
+    .other_header_content {
+        padding-top: 3vh;
+        /* background-color: red; */
     }
 }
 
@@ -539,7 +552,8 @@
         font-size: 1.6rem;
     }
 
-    .other_service_content .services_container, .publication_container {
+    .other_service_content .services_container,
+    .publication_container {
         max-width: 600px;
 
     }
@@ -681,39 +695,39 @@
         font-size: 1.4rem;
     }
 
-   
+
 
 
 
 }
 
-@media screen and (max-width: 450px){
-    .other_exam_results_container{
-        
-        max-width: 300px;
-       
-    }
-    
-    .other_exam_results_container::before{
-       
-        width: 300px;
-        
-        
-    
-    }
-    
-    .other_exam_results_container::after{
-       
-         width: 300px;
-         
-         
-     
-     }
+@media screen and (max-width: 450px) {
+    .other_exam_results_container {
 
-     .exam_results_inp_icon{
-        
+        max-width: 300px;
+
+    }
+
+    .other_exam_results_container::before {
+
+        width: 300px;
+
+
+
+    }
+
+    .other_exam_results_container::after {
+
+        width: 300px;
+
+
+
+    }
+
+    .exam_results_inp_icon {
+
         width: 240px;
-        
-     }
-    
+
+    }
+
 }
