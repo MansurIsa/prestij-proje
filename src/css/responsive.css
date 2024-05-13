@@ -280,6 +280,9 @@
     .other_contact_form_card textarea::placeholder {
         color: var(--black);
     }
+    .other_luck_container{
+        max-width: 500px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -407,7 +410,7 @@
         font-size: 1.4rem;
     }
 
-    .other_luck_container {
+    /* .other_luck_container {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
     }
@@ -415,7 +418,7 @@
     .other_luck_card {
         min-width: 300px;
 
-    }
+    } */
 
     .other_luck_card img {
         height: 250px;
@@ -565,6 +568,7 @@
     .bg_new_letter {
         background: none;
     }
+
 
 }
 

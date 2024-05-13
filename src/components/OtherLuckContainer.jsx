@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSuccessItemList, getSuccessList } from '../actions/MainAction'
 import OtherLuckCard from './OtherLuckCard'
+import LatestNews from './LatestNews'
 
 const OtherLuckContainer = () => {
     const dispatch = useDispatch()
@@ -13,7 +14,7 @@ const OtherLuckContainer = () => {
 
 
     return (
-        <div className='other_luck_parent container'>
+        <div className='other_about_container container'>
             {/* <div className="other_about_content">
                 {
                     successListArr?.map((data, i) => {
@@ -28,6 +29,7 @@ const OtherLuckContainer = () => {
                     })
                 }
             </div>
+            <LatestNews />
 
 
 
