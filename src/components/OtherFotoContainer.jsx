@@ -1,10 +1,12 @@
 import React from 'react'
 import OtherFotoCards from './OtherFotoCards'
+import LatestNews from './LatestNews'
 
 const OtherFotoContainer = () => {
   return (
-    <div className='other_foto_container container'>
+    <div className='other_about_container container'>
         <OtherFotoCards/>
+        <LatestNews/>
     </div>
   )
 }

@@ -2341,12 +2341,17 @@ nav {
 }
 
 .other_foto_cards {
+    max-width: 700px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(277px, 1fr));
+    gap: 20px;
 
 }
-
+.other_foto_card{
+    min-width: 277px;
+    box-shadow: 0px 0px 9px rgba(69, 69, 69, 0.23);
+    border-radius: 6px;
+}
 .other_foto_card_content {
     width: 100%;
     padding: 20px;

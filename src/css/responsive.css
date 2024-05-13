@@ -280,7 +280,7 @@
     .other_contact_form_card textarea::placeholder {
         color: var(--black);
     }
-    .other_luck_container{
+    .other_luck_container, .other_foto_cards{
         max-width: 500px;
     }
 }
