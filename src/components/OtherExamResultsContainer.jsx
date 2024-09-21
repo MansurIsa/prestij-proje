@@ -17,7 +17,7 @@ const OtherExamResultsContainer = () => {
         e.preventDefault()
 
         if(examResultsİnpValue!==""){
-            window.open(`https://dev.prestij-s.com/oapp/results.php?is_nomresi=${examResultsİnpValue}`, '_blank');
+            window.open(`https://dev.prestij-s.com/app/results.php?is_nomresi=${examResultsİnpValue}`, '_blank');
 
         }else{
             setExamResultsErr("İş nömrəsi boş ola bilməz!")
