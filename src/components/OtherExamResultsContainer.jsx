@@ -1,54 +1,67 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaUser } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
 
 const OtherExamResultsContainer = () => {
-
-    const navigate=useNavigate()
-
-    const [examResultsİnpValue, setExamResultsİnpValue] = useState("")
-    const [examResultsErr, setExamResultsErr] = useState("")
+    const [examResultsİnpValue, setExamResultsİnpValue] = useState("");
+    const [examResultsErr, setExamResultsErr] = useState("");
+    const [selectedExam, setSelectedExam] = useState("");
 
     const examResultsİnpChange = (e) => {
-        setExamResultsİnpValue(e.target.value)
-    }
+        setExamResultsİnpValue(e.target.value);
+    };
 
-    const examResultsSubmit=(e)=>{
-        e.preventDefault()
+    const handleSelectChange = (e) => {
+        setSelectedExam(e.target.value);
+        setExamResultsİnpValue(""); // seçimi dəyişəndə inputu təmizləyirik
+        setExamResultsErr(""); // səhv mesajını təmizləyirik
+    };
 
-        if(examResultsİnpValue!==""){
-            window.open(`https://dev.prestij-s.com/oapp/results.php?is_nomresi=${examResultsİnpValue}`, '_blank');
+    const examResultsSubmit = (e) => {
+        e.preventDefault();
 
-        }else{
-            setExamResultsErr("İş nömrəsi boş ola bilməz!")
+        if (examResultsİnpValue !== "") {
+            const y = selectedExam === "Magistr" || selectedExam === "1-8 ci siniflər" 
+                ? "https://dev.prestij-s.com/oapp/results.php"
+                : "https://dev.prestij-s.com/app/results.php";
+            
+            window.open(`${y}?is_nomresi=${examResultsİnpValue}`, '_blank');
+        } else {
+            setExamResultsErr("İş nömrəsi boş ola bilməz!");
         }
+    };
 
-
-
-    }
     return (
-
         <div className='other_about_container container other_exam_results_container'>
             <form onSubmit={examResultsSubmit}>
-                <div className='exam_results_inp_icon'>
-                    <FaUser />
-                    <input placeholder='İş nömrəsi' type="number" value={examResultsİnpValue} onChange={examResultsİnpChange} />
+                <select className='exam_result_select' value={selectedExam} onChange={handleSelectChange}>
+                    <option value="" disabled>Sınaq imtahanını seçin</option>
+                    <option value="Magistr">Magistr</option>
+                    <option value="Blok">Blok</option>
+                    <option value="Buraxılış">Buraxılış</option>
+                    <option value="Miq">Miq</option>
+                    <option value="1-8 ci siniflər">1-8 ci siniflər</option>
+                </select>
 
-                </div>
-                <p>{examResultsErr}</p>
-                <div className='other_contact_form'>
-                    <button><span>Göstər</span></button>
-                </div>
-
-
+                {selectedExam && (
+                    <>
+                        <div className='exam_results_inp_icon'>
+                            <FaUser />
+                            <input
+                                placeholder='İş nömrəsi'
+                                type="number"
+                                value={examResultsİnpValue}
+                                onChange={examResultsİnpChange}
+                            />
+                        </div>
+                        <p>{examResultsErr}</p>
+                        <div className='other_contact_form'>
+                            <button type="submit"><span>Göstər</span></button>
+                        </div>
+                    </>
+                )}
             </form>
         </div>
+    );
+};
 
-
-
-
-
-    )
-}
-
-export default OtherExamResultsContainer
+export default OtherExamResultsContainer;
