@@ -2,7 +2,7 @@ import React from 'react'
 import OnlineExamIcon from '../images/online-course (1).png'
 import OnlineSignUpIcon from '../images/registered (1).png'
 import OnlineExamResultIcon from '../images/checklist (4).png'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const MainFirstCards = () => {
 
@@ -39,7 +39,7 @@ const MainFirstCards = () => {
 
 
                     </div>
-                    <p>Online sınaq imtahanı</p>
+                    <Link target='_blank' to={'https://sinaq.prestij-s.com/'}>Online sınaq imtahanı</Link>
                 </li>
             </ul>
         </div>

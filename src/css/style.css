@@ -196,6 +196,12 @@ textarea {
 .header_second_card p {
     color: var(--white);
 }
+.header_second_card a {
+    color: var(--white);
+    text-align: center;
+    display: block;
+    margin-top: 8px;
+}
 
 .header_second_card:hover {
     transform: translateY(-10px);
