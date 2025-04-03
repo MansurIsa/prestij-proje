@@ -5,23 +5,23 @@ import OnlineExamResultIcon from '../images/checklist (4).png'
 import { Link, useNavigate } from 'react-router-dom'
 
 const HeaderSecondCards = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
-    const courseOnlineRegister=()=>{
+    const courseOnlineRegister = () => {
         navigate('/course-online-register')
     }
 
-    const onlineExamResults=()=>{
+    const onlineExamResults = () => {
         navigate('/imtahan-neticeleri')
     }
 
-    
+
     return (
         <ul className='header_second_cards_container container'>
             <li onClick={onlineExamResults} className="header_second_card">
                 <div>
                     <img src={OnlineExamResultIcon} alt="" />
-                    
+
                 </div>
                 <p>İmtahan nəticələri</p>
             </li>
@@ -31,15 +31,18 @@ const HeaderSecondCards = () => {
                 </div>
                 <p>Kursa online qeydiyyat</p>
             </li>
-            
-            
+
+
             <li className="header_second_card">
-                <div>
-                    <img src={OnlineExamIcon} alt="" />
+                <Link target='_blank' to={'https://sinaq.prestij-s.com/'}>
+                    <div>
+                        <img src={OnlineExamIcon} alt="" />
 
 
-                </div>
-                <Link target='_blank' to={'https://sinaq.prestij-s.com/'}>Online sınaq imtahanı</Link>
+                    </div>
+                    <p>Online sınaq imtahanı</p>
+                </Link>
+
             </li>
         </ul>
     )

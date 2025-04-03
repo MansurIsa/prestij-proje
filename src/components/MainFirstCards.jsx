@@ -6,13 +6,13 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const MainFirstCards = () => {
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
-    const courseOnlineRegister=()=>{
+    const courseOnlineRegister = () => {
         navigate('/course-online-register')
     }
 
-    const onlineExamResults=()=>{
+    const onlineExamResults = () => {
         navigate('/imtahan-neticeleri')
     }
 
@@ -22,7 +22,7 @@ const MainFirstCards = () => {
                 <li onClick={onlineExamResults} className="header_second_card">
                     <div>
                         <img src={OnlineExamResultIcon} alt="" />
-                        
+
                     </div>
                     <p>İmtahan nəticələri</p>
                 </li>
@@ -32,14 +32,17 @@ const MainFirstCards = () => {
                     </div>
                     <p>Kursa online qeydiyyat</p>
                 </li>
-                
+
                 <li className="header_second_card">
-                    <div>
-                        <img src={OnlineExamIcon} alt="" />
+                    <Link target='_blank' to={'https://sinaq.prestij-s.com/'}>
+                        <div>
+                            <img src={OnlineExamIcon} alt="" />
 
 
-                    </div>
-                    <Link target='_blank' to={'https://sinaq.prestij-s.com/'}>Online sınaq imtahanı</Link>
+                        </div>
+                        <p>Online sınaq imtahanı</p>
+                    </Link>
+
                 </li>
             </ul>
         </div>
