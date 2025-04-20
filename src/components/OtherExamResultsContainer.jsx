@@ -18,20 +18,23 @@ const OtherExamResultsContainer = () => {
 
     const examResultsSubmit = (e) => {
         e.preventDefault();
-
-        if (examResultsİnpValue !== "") {
-            const y = selectedExam === "Magistr" 
+    
+        const isOther = selectedExam !== "1-8 ci siniflər";
+    
+        if (!isOther || (isOther && examResultsİnpValue !== "")) {
+            const y = selectedExam === "Magistr"
                 ? "https://dev.prestij-s.com/oapp/results.php"
-                : selectedExam === "1-8 ci siniflər"?
-                "https://sinaq.prestij-s.com/search-result"
+                : selectedExam === "1-8 ci siniflər"
+                ? "https://sinaq.prestij-s.com/search-result"
                 : "https://dev.prestij-s.com/app/results.php";
-            
-            window.open(`${y}?is_nomresi=${examResultsİnpValue}`, '_blank');
+    
+            const fullUrl = isOther ? `${y}?is_nomresi=${examResultsİnpValue}` : y;
+            window.open(fullUrl, '_blank');
         } else {
             setExamResultsErr("İş nömrəsi boş ola bilməz!");
         }
     };
-
+    
     return (
         <div className='other_about_container container other_exam_results_container'>
             <form onSubmit={examResultsSubmit}>
@@ -45,22 +48,27 @@ const OtherExamResultsContainer = () => {
                 </select>
 
                 {selectedExam && (
-                    <>
-                        <div className='exam_results_inp_icon'>
-                            <FaUser />
-                            <input
-                                placeholder='İş nömrəsi'
-                                type="number"
-                                value={examResultsİnpValue}
-                                onChange={examResultsİnpChange}
-                            />
-                        </div>
-                        <p>{examResultsErr}</p>
-                        <div className='other_contact_form'>
-                            <button type="submit"><span>Göstər</span></button>
-                        </div>
-                    </>
-                )}
+    <>
+        {selectedExam !== "1-8 ci siniflər" && (
+            <>
+                <div className='exam_results_inp_icon'>
+                    <FaUser />
+                    <input
+                        placeholder='İş nömrəsi'
+                        type="number"
+                        value={examResultsİnpValue}
+                        onChange={examResultsİnpChange}
+                    />
+                </div>
+                <p>{examResultsErr}</p>
+            </>
+        )}
+        <div className='other_contact_form'>
+            <button type="submit"><span>Göstər</span></button>
+        </div>
+    </>
+)}
+
             </form>
         </div>
     );
