@@ -20,8 +20,10 @@ const OtherExamResultsContainer = () => {
         e.preventDefault();
 
         if (examResultsİnpValue !== "") {
-            const y = selectedExam === "Magistr" || selectedExam === "1-8 ci siniflər" 
+            const y = selectedExam === "Magistr" 
                 ? "https://dev.prestij-s.com/oapp/results.php"
+                : selectedExam === "1-8 ci siniflər"?
+                "https://sinaq.prestij-s.com/search-result"
                 : "https://dev.prestij-s.com/app/results.php";
             
             window.open(`${y}?is_nomresi=${examResultsİnpValue}`, '_blank');
